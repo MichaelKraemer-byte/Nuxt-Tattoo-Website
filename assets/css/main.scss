@@ -1,0 +1,116 @@
+@use "@/assets/css/fonts.scss";
+
+body {
+  background-color: #121212;
+  font-family: "Poppins";
+  font-weight: 100;
+}
+
+.poppins-200 {
+  font-family: "Poppins";
+  font-weight: 200;
+}
+
+/* Animation */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in {
+  animation: fade-in 1s ease-out;
+}
+
+.btn-custom {
+  color: #fff;
+  transition: all 0.5s;
+  position: relative;
+}
+.btn-custom::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: #f65c1a01;
+  transition: all 0.3s;
+  padding: 4px;
+}
+.btn-custom:hover::before {
+  opacity: 0;
+  transform: scale(0.5, 0.5);
+}
+.btn-custom::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+  border: 1px solid white;
+  transform: scale(1.2, 1.2);
+  border-radius: 4px;
+  padding: 4px;
+}
+.btn-custom:hover::after {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+
+.btn-custom-2 {
+  color: #fff;
+  transition: all 0.3s;
+  position: relative;
+}
+.btn-custom-2 span {
+  transition: all 0.3s;
+}
+.btn-custom-2::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-top-color: rgba(255, 255, 255, 0.5);
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+  transform: scale(0.1, 1);
+}
+.btn-custom-2:hover span {
+  letter-spacing: 2px;
+}
+.btn-custom-2:hover::before {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+.btn-custom-2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.3s;
+}
+.btn-custom-2:hover::after {
+  opacity: 0;
+  transform: scale(0.1, 1);
+}
