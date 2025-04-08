@@ -25,29 +25,30 @@ export const useCookieConsentStore = defineStore("cookieConsent", {
       console.log("initializeKlaro inside");
 
       if (typeof window.klaro === "undefined") {
-        // Lade Klaro-Skript dynamisch, falls es noch nicht geladen wurde
         await this.loadKlaroScript();
       }
-
-      console.log("initializeKlaro inside 3");
 
       if (typeof window.klaro !== "undefined") {
         console.log("Klaro verfügbar");
 
-        (window.klaro as any).addEventListener("accept", () => {
+        window.klaro.addEventListener("accept", () => {
           console.log("Klaro accept Event ausgelöst!");
           this.setConsent(true);
-          console.log("initializeKlaro CookieConsent: true");
         });
 
-        (window.klaro as any).addEventListener("decline", () => {
+        window.klaro.addEventListener("decline", () => {
           console.log("Klaro decline Event ausgelöst!");
           this.setConsent(false);
-          console.log("initializeKlaro CookieConsent: false");
         });
 
-        console.log("Klaro wurde erfolgreich initialisiert!");
+        // NEU: Instagram-spezifisches Event
+        window.addEventListener("load-instagram", () => {
+          console.log("Event 'load-instagram' empfangen");
+          this.setConsent(true);
+        });
+
         this.klaroInitialized = true;
+        console.log("Klaro wurde erfolgreich initialisiert!");
       } else {
         console.warn("Klaro ist noch nicht verfügbar.");
       }

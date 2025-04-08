@@ -36,4 +36,10 @@ var klaroConfig = {
       },
     },
   ],
+  onDecline: function () {
+    console.log("Zustimmung abgelehnt");
+    this.setConsent(false); // Zustandsänderung im Pinia-Store
+    // Trigger für das Verstecken des Instagram-Feeds
+    window.dispatchEvent(new Event("klaro-decline")); // Optional
+  },
 };

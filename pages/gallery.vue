@@ -22,9 +22,8 @@
     <div v-else class="px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 py-32">
       <iframe
         src="https://cdn.lightwidget.com/widgets/c669fa07b7e05b1ebf5fd46a16427076.html"
-        scrolling="no"
         allowtransparency="true"
-        class="w-full h-[600px] border-0 overflow-hidden shadow-lg rounded-lg"
+        class="w-full min-h-screen border-0 overflow-hidden shadow-lg rounded-lg"
       ></iframe>
     </div>
   </div>
@@ -35,4 +34,6 @@ import { useCookieConsentStore } from "@/stores/cookieConsent"; // Store korrekt
 
 const store = useCookieConsentStore(); // Store instanziieren
 const consentGiven = store.consentGiven; // Status der Zustimmung abrufen
+
+console.log(store.consentGiven); // false
 </script>

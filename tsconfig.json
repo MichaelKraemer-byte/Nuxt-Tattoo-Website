@@ -9,5 +9,5 @@
     "stores/**/*.ts",
     "composables/**/*.ts",
     "plugins/**/*.ts"
-, "plugins/klaro.client.js"  ]
+, "plugins/klaro.client.js", "plugins/pinia.js"  ]
 }
