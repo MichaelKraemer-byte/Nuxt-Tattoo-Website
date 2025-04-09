@@ -1,27 +1,10 @@
 <template>
-  <div>
-    <!-- Wenn der Nutzer noch nicht zugestimmt hat -->
-    <div
-      v-if="!store.consentGiven"
-      class="min-h-screen flex column items-center justify-center"
-    >
-      <p class="poppins-200 text-white text-lg text-center px-4">
-        Um unseren Instagram-Feed zu sehen, müssen Sie der Nutzung externer
-        Inhalte zustimmen.
-      </p>
-      <!-- CookieSettings Button -->
-      <button
-        @click="store.openCookieSettings"
-        class="bg-blue-600 text-white px-4 py-2 rounded mt-4"
-      >
-        Cookie-Settings
-      </button>
-    </div>
-
-    <!-- Wenn der Nutzer zugestimmt hat -->
-    <div v-else class="px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48 py-32">
+  <div class="min-h-screen py-32 px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48">
+    <div id="instagram-container" v-if="cookieStore.consentGiven">
+      <!-- Instagram Feed iframe wird nur angezeigt, wenn Zustimmung erteilt wurde -->
       <iframe
-        src="https://cdn.lightwidget.com/widgets/c669fa07b7e05b1ebf5fd46a16427076.html"
+        v-if="cookieStore.instagramIframeSrc"
+        :src="cookieStore.instagramIframeSrc"
         allowtransparency="true"
         class="w-full min-h-screen border-0 overflow-hidden shadow-lg rounded-lg"
       ></iframe>
@@ -30,10 +13,8 @@
 </template>
 
 <script setup>
-import { useCookieConsentStore } from "@/stores/cookieConsent"; // Store korrekt importieren
+import { useCookieStore } from "../stores/cookieStore"; // Pinia Store importieren
 
-const store = useCookieConsentStore(); // Store instanziieren
-const consentGiven = store.consentGiven; // Status der Zustimmung abrufen
-
-console.log(store.consentGiven); // false
+// Store verwenden
+const cookieStore = useCookieStore();
 </script>
