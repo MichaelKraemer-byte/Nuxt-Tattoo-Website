@@ -80,3 +80,4 @@ export const useCookieStore = defineStore("cookieStore", () => {
     resetConsentStatus,
   };
 });
+

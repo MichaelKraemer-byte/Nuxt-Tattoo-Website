@@ -1,3 +1,40 @@
+<template>
+  <footer
+    class="bg-black/15 backdrop-blur-md py-6 shadow-md text-center text-sm text-gray-600"
+  >
+    <div class="container mx-auto px-4 text-gray-100">
+      <p>© {{ new Date().getFullYear() }} Mika Krämer Consciousness</p>
+
+      <div class="flex justify-center flex-wrap gap-4 mt-4">
+        <button
+          @click="openCookieBanner"
+          class="btn-custom-2 text-blue-600 hover:text-orange-800 cursor-pointer text-gray-100"
+        >
+          Cookie-Einstellungen
+        </button>
+
+        <NuxtLink
+          to="/shared/privacy-policy"
+          class="btn-custom-2 text-blue-600 hover:text-orange-800 cursor-pointer text-gray-100"
+        >
+          Privacy Policy
+        </NuxtLink>
+
+        <NuxtLink
+          to="/shared/imprint"
+          class="btn-custom-2 text-blue-600 hover:text-orange-800 cursor-pointer text-gray-100"
+        >
+          Imprint
+        </NuxtLink>
+      </div>
+    </div>
+  </footer>
+</template>
+
+<styles scoped>
+
+</styles>
+
 <script setup>
 import { useCookieStore } from "../stores/cookieStore"; // Pinia Store importieren
 
@@ -11,18 +48,3 @@ function openCookieBanner() {
   console.log(cookieStore.showCookieBanner);
 }
 </script>
-
-<template>
-  <footer class="bg-gray-100 text-center py-6 text-sm text-gray-600">
-    <div class="container mx-auto px-4">
-      <p>© {{ new Date().getFullYear() }} Deine Webseite</p>
-
-      <button
-        @click="openCookieBanner"
-        class="mt-2 text-blue-600 underline hover:text-blue-800"
-      >
-        Cookie-Einstellungen
-      </button>
-    </div>
-  </footer>
-</template>
