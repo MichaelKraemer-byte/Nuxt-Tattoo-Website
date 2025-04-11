@@ -10,7 +10,7 @@
         in unserer
         <NuxtLink
           to="/privacy-policy"
-          class="text-orange-500 hover:text-orange-400 transition-colors mx-1"
+          class="text-orange-400 hover:text-orange-300 transition-colors mx-1"
         >
           Datenschutzerklärung </NuxtLink
         >. Bitte stimme zu, um fortzufahren.

@@ -8,23 +8,23 @@
       <div class="flex justify-center flex-wrap gap-4 mt-4">
         <button
           @click="openCookieBanner"
-          class="btn-custom-2 text-blue-600 hover:text-orange-800 cursor-pointer text-gray-100"
+          class="btn-custom-2 hover:text-orange-800 cursor-pointer text-gray-100"
         >
           Cookie-Einstellungen
         </button>
 
         <NuxtLink
           to="/shared/privacy-policy"
-          class="btn-custom-2 text-blue-600 hover:text-orange-800 cursor-pointer text-gray-100"
+          class="btn-custom-2 hover:text-orange-800 cursor-pointer text-gray-100"
         >
-          Privacy Policy
+          Datenschutzerklärung
         </NuxtLink>
 
         <NuxtLink
           to="/shared/imprint"
-          class="btn-custom-2 text-blue-600 hover:text-orange-800 cursor-pointer text-gray-100"
+          class="btn-custom-2 hover:text-orange-800 cursor-pointer text-gray-100"
         >
-          Imprint
+          Impressum
         </NuxtLink>
       </div>
     </div>
