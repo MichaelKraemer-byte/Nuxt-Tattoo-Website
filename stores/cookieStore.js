@@ -4,7 +4,6 @@ import { ref } from "vue";
 // Hilfsfunktionen zum Setzen, Abrufen und Löschen von Cookies
 function setCookie(name, value, days) {
   if (typeof window !== "undefined") {
-    // Sicherstellen, dass der Code im Browser ausgeführt wird
     const expires = new Date();
     expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000); // Ablaufdatum
     document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/`;
@@ -13,7 +12,6 @@ function setCookie(name, value, days) {
 
 function getCookie(name) {
   if (typeof window !== "undefined") {
-    // Sicherstellen, dass der Code im Browser ausgeführt wird
     const nameEQ = name + "=";
     const ca = document.cookie.split(";");
     for (let i = 0; i < ca.length; i++) {
@@ -21,34 +19,32 @@ function getCookie(name) {
       if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
     }
   }
-  return null; // Rückgabe null, falls wir uns im SSR befinden
+  return null;
 }
 
 function eraseCookie(name) {
   if (typeof window !== "undefined") {
-    // Sicherstellen, dass der Code im Browser ausgeführt wird
     document.cookie = `${name}=; Max-Age=-1; path=/`;
   }
 }
 
 export const useCookieStore = defineStore("cookieStore", () => {
   const consentGiven = ref(false);
+  const consentStatus = ref(getCookie("cookiesAccepted")); // reaktive Variable für Consent-Status
   const showCookieBanner = ref(false);
   const instagramIframeSrc = ref("");
 
-  // Sicherstellen, dass der Status der Zustimmung nachgeladen wird
   const initializeConsentStatus = () => {
     if (typeof window !== "undefined") {
-      const consentStatus = getCookie("cookiesAccepted");
-
-      if (consentStatus === "true") {
+      if (consentStatus.value === "true") {
         consentGiven.value = true;
         showCookieBanner.value = false;
-      } else if (consentStatus === "false") {
-        consentGiven.value = false;
+        acceptCookies();
+      } else if (consentStatus.value === "false") {
+        consentGiven.value = true;
         showCookieBanner.value = false;
       } else {
-        // Kein Cookie vorhanden → Banner anzeigen
+        consentGiven.value = false;
         showCookieBanner.value = true;
       }
     }
@@ -69,34 +65,30 @@ export const useCookieStore = defineStore("cookieStore", () => {
 
   const acceptCookies = () => {
     consentGiven.value = true;
+    consentStatus.value = "true"; // markiert Zustimmung
     showCookieBanner.value = false;
     setCookie("cookiesAccepted", "true", 365);
     instagramIframeSrc.value =
       "https://cdn.lightwidget.com/widgets/c669fa07b7e05b1ebf5fd46a16427076.html";
-    loadLightWidgetScript(); // ← wichtig
+    loadLightWidgetScript();
   };
 
   const declineCookies = () => {
-    consentGiven.value = false;
+    consentGiven.value = true;
+    consentStatus.value = "false"; // markiert Ablehnung
     showCookieBanner.value = false;
     setCookie("cookiesAccepted", "false", 365); // Zustimmung ablehnen und Cookie setzen
     instagramIframeSrc.value = ""; // Instagram Feed deaktivieren
     window.location.reload();
   };
 
-  const resetConsentStatus = () => {
-    consentGiven.value = false;
-    showCookieBanner.value = true;
-    eraseCookie("cookiesAccepted"); // Entferne das Cookie
-  };
-
   return {
+    consentStatus,
     consentGiven,
     showCookieBanner,
     instagramIframeSrc,
     initializeConsentStatus,
     acceptCookies,
     declineCookies,
-    resetConsentStatus,
   };
 });

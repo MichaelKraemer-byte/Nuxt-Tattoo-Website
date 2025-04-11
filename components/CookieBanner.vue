@@ -9,7 +9,7 @@
         anderem für unseren eingebetteten Instagram-Feed. Mehr Infos findest du
         in unserer
         <NuxtLink
-          to="/privacy-policy"
+          to="/shared/privacy-policy"
           class="text-orange-400 hover:text-orange-300 transition-colors mx-1"
         >
           Datenschutzerklärung </NuxtLink

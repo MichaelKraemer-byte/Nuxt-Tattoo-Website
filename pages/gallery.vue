@@ -1,20 +1,3 @@
-<script setup>
-import { ref, onMounted } from "vue";
-import { useCookieStore } from "../stores/cookieStore";
-
-const cookieStore = useCookieStore();
-const isHydrated = ref(false); // Wird true, sobald wir im Browser sind
-
-onMounted(() => {
-  cookieStore.initializeConsentStatus();
-  isHydrated.value = true;
-});
-
-function openCookieBanner() {
-  cookieStore.showCookieBanner = true;
-}
-</script>
-
 <template>
   <div
     class="relative min-h-screen py-32 px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48"
@@ -29,7 +12,7 @@ function openCookieBanner() {
       ></iframe>
 
       <div
-        v-else
+        v-else-if="cookieStore.instagramIframeSrc === ''"
         class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-xl w-full border border-dashed border-gray-400 shadow-md rounded-lg p-6 text-center text-gray-700"
       >
         <p class="text-lg font-medium">
@@ -47,3 +30,20 @@ function openCookieBanner() {
     </div>
   </div>
 </template>
+
+<script setup>
+import { ref, onMounted } from "vue";
+import { useCookieStore } from "../stores/cookieStore";
+
+const cookieStore = useCookieStore();
+const isHydrated = ref(false); // Wird true, sobald wir im Browser sind
+
+onMounted(() => {
+  cookieStore.initializeConsentStatus();
+  isHydrated.value = true;
+});
+
+function openCookieBanner() {
+  cookieStore.showCookieBanner = true;
+}
+</script>
