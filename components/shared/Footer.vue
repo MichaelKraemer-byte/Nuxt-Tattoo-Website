@@ -3,26 +3,28 @@
     class="bg-black/15 backdrop-blur-md py-6 shadow-md text-center text-sm text-gray-600"
   >
     <div class="container mx-auto px-4 text-gray-100">
-      <p>© {{ new Date().getFullYear() }} Mika Krämer Consciousness</p>
+      <p class="text-gray-100">
+        © {{ new Date().getFullYear() }} Mika Krämer Consciousness
+      </p>
 
       <div class="flex justify-center flex-wrap gap-4 mt-4">
         <button
           @click="openCookieBanner"
-          class="btn-custom-2 hover:text-orange-800 cursor-pointer text-gray-100"
+          class="btn-custom-2 hover:text-orange-800 cursor-pointer text-gray-100 text-lg"
         >
           Cookie-Einstellungen
         </button>
 
         <NuxtLink
           to="/shared/privacy-policy"
-          class="btn-custom-2 hover:text-orange-800 cursor-pointer text-gray-100"
+          class="btn-custom-2 hover:text-orange-800 cursor-pointer text-gray-100 text-lg"
         >
           Datenschutzerklärung
         </NuxtLink>
 
         <NuxtLink
           to="/shared/imprint"
-          class="btn-custom-2 hover:text-orange-800 cursor-pointer text-gray-100"
+          class="btn-custom-2 hover:text-orange-800 cursor-pointer text-gray-100 text-lg"
         >
           Impressum
         </NuxtLink>
@@ -36,7 +38,7 @@
 </styles>
 
 <script setup>
-import { useCookieStore } from "../stores/cookieStore"; // Pinia Store importieren
+import { useCookieStore } from "../../stores/cookieStore"; // Pinia Store importieren
 
 // Store verwenden
 const cookieStore = useCookieStore();

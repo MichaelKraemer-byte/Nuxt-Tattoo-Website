@@ -95,6 +95,10 @@ body {
   border-bottom-color: rgba(255, 255, 255, 0.5);
   transform: scale(0.1, 1);
 }
+.btn-custom-2:hover {
+  color: #ffbd8a;
+}
+
 .btn-custom-2:hover span {
   letter-spacing: 2px;
 }

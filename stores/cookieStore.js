@@ -54,12 +54,26 @@ export const useCookieStore = defineStore("cookieStore", () => {
     }
   };
 
+  const loadLightWidgetScript = () => {
+    if (
+      typeof window !== "undefined" &&
+      !document.getElementById("lightwidget-script")
+    ) {
+      const script = document.createElement("script");
+      script.src = "https://cdn.lightwidget.com/widgets/lightwidget.js";
+      script.id = "lightwidget-script";
+      script.async = true;
+      document.body.appendChild(script);
+    }
+  };
+
   const acceptCookies = () => {
     consentGiven.value = true;
     showCookieBanner.value = false;
-    setCookie("cookiesAccepted", "true", 365); // Zustimmung für 1 Jahr speichern
+    setCookie("cookiesAccepted", "true", 365);
     instagramIframeSrc.value =
-      "https://cdn.lightwidget.com/widgets/c669fa07b7e05b1ebf5fd46a16427076.html"; // Instagram Feed URL
+      "https://cdn.lightwidget.com/widgets/c669fa07b7e05b1ebf5fd46a16427076.html";
+    loadLightWidgetScript(); // ← wichtig
   };
 
   const declineCookies = () => {
