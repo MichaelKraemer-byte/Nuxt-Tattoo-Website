@@ -39,12 +39,17 @@ export const useCookieStore = defineStore("cookieStore", () => {
   // Sicherstellen, dass der Status der Zustimmung nachgeladen wird
   const initializeConsentStatus = () => {
     if (typeof window !== "undefined") {
-      // Nur im Browser
       const consentStatus = getCookie("cookiesAccepted");
+
       if (consentStatus === "true") {
         consentGiven.value = true;
+        showCookieBanner.value = false;
       } else if (consentStatus === "false") {
         consentGiven.value = false;
+        showCookieBanner.value = false;
+      } else {
+        // Kein Cookie vorhanden → Banner anzeigen
+        showCookieBanner.value = true;
       }
     }
   };
@@ -62,6 +67,7 @@ export const useCookieStore = defineStore("cookieStore", () => {
     showCookieBanner.value = false;
     setCookie("cookiesAccepted", "false", 365); // Zustimmung ablehnen und Cookie setzen
     instagramIframeSrc.value = ""; // Instagram Feed deaktivieren
+    window.location.reload();
   };
 
   const resetConsentStatus = () => {
@@ -80,4 +86,3 @@ export const useCookieStore = defineStore("cookieStore", () => {
     resetConsentStatus,
   };
 });
-
