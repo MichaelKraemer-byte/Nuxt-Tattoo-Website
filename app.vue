@@ -8,9 +8,8 @@
   </div>
 </template>
 
-<styles scoped>
-
-</styles>
+<style>
+</style>
 
 <script setup>
 import "assets/css/fonts.scss";
