@@ -1,12 +1,13 @@
 <template>
   <div
-    class="max-w-2xl mx-auto p-6 bg-zinc-900 rounded-lg shadow-xl text-white space-y-6"
+    id="BookingForm"
+    class="max-w-full sm:max-w-2xl mx-auto p-6 bg-zinc-900 rounded-lg shadow-xl text-white space-y-6"
   >
     <h2 class="text-3xl font-bold text-orange-500">📅 Termin-Anfrage</h2>
 
     <form @submit.prevent="submitForm" class="space-y-5">
       <!-- Name -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label class="block mb-1">Vorname</label>
           <input
@@ -34,7 +35,7 @@
           v-model="form.isAdult"
           type="checkbox"
           required
-          class="w-5 h-5 text-orange-500 bg-zinc-800 border-zinc-600 rounded focus:ring-2 focus:ring-orange-500 focus:outline-none"
+          class="w-5 h-5 text-orange-500 bg-zinc-800 border-zinc-600 rounded focus:ring-2 focus:ring-orange-500 focus:outline-none cursor-pointer"
         />
         <label for="isAdult" class="text-white select-none cursor-pointer">
           Ich bin volljährig (18+)
@@ -52,12 +53,12 @@
 
       <!-- Beschreibung mit Tooltip -->
       <div class="relative">
-        <label class="block mb-1 flex items-center gap-2">
+        <label class="block mb-1 flex items-center gap-2 group cursor-pointer">
           Beschreibung / Idee
-          <div class="relative group cursor-pointer">
+          <div class="relative">
             <span class="text-orange-400">❔</span>
             <div
-              class="absolute left-5 top-full mt-1 w-72 text-sm bg-zinc-800 border border-orange-500 text-white p-3 rounded-sm shadow-lg opacity-0 group-hover:opacity-100 transition duration-200 z-10"
+              class="pointer-events-none absolute left-5 top-full mt-1 w-72 text-sm bg-zinc-800 border border-orange-500 text-white p-3 rounded-sm shadow-lg opacity-0 group-hover:opacity-100 transition duration-200 z-10"
             >
               Beschreibe bitte so genau wie möglich: Motiv, Größe, Platzierung
               am Körper, Stil (Realistic, Linework, Blackwork etc.), Farben,
@@ -65,6 +66,7 @@
             </div>
           </div>
         </label>
+
         <textarea
           v-model="form.description"
           rows="4"
@@ -73,40 +75,38 @@
       </div>
 
       <!-- Datei-Upload -->
-      <div>
-        <label class="block mb-1">Referenzbilder (max. 3 Dateien)</label>
-        <input
-          type="file"
-          multiple
-          accept="image/*"
-          @change="handleFileUpload"
-          class="rounded-sm"
-        />
-        <p class="text-sm text-gray-400 mt-1">
-          {{ form.files.length }}/3 ausgewählt
-        </p>
-      </div>
+      <FileUpload
+        :files="form.files"
+        required
+        ref="fileUploadRef"
+        @update:files="(newFiles) => (form.files = newFiles)"
+      />
 
-      <!-- Kontakt Buttons -->
-      <div class="flex gap-4 mt-4">
-        <a
-          :href="instagramLink"
-          target="_blank"
-          class="bg-orange-500 text-black px-4 py-2 rounded-sm hover:bg-orange-400 transition"
-          >Instagram</a
-        >
-        <a
-          :href="whatsappLink"
-          target="_blank"
-          class="bg-green-500 text-black px-4 py-2 rounded-sm hover:bg-green-400 transition"
-          >WhatsApp</a
-        >
+      <!-- Datenschutzerklärung -->
+      <div class="flex items-center space-x-2">
+        <input
+          id="privacyPolicy"
+          v-model="form.privacyPolicy"
+          type="checkbox"
+          required
+          class="w-5 h-5 text-orange-500 bg-zinc-800 border-zinc-600 rounded focus:ring-2 focus:ring-orange-500 focus:outline-none cursor-pointer"
+        />
+        <label for="privacyPolicy" class="text-white cursor-pointer">
+          Ich habe die
+          <nuxt-link
+            to="/shared/privacy-policy"
+            class="text-orange-500 hover:underline"
+          >
+            Datenschutzerklärung
+          </nuxt-link>
+          gelesen und akzeptiere sie.
+        </label>
       </div>
 
       <!-- Absenden -->
       <button
         type="submit"
-        class="mt-6 w-full bg-orange-500 px-6 py-3 rounded-sm hover:bg-orange-400 transition"
+        class="mt-6 w-full bg-orange-500 px-6 py-3 rounded-sm hover:bg-orange-400 transition cursor-pointer"
       >
         Anfrage senden
       </button>
@@ -114,21 +114,27 @@
   </div>
 </template>
 
-<style scoped>
-/* Sicherstellen, dass alle relevanten Elemente 4px Border-Radius haben */
-input,
-textarea,
-button,
-a {
-  border-radius: 4px;
-}
-</style>
-
 <script setup>
-import { ref } from "vue";
+import { ref, watch, onMounted } from "vue";
+import FileUpload from "./FileUpload.vue";
 import FormDatepicker from "./FormDatepicker.vue";
 
-// Formular
+// Funktion zum Umwandeln von Dateien in Base64
+const fileToBase64 = (file) => {
+  return new Promise((resolve, reject) => {
+    // Stelle sicher, dass es sich um ein gültiges File-Objekt handelt
+    if (file instanceof File) {
+      const reader = new FileReader();
+      reader.onloadend = () => resolve(reader.result);
+      reader.onerror = reject;
+      reader.readAsDataURL(file);
+    } else {
+      reject(new Error("Die übergebene Datei ist kein gültiges File-Objekt"));
+    }
+  });
+};
+
+// Formular mit Standardwerten initialisieren
 const form = ref({
   firstName: "",
   lastName: "",
@@ -136,54 +142,99 @@ const form = ref({
   spot: "",
   date: "",
   description: "",
-  files: [],
+  files: [], // Die Dateien werden als Base64 gespeichert
+  privacyPolicy: false,
 });
 
-const instagramLink = "https://instagram.com/deinprofil";
-const whatsappLink = `https://wa.me/4915734434856?text=${encodeURIComponent(
-  "Hey! Ich möchte einen Tattoo-Termin anfragen 😊"
-)}`;
+// Dateien aus localStorage laden (nur im Client)
+onMounted(() => {
+  if (process.client) {
+    form.value.firstName = localStorage.getItem("firstName") || "";
+    form.value.lastName = localStorage.getItem("lastName") || "";
+    form.value.isAdult = JSON.parse(localStorage.getItem("isAdult")) || false;
+    form.value.spot = localStorage.getItem("spot") || "";
+    form.value.date = localStorage.getItem("date") || "";
+    form.value.description = localStorage.getItem("description") || "";
+    form.value.privacyPolicy =
+      JSON.parse(localStorage.getItem("privacyPolicy")) || false;
 
-const dateError = ref(false);
+    // Lade und dekodiere die Base64-kodierten Dateien, falls sie existieren
+    const filesData = JSON.parse(localStorage.getItem("files") || "[]");
+    form.value.files = filesData
+      .map((fileData) => {
+        // Überprüfen, ob fileData tatsächlich ein Base64-String ist
+        if (typeof fileData === "string" && fileData.startsWith("data:")) {
+          // Entschlüsseln des Base64-Strings und Erstellen eines Blobs
+          const byteString = atob(fileData.split(",")[1]); // decode Base64
+          const arrayBuffer = new ArrayBuffer(byteString.length);
+          const uint8Array = new Uint8Array(arrayBuffer);
 
-// Datei-Upload max 3
-const handleFileUpload = (event) => {
-  const selectedFiles = Array.from(event.target.files).slice(0, 3);
-  form.value.files = selectedFiles;
-};
+          for (let i = 0; i < byteString.length; i++) {
+            uint8Array[i] = byteString.charCodeAt(i);
+          }
+
+          const blob = new Blob([uint8Array], {
+            type: "application/octet-stream",
+          });
+          // Versuchen, die Blob-Daten als File zu rekonstruieren (mit einem Standardnamen)
+          const file = new File([blob], "file", {
+            type: "application/octet-stream",
+          });
+          return file;
+        } else {
+          return null; // Ungültige Daten oder kein Base64-String
+        }
+      })
+      .filter((file) => file !== null); // Filtere ungültige Dateien heraus
+  }
+});
+
+// Speichern der Formulardaten und der Dateien (Base64) in localStorage
+watch(
+  () => form.value,
+  async (newForm) => {
+    if (process.client) {
+      localStorage.setItem("firstName", newForm.firstName);
+      localStorage.setItem("lastName", newForm.lastName);
+      localStorage.setItem("isAdult", JSON.stringify(newForm.isAdult));
+      localStorage.setItem("spot", newForm.spot);
+      localStorage.setItem("date", newForm.date);
+      localStorage.setItem("description", newForm.description);
+      localStorage.setItem(
+        "privacyPolicy",
+        JSON.stringify(newForm.privacyPolicy)
+      );
+
+      // Konvertiere alle Dateien in Base64 und speichere sie
+      const filesBase64 = await Promise.all(
+        newForm.files.map((file) => {
+          // Überprüfen, ob es sich um ein gültiges File-Objekt handelt
+          if (file instanceof File) {
+            return fileToBase64(file);
+          } else {
+            return null;
+          }
+        })
+      );
+      localStorage.setItem(
+        "files",
+        JSON.stringify(filesBase64.filter(Boolean))
+      );
+    }
+  },
+  { deep: true } // Um auch tief verschachtelte Änderungen zu überwachen
+);
+
+const fileUploadRef = ref(null);
 
 const submitForm = () => {
-  if (dateError.value) {
-    alert("Bitte wähle einen gültigen Tag (Fr–Mo).");
-    return;
-  }
+  // Datei-Validierung direkt in der Komponente
+  if (!fileUploadRef.value.validateFiles()) return;
 
-  if (!form.value.isAdult) {
-    alert("Du musst volljährig sein.");
-    return;
-  }
+  // Weitere Validierung
+  if (!form.value.isAdult || !form.value.privacyPolicy) return;
 
-  // Hier: Backend call oder Mail etc.
   console.log("Gesendet:", form.value);
   alert("Danke für deine Anfrage! Ich melde mich bald.");
 };
-
-const handleClickOutside = (event) => {
-  const inputElement = document.querySelector(
-    "input[placeholder='z. B. linker Unterarm']"
-  );
-  const dropdown = document.querySelector("ul");
-
-  if (
-    inputElement &&
-    dropdown &&
-    !inputElement.contains(event.target) &&
-    !dropdown.contains(event.target)
-  ) {
-    filteredSpots.value = [];
-  }
-};
-
-// Dropdown-Logik
-const filteredSpots = ref([]);
 </script>

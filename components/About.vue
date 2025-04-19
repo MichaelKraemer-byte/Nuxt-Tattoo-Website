@@ -40,7 +40,7 @@
 "            Welcome to MKC Tattoo Art! I create unique works of art from legends and sagas with passion and precision.
 "        </p>
         <a
-          href="/kontakt"
+          href="#BookingForm"
           class="btn btn-custom inline-block px-4 py-2 text-sm sm:text-lg sm:px-6 sm:py-3 font-medium bg-orange-600 hover:bg-orange-500 rounded-sm shadow-md transition-all transform hover:scale-105"
           >Book now</a
         >

@@ -1,6 +1,10 @@
 @use "@/assets/css/fonts.scss";
 @use "@/assets/css/tailwind.css";
 
+html {
+  scroll-padding-top: 120px;
+}
+
 body {
   background-color: #121212;
   font-family: "Poppins";

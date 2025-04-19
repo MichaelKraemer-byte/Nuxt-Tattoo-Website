@@ -8,7 +8,8 @@
     :enable-time-picker="false"
     :auto-apply="true"
     placeholder="Wunschdatum wählen"
-    class="rounded-sm"
+    class="rounded-sm w-full"
+    required
   />
 </template>
 
@@ -133,5 +134,30 @@ defineEmits(["update:modelValue"]);
   background-color: #f97316;
   padding: 24px 32px;
   font-size: 20px;
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 320px) {
+  ::v-deep .dp__calendar_item {
+    font-size: 12px; /* Kleinere Schrift für kleine Bildschirme */
+  }
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+  ::v-deep .dp__input {
+    padding-left: 24px; /* Etwas mehr Platz auf mittleren Geräten */
+  }
+  ::v-deep .dp__calendar_item {
+    font-size: 14px; /* Etwas größere Schrift für Tablets */
+  }
+}
+
+@media (min-width: 768px) {
+  ::v-deep .dp__input {
+    padding-left: 36px; /* Mehr Padding auf größeren Bildschirmen */
+  }
+  ::v-deep .dp__calendar_item {
+    font-size: 16px; /* Normale Schriftgröße auf größeren Geräten */
+  }
 }
 </style>

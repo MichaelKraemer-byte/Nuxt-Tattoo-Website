@@ -2,6 +2,7 @@
   <div class="relative" ref="dropdownRef">
     <label class="block mb-1">Wunschstelle</label>
     <input
+      required
       v-model="query"
       type="text"
       placeholder="z. B. linker Unterarm"
