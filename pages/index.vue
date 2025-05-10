@@ -8,5 +8,4 @@
 
 <script setup>
 import BookingForm from "../components/BookingForm.vue";
-import MaleFront from "../components/MaleFront.vue";
 </script>
