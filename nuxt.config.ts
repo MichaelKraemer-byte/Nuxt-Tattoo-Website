@@ -13,5 +13,5 @@ export default defineNuxtConfig({
     "nuxt-tailwindcss4",
   ],
   css: ["@/assets/css/tailwind.css"],
-  plugins: ["~/plugins/pinia.js"],
+  plugins: ["~/plugins/pinia.js", "~/plugins/aos.client.js"],
 });
