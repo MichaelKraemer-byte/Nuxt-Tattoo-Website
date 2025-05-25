@@ -126,13 +126,25 @@ const selectHighlighted = () => {
 };
 
 // Überwachen, wenn der `query`-Wert sich ändert
-watch(query, () => {
+// Bestehender Watcher auf `query`
+watch(query, (newVal) => {
   if (ignoreNextUpdate) {
     ignoreNextUpdate = false;
-    return; // skip filtering
+    return;
   }
   filterSpots();
+
+  // Bei manueller Eingabe auch Wert ans Parent schicken
+  emit("update:modelValue", newVal);
 });
+
+// Neuer Watcher auf externes `modelValue` (props)
+watch(
+  () => props.modelValue,
+  (newVal) => {
+    query.value = newVal;
+  }
+);
 </script>
 
 <style scoped>

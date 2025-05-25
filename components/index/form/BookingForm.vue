@@ -106,7 +106,7 @@
       <!-- Absenden -->
       <button
         type="submit"
-        class="mt-6 w-full bg-orange-500 px-6 py-3 rounded-sm hover:bg-orange-400 transition cursor-pointer"
+        class="mt-6 w-full border-2 border-orange-500 px-6 py-3 rounded-sm hover:bg-orange-400 transition cursor-pointer"
       >
         Anfrage senden
       </button>
@@ -118,6 +118,7 @@
 import { ref, watch, onMounted } from "vue";
 import FileUpload from "./FileUpload.vue";
 import FormDatepicker from "./FormDatepicker.vue";
+import Dropdown from "./Dropdown.vue";
 
 // Funktion zum Umwandeln von Dateien in Base64
 const fileToBase64 = (file) => {
@@ -160,32 +161,33 @@ onMounted(() => {
 
     // Lade und dekodiere die Base64-kodierten Dateien, falls sie existieren
     const filesData = JSON.parse(localStorage.getItem("files") || "[]");
+
     form.value.files = filesData
-      .map((fileData) => {
-        // Überprüfen, ob fileData tatsächlich ein Base64-String ist
-        if (typeof fileData === "string" && fileData.startsWith("data:")) {
-          // Entschlüsseln des Base64-Strings und Erstellen eines Blobs
-          const byteString = atob(fileData.split(",")[1]); // decode Base64
-          const arrayBuffer = new ArrayBuffer(byteString.length);
-          const uint8Array = new Uint8Array(arrayBuffer);
+      .map((fileData, index) => {
+        try {
+          if (typeof fileData === "string" && fileData.startsWith("data:")) {
+            const byteString = atob(fileData.split(",")[1]); // decode Base64
+            const mimeType =
+              fileData.match(/^data:(.*?);base64/)?.[1] ||
+              "application/octet-stream";
 
-          for (let i = 0; i < byteString.length; i++) {
-            uint8Array[i] = byteString.charCodeAt(i);
+            const arrayBuffer = new ArrayBuffer(byteString.length);
+            const uint8Array = new Uint8Array(arrayBuffer);
+
+            for (let i = 0; i < byteString.length; i++) {
+              uint8Array[i] = byteString.charCodeAt(i);
+            }
+
+            const blob = new Blob([uint8Array], { type: mimeType });
+            return new File([blob], `upload-${index + 1}`, { type: mimeType });
           }
-
-          const blob = new Blob([uint8Array], {
-            type: "application/octet-stream",
-          });
-          // Versuchen, die Blob-Daten als File zu rekonstruieren (mit einem Standardnamen)
-          const file = new File([blob], "file", {
-            type: "application/octet-stream",
-          });
-          return file;
-        } else {
-          return null; // Ungültige Daten oder kein Base64-String
+        } catch (error) {
+          console.warn("Fehler beim Wiederherstellen einer Datei:", error);
+          return null;
         }
+        return null;
       })
-      .filter((file) => file !== null); // Filtere ungültige Dateien heraus
+      .filter(Boolean); // Nur gültige Dateien behalten
   }
 });
 
@@ -227,14 +229,64 @@ watch(
 
 const fileUploadRef = ref(null);
 
-const submitForm = () => {
-  // Datei-Validierung direkt in der Komponente
+const submitForm = async () => {
   if (!fileUploadRef.value.validateFiles()) return;
-
-  // Weitere Validierung
   if (!form.value.isAdult || !form.value.privacyPolicy) return;
 
-  console.log("Gesendet:", form.value);
-  alert("Danke für deine Anfrage! Ich melde mich bald.");
+  try {
+    const validFiles = form.value.files
+      .map((f) => f.file)
+      .filter((file) => file instanceof File);
+
+    if (validFiles.length !== form.value.files.length) {
+      alert("Einige Dateien waren ungültig und wurden übersprungen.");
+    }
+
+    const base64Files = await Promise.all(validFiles.map(fileToBase64));
+
+    const res = await $fetch("/api/send-email", {
+      method: "POST",
+      body: {
+        ...form.value,
+        files: base64Files,
+      },
+    });
+
+    if (res.success) {
+      alert("Danke für deine Anfrage! Ich melde mich bald.");
+
+      // Formular zurücksetzen:
+      form.value = {
+        firstName: "",
+        lastName: "",
+        isAdult: false,
+        spot: "",
+        date: "",
+        description: "",
+        files: [],
+        privacyPolicy: false,
+      };
+
+      // Optional: auch FileUpload-Komponente resetten (falls nötig)
+      if (fileUploadRef.value?.reset) {
+        fileUploadRef.value.reset();
+      }
+
+      // Falls du localStorage nutzt, dann auch dort löschen:
+      localStorage.removeItem("firstName");
+      localStorage.removeItem("lastName");
+      localStorage.removeItem("isAdult");
+      localStorage.removeItem("spot");
+      localStorage.removeItem("date");
+      localStorage.removeItem("description");
+      localStorage.removeItem("privacyPolicy");
+      localStorage.removeItem("files");
+    } else {
+      alert("Fehler beim Senden der E-Mail: " + res.error);
+    }
+  } catch (err) {
+    console.error("Sende-Fehler:", err);
+    alert("Es ist ein Fehler aufgetreten.");
+  }
 };
 </script>

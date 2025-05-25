@@ -1,30 +1,29 @@
 <template>
   <div>
-    <!-- Label als Button -->
-    <label
-      for="fileUpload"
-      tabindex="0"
-      class="inline-block cursor-pointer border border-zinc-600 text-white px-4 py-2 rounded-sm hover:bg-zinc-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
+    <!-- Normaler Upload Button / Bereich -->
+    <button
+      @click="triggerFileInput"
+      class="border border-zinc-600 text-white px-4 py-2 rounded-sm hover:bg-zinc-700 cursor-pointer"
     >
       Referenzbilder auswählen (max. 3 Dateien)
-    </label>
+    </button>
 
-    <!-- Unsichtbares File-Input -->
     <input
       id="fileUpload"
       type="file"
       multiple
       accept="image/*"
+      ref="fileInput"
       @change="handleFileUpload"
       class="hidden"
     />
 
-    <!-- Bildvorschau -->
+    <!-- Bildvorschau wie gehabt -->
     <div class="flex flex-wrap gap-2 mt-3 justify-center sm:justify-start">
       <div
         v-for="(file, index) in files"
         :key="index"
-        class="relative w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 xl:w-40 xl:h-40 border border-orange-500 border-2 rounded-sm overflow-hidden"
+        class="relative w-24 h-24 border border-orange-500 rounded-sm overflow-hidden"
       >
         <button
           @click="removeFile(index)"
@@ -40,6 +39,25 @@
         />
       </div>
     </div>
+
+    <!-- Vollbild Drag & Drop Overlay -->
+    <transition name="fade">
+      <div
+        v-if="isDragOver"
+        @dragover.prevent
+        @dragleave.prevent="onDragLeave"
+        @drop.prevent="onDrop"
+        class="fixed inset-0 bg-black bg-opacity-70 flex flex-col items-center justify-center text-white text-lg z-50 select-none"
+      >
+        <p class="mb-2">Dateien hierher ziehen, um hochzuladen</p>
+        <button
+          @click="cancelDrag"
+          class="mt-4 px-4 py-2 border border-white rounded hover:bg-white hover:text-black"
+        >
+          Abbrechen
+        </button>
+      </div>
+    </transition>
 
     <!-- Visuelle Fehlermeldung -->
     <transition
@@ -60,25 +78,13 @@
         </span>
       </p>
     </transition>
-
-    <!-- Pflichtfeld-Fehlermeldung -->
-    <transition
-      enter-active-class="transition-opacity duration-500"
-      enter-from-class="opacity-0"
-      enter-to-class="opacity-100"
-      leave-active-class="transition-opacity duration-300"
-      leave-from-class="opacity-100"
-      leave-to-class="opacity-0"
-    >
-      <p v-if="showRequiredError" class="text-red-500 text-sm mt-1">
-        Bitte lade mindestens ein Referenzbild hoch.
-      </p>
-    </transition>
   </div>
 </template>
 
 <script setup>
-import { ref, watch, computed } from "vue";
+import { ref, onMounted, onBeforeUnmount } from "vue";
+const showHint = ref(false);
+const showRequiredError = ref(false);
 
 const props = defineProps({
   files: Array,
@@ -89,24 +95,28 @@ const props = defineProps({
 });
 const emit = defineEmits(["update:files"]);
 
-// Hinweis wird kurz angezeigt, wenn kein Bild da ist (nicht Pflicht-Fehler)
-const showHint = ref(false);
-const showRequiredError = ref(false);
+const fileInput = ref(null);
+const isDragOver = ref(false);
+let dragCounter = 0; // Zählt, wie viele dragenter ohne passenden dragleave sind
+
+const MAX_FILES = 3;
 
 const handleFileUpload = (event) => {
   const selected = Array.from(event.target.files);
-  const remainingSlots = 3 - props.files.length;
+  addFiles(selected);
+  event.target.value = null;
+};
+
+const addFiles = (newFiles) => {
+  const remainingSlots = MAX_FILES - props.files.length;
   if (remainingSlots <= 0) return;
 
-  const filesToAdd = selected.slice(0, remainingSlots).map((file) => ({
+  const filesToAdd = newFiles.slice(0, remainingSlots).map((file) => ({
     file,
     preview: URL.createObjectURL(file),
   }));
 
   emit("update:files", [...props.files, ...filesToAdd]);
-  event.target.value = null;
-  showHint.value = false;
-  showRequiredError.value = false;
 };
 
 const removeFile = (index) => {
@@ -115,6 +125,51 @@ const removeFile = (index) => {
   if (removed?.preview) URL.revokeObjectURL(removed.preview);
   emit("update:files", updated);
 };
+
+const onDragEnter = (event) => {
+  if (event.dataTransfer.types.includes("Files")) {
+    dragCounter++;
+    isDragOver.value = true;
+  }
+};
+
+const onDragLeave = (event) => {
+  dragCounter--;
+  if (dragCounter <= 0) {
+    dragCounter = 0;
+    isDragOver.value = false;
+  }
+};
+
+const onDrop = (event) => {
+  isDragOver.value = false;
+  dragCounter = 0;
+  const droppedFiles = Array.from(event.dataTransfer.files);
+  addFiles(droppedFiles);
+};
+
+const cancelDrag = () => {
+  isDragOver.value = false;
+  dragCounter = 0;
+};
+
+const triggerFileInput = () => {
+  fileInput.value?.click();
+};
+
+onMounted(() => {
+  window.addEventListener("dragenter", onDragEnter);
+  window.addEventListener("dragleave", onDragLeave);
+  window.addEventListener("drop", (e) => e.preventDefault());
+  window.addEventListener("dragover", (e) => e.preventDefault());
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener("dragenter", onDragEnter);
+  window.removeEventListener("dragleave", onDragLeave);
+  window.removeEventListener("drop", (e) => e.preventDefault());
+  window.removeEventListener("dragover", (e) => e.preventDefault());
+});
 
 // Validierung bei Submit triggern
 defineExpose({
@@ -128,3 +183,14 @@ defineExpose({
   },
 });
 </script>
+
+<style>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>
