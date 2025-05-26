@@ -107,10 +107,19 @@
       <button
         type="submit"
         class="mt-6 w-full border-2 border-orange-500 px-6 py-3 rounded-sm hover:bg-orange-400 transition cursor-pointer"
+        :class="{
+          'opacity-50 cursor-not-allowed hover:bg-transparent':
+            isInSubmitProcess,
+        }"
+        :disabled="isInSubmitProcess"
       >
         Anfrage senden
       </button>
     </form>
+    <ConfirmationToast
+      v-if="showConfirmation"
+      @close="showConfirmation = false"
+    />
   </div>
 </template>
 
@@ -119,6 +128,9 @@ import { ref, watch, onMounted } from "vue";
 import FileUpload from "./FileUpload.vue";
 import FormDatepicker from "./FormDatepicker.vue";
 import Dropdown from "./Dropdown.vue";
+import ConfirmationToast from "~/components/ConfirmationToast.vue";
+
+const showConfirmation = ref(false);
 
 // Funktion zum Umwandeln von Dateien in Base64
 const fileToBase64 = (file) => {
@@ -146,6 +158,8 @@ const form = ref({
   files: [], // Die Dateien werden als Base64 gespeichert
   privacyPolicy: false,
 });
+
+const isInSubmitProcess = ref(false);
 
 // Dateien aus localStorage laden (nur im Client)
 onMounted(() => {
@@ -232,6 +246,9 @@ const fileUploadRef = ref(null);
 const submitForm = async () => {
   if (!fileUploadRef.value.validateFiles()) return;
   if (!form.value.isAdult || !form.value.privacyPolicy) return;
+  if (isInSubmitProcess.value) return;
+
+  isInSubmitProcess.value = true;
 
   try {
     const validFiles = form.value.files
@@ -253,7 +270,7 @@ const submitForm = async () => {
     });
 
     if (res.success) {
-      alert("Danke für deine Anfrage! Ich melde mich bald.");
+      showConfirmation.value = true;
 
       // Formular zurücksetzen:
       form.value = {
@@ -288,5 +305,6 @@ const submitForm = async () => {
     console.error("Sende-Fehler:", err);
     alert("Es ist ein Fehler aufgetreten.");
   }
+  isInSubmitProcess.value = false;
 };
 </script>
