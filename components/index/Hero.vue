@@ -16,7 +16,7 @@
       playsinline
       class="absolute inset-0 w-full h-full object-cover opacity-60"
     >
-      <source src="/videos/tattoos.mp4" type="video/mp4" />
+      <source src="/videos/hero-video.mp4" type="video/mp4" />
       Dein Browser unterstützt kein Video.
     </video>
 
