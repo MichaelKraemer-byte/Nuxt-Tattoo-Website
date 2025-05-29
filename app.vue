@@ -2,6 +2,7 @@
   <div>
     <NuxtRouteAnnouncer />
     <Header></Header>
+    <Cursor></Cursor>
     <NuxtPage />
     <FloatingContact />
 
@@ -18,6 +19,7 @@ import Footer from "./components/shared/Footer.vue";
 import CookieBanner from "./components/CookieBanner.vue";
 import FloatingContact from "@/components/FloatingContact.vue";
 import { useCookieStore } from "./stores/cookieStore"; // Pinia Store importieren
+import Cursor from "./components/Cursor.vue";
 
 
 // Store verwenden und initialisieren

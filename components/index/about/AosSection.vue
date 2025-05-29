@@ -3,22 +3,18 @@
     <!-- Section 1 -->
     <ClientOnly>
       <section
-        class="mx-auto max-w-screen-2xl px-6 sm:px-10 md:px-16 xl:px-32 flex flex-col items-center lg:flex-row py-36 gap-16 lg:gap-24"
+        class="mx-auto max-w-screen-2xl px-4 sm:px-6 md:px-10 lg:px-16 xl:px-32 flex flex-col lg:flex-row items-center pt-40 sm:pt-60 lg:pt-96 gap-12 sm:gap-16 lg:gap-24"
       >
         <!-- Galerie -->
         <div
           data-aos="fade-up"
-          class="w-full lg:w-1/2 grid grid-cols-2 md:grid-cols-3 gap-4"
+          class="w-full lg:w-1/2 grid grid-cols-2 sm:grid-cols-3 gap-1"
         >
-          <div
-            v-for="n in 6"
-            :key="n"
-            class="relative overflow-hidden rounded-xl shadow-xl"
-          >
+          <div class="col-span-2 sm:col-span-3 flex justify-center">
             <NuxtImg
-              :src="`/img/freshTattoos/${n}.jpg`"
+              src="/img/tung-monster.png"
               alt="Tattoo Galerie"
-              class="w-full h-full object-cover transform transition-transform duration-500 ease-in-out group hover:scale-150 hover:z-10"
+              class="w-full max-w-[420px] h-auto object-contain swinging transition-transform duration-500 ease-in-out hover:scale-150 hover:z-10 active:scale-150"
             />
           </div>
         </div>
@@ -27,19 +23,18 @@
         <div
           data-aos="fade-up"
           data-aos-delay="200"
-          class="w-full lg:w-1/2 text-center lg:text-left items-center px-4 sm:px-0"
+          class="w-full lg:w-1/2 text-center lg:text-left px-2 sm:px-4"
         >
           <h2
             class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight cinzel-500"
           >
-            Fantasy, Mythologie, Folklore
+            Fantasy, Mythology & Folklore
           </h2>
           <p
             class="text-base sm:text-lg text-gray-300 leading-relaxed cinzel-300"
           >
-            Ich erschaffe Kreaturen, Wesen in allen Formen, Sagas und Legenden
-            und bestuecke sie mit Geschichten und erwecke sie auf deiner Haut
-            zum Leben.
+            „Ich erschaffe Kreaturen und Wesen in allen Formen, Sagen und
+            Legenden, statte sie mit Geschichten aus und erwecke sie zum Leben."
           </p>
         </div>
       </section>
@@ -48,18 +43,18 @@
     <!-- Section 2 -->
     <ClientOnly>
       <section
-        class="mx-auto max-w-screen-2xl px-6 sm:px-10 md:px-16 xl:px-32 flex items-center flex-col lg:flex-row-reverse py-36 gap-16 lg:gap-24"
+        class="mx-auto max-w-screen-2xl px-4 sm:px-6 md:px-10 lg:px-16 xl:px-32 flex flex-col lg:flex-row-reverse items-center pt-24 sm:pt-36 pb-36 sm:pb-56 gap-12 sm:gap-16 lg:gap-24"
       >
         <!-- Galerie -->
         <div
           data-aos="fade-left"
-          class="w-full lg:w-1/2 grid grid-cols-2 md:grid-cols-3 gap-4 mx-auto"
+          class="w-full lg:w-1/2 grid grid-cols-2 sm:grid-cols-3 gap-1"
         >
-          <div class="col-span-2 md:col-span-3 flex justify-center">
+          <div class="col-span-2 sm:col-span-3 flex justify-center">
             <NuxtImg
               src="/img/arms-of-soulway.PNG"
               alt="Tattoo Galerie"
-              class="w-[300px] max-h-[600px] object-contain transform transition-transform duration-500 ease-in-out group hover:scale-150 hover:z-10 rotate-32"
+              class="w-auto max-h-[700px] object-contain swinging spin-slow transition-transform duration-500 ease-in-out hover:scale-150 hover:z-10 active:scale-150"
             />
           </div>
         </div>
@@ -68,20 +63,20 @@
         <div
           data-aos="fade-right"
           data-aos-delay="200"
-          class="w-full lg:w-1/2 flex flex-col justify-center text-center lg:text-left px-4 sm:px-0"
+          class="w-full lg:w-1/2 flex flex-col justify-center text-center lg:text-left px-2 sm:px-4"
         >
           <h2
             class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight cinzel-500"
           >
-            Achtsamkeit, Natur und Erleuchtung
+            Achtsamkeit, Natur & Erleuchtung
           </h2>
           <p
             class="text-base sm:text-lg text-gray-300 leading-relaxed cinzel-300"
           >
-            Ich verbinde symbolisch Anatomie, Natur, Spiritualität in
-            ornamentalischer Anordnung im kuenstlerischem Ausdruck fuer
-            Achtsamkeit und Verbundenheit. Meine spirituellen Tattoos erinnern
-            dich an die Kraft der Gegenwart.
+            „In ornamentaler Anordnung verbinde ich symbolisch Anatomie, Natur
+            und Spiritualität zu einem künstlerischen Ausdruck von Achtsamkeit
+            und Verbundenheit. Meine spirituellen Tattoos erinnern dich an die
+            Kraft des Augenblicks.“
           </p>
         </div>
       </section>
@@ -101,3 +96,36 @@ onMounted(() => {
   });
 });
 </script>
+
+<style scoped>
+@keyframes slow-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (min-width: 1024px) {
+  .spin-slow {
+  animation: slow-spin 60s linear infinite !important;
+  }
+}
+
+@keyframes swing-rotate {
+  0% {
+    transform: rotate(8.5deg);
+  }
+  50% {
+    transform: rotate(-8.5deg);
+  }
+  100% {
+    transform: rotate(8.5deg);
+  }
+}
+
+.swinging {
+  animation: swing-rotate 12s ease-in-out infinite;
+}
+</style>

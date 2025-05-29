@@ -1,6 +1,11 @@
 @use "@/assets/css/fonts.scss";
 @use "@/assets/css/tailwind.css";
 
+::selection {
+  background-color: #f65c1a;
+  color: white;
+}
+
 html {
   scroll-padding-top: 120px;
 }
