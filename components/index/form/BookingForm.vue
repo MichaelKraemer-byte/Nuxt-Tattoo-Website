@@ -3,7 +3,9 @@
     id="BookingForm"
     class="max-w-full sm:max-w-2xl mx-auto p-6 bg-zinc-900 rounded-lg shadow-xl text-white space-y-6"
   >
-    <h2 class="text-3xl font-bold text-orange-500">📅 Termin-Anfrage</h2>
+    <h2 class="text-3xl font-bold text-orange-500 cinzel-500">
+      📅 Termin-Anfrage
+    </h2>
 
     <form @submit.prevent="submitForm" class="space-y-5">
       <!-- Name -->
@@ -53,16 +55,16 @@
 
       <!-- Beschreibung mit Tooltip -->
       <div class="relative">
-        <label class="block mb-1 flex items-center gap-2 group cursor-pointer">
+        <label class="items-center gap-2 group cursor-pointer">
           Beschreibung / Idee
-          <div class="relative">
-            <span class="text-orange-400">❔</span>
+          <span class="text-orange-400">❔</span>
+          <div class="relative mb-1">
             <div
-              class="pointer-events-none absolute left-5 top-full mt-1 w-72 text-sm bg-zinc-800 border border-orange-500 text-white p-3 rounded-sm shadow-lg opacity-0 group-hover:opacity-100 transition duration-200 z-10"
+              class="pointer-events-none absolute top-full inset-x-0 mx-auto mt-1 w-full max-w-[90vw] sm:max-w-[20rem] text-sm bg-zinc-800 border border-orange-500 text-white p-3 rounded-sm shadow-lg opacity-0 group-hover:opacity-100 transition duration-200 z-10"
             >
-              Beschreibe bitte so genau wie möglich: Motiv, Größe, Platzierung
-              am Körper, Stil (Realistic, Linework, Blackwork etc.), Farben,
-              Bedeutung – alles was wichtig sein könnte.
+              Beschreibe bitte so genau wie möglich: Motiv, Größe, Stil
+              (Realistic, Linework, Blackwork etc.), Farben, Bedeutung,
+              Gesundheitliches – alles was wichtig sein könnte. 🙏
             </div>
           </div>
         </label>

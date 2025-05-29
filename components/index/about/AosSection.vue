@@ -30,13 +30,16 @@
           class="w-full lg:w-1/2 text-center lg:text-left items-center px-4 sm:px-0"
         >
           <h2
-            class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight"
+            class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight cinzel-500"
           >
-            Feinste Linien. Klare Formen.
+            Fantasy, Mythologie, Folklore
           </h2>
-          <p class="text-base sm:text-lg text-gray-300 leading-relaxed">
-            Jede Linie ist bewusst gesetzt. Ich arbeite präzise, ruhig und mit
-            Respekt vor deiner Haut.
+          <p
+            class="text-base sm:text-lg text-gray-300 leading-relaxed cinzel-300"
+          >
+            Ich erschaffe Kreaturen, Wesen in allen Formen, Sagas und Legenden
+            und bestuecke sie mit Geschichten und erwecke sie auf deiner Haut
+            zum Leben.
           </p>
         </div>
       </section>
@@ -50,17 +53,13 @@
         <!-- Galerie -->
         <div
           data-aos="fade-left"
-          class="w-full lg:w-1/2 grid grid-cols-2 md:grid-cols-3 gap-4"
+          class="w-full lg:w-1/2 grid grid-cols-2 md:grid-cols-3 gap-4 mx-auto"
         >
-          <div
-            v-for="n in [7, 8, 9, 10, 11, 12]"
-            :key="n"
-            class="relative overflow-hidden rounded-xl shadow-xl"
-          >
+          <div class="col-span-2 md:col-span-3 flex justify-center">
             <NuxtImg
-              :src="`/img/freshTattoos/${n}.jpg`"
+              src="/img/arms-of-soulway.PNG"
               alt="Tattoo Galerie"
-              class="w-full h-full object-cover transform transition-transform duration-500 ease-in-out group hover:scale-150 hover:z-10"
+              class="w-[300px] max-h-[600px] object-contain transform transition-transform duration-500 ease-in-out group hover:scale-150 hover:z-10 rotate-32"
             />
           </div>
         </div>
@@ -72,13 +71,17 @@
           class="w-full lg:w-1/2 flex flex-col justify-center text-center lg:text-left px-4 sm:px-0"
         >
           <h2
-            class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight"
+            class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight cinzel-500"
           >
-            Deine Haut als Leinwand.
+            Achtsamkeit, Natur und Erleuchtung
           </h2>
-          <p class="text-base sm:text-lg text-gray-300 leading-relaxed">
-            Meine Kunst entsteht im Dialog mit dir. Individuell, fein, und mit
-            Fokus auf Ästhetik und Bedeutung.
+          <p
+            class="text-base sm:text-lg text-gray-300 leading-relaxed cinzel-300"
+          >
+            Ich verbinde symbolisch Anatomie, Natur, Spiritualität in
+            ornamentalischer Anordnung im kuenstlerischem Ausdruck fuer
+            Achtsamkeit und Verbundenheit. Meine spirituellen Tattoos erinnern
+            dich an die Kraft der Gegenwart.
           </p>
         </div>
       </section>

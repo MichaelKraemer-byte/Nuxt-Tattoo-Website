@@ -1,6 +1,6 @@
 <template>
   <footer
-    class="bg-black/15 backdrop-blur-md py-6 shadow-md text-center text-sm text-gray-600"
+    class="bg-black/15 backdrop-blur-md py-12 shadow-md text-center text-sm text-gray-600"
   >
     <div class="container mx-auto px-4 text-gray-100">
       <p class="text-gray-100">

@@ -44,7 +44,7 @@
       <!-- "Book" Button -->
       <NuxtLink
         to="/contact"
-        class="btn btn-custom inline-block px-4 py-1.5 text-sm sm:text-lg sm:px-6 sm:py-2 font-medium bg-orange-600 hover:bg-orange-500 rounded-sm shadow-md transition-all transform hover:scale-105"
+        class="cinzel-500 btn btn-custom inline-block px-4 py-1.5 text-sm sm:text-lg sm:px-6 sm:py-2 font-medium bg-orange-600 hover:bg-orange-500 rounded-sm shadow-md transition-all transform hover:scale-105"
       >
         Book now
       </NuxtLink>
@@ -75,7 +75,7 @@
   <transition name="slide-fade">
     <div
       v-if="isMenuOpen"
-      class="fixed pr-15 p-10 top-10 right-0 bg-[#121212] rounded-sm h-auto p-6 transform z-100 shadow-md border border-[#FFFFFF80] border-solid"
+      class="fixed pr-15 p-10 top-10 right-0 bg-[#121212] rounded-sm h-auto transform z-100 shadow-md border border-[#FFFFFF80] border-solid"
     >
       <nav class="flex flex-col items-start space-y-4">
         <NuxtLink
@@ -84,13 +84,6 @@
           @click="closeMenu"
         >
           Gallery
-        </NuxtLink>
-        <NuxtLink
-          to="/shop"
-          class="btn-custom-2 py-2 text-white text-xl font-medium hover:text-orange-600"
-          @click="closeMenu"
-        >
-          Shop
         </NuxtLink>
         <NuxtLink
           to="/about"
