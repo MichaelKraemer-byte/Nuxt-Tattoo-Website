@@ -30,6 +30,17 @@
         </div>
       </div>
 
+      <!-- Email -->
+      <div>
+        <label class="block mb-1">E-Mail</label>
+        <input
+          v-model="form.email"
+          type="email"
+          required
+          class="w-full bg-zinc-800 text-white border border-zinc-700 rounded-sm px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
+        />
+      </div>
+
       <!-- Volljährigkeit -->
       <div class="flex items-center space-x-2">
         <input
@@ -153,6 +164,7 @@ const fileToBase64 = (file) => {
 const form = ref({
   firstName: "",
   lastName: "",
+  email: "",
   isAdult: false,
   spot: "",
   date: "",
@@ -168,6 +180,7 @@ onMounted(() => {
   if (process.client) {
     form.value.firstName = localStorage.getItem("firstName") || "";
     form.value.lastName = localStorage.getItem("lastName") || "";
+    form.value.email = localStorage.getItem("email") || "";
     form.value.isAdult = JSON.parse(localStorage.getItem("isAdult")) || false;
     form.value.spot = localStorage.getItem("spot") || "";
     form.value.date = localStorage.getItem("date") || "";
@@ -214,6 +227,7 @@ watch(
     if (process.client) {
       localStorage.setItem("firstName", newForm.firstName);
       localStorage.setItem("lastName", newForm.lastName);
+      localStorage.setItem("email", newForm.email);
       localStorage.setItem("isAdult", JSON.stringify(newForm.isAdult));
       localStorage.setItem("spot", newForm.spot);
       localStorage.setItem("date", newForm.date);
@@ -294,6 +308,7 @@ const submitForm = async () => {
       // Falls du localStorage nutzt, dann auch dort löschen:
       localStorage.removeItem("firstName");
       localStorage.removeItem("lastName");
+      localStorage.removeItem("email");
       localStorage.removeItem("isAdult");
       localStorage.removeItem("spot");
       localStorage.removeItem("date");

@@ -74,7 +74,7 @@
       >
         📸
         <span>
-          Ein Beispielbild hilft mir total, deine Idee besser zu verstehen 😊🙏
+          Ein Beispielbild hilft mir total deine Idee besser zu verstehen 😊🙏
         </span>
       </p>
     </transition>
@@ -127,7 +127,11 @@ const removeFile = (index) => {
 };
 
 const onDragEnter = (event) => {
-  if (event.dataTransfer.types.includes("Files")) {
+  const dt = event.dataTransfer;
+  const isExternalFileDrag =
+    dt.types.includes("Files") && !dt.types.includes("text/html");
+
+  if (isExternalFileDrag) {
     dragCounter++;
     isDragOver.value = true;
   }
