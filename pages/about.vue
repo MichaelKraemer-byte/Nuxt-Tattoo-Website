@@ -1,5 +1,5 @@
 <template>
-  <div class=" text-white">
+  <div class="text-white">
     <!-- HERO SECTION -->
     <section
       class="relative h-screen flex flex-col justify-center items-center text-center px-6"
@@ -7,7 +7,7 @@
     >
       <NuxtImg
         format="webp"
-        src="/img/hero-me.jpg"
+        src="/img/me/finger-pistole-copy.jpg"
         alt="Tattoo Artist bei der Arbeit"
         class="absolute inset-0 w-full h-full object-cover opacity-30"
       />
@@ -15,10 +15,10 @@
         <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold cinzel-500 mb-4">
           Ich bin Mika
         </h1>
-        <p class="text-lg sm:text-xl cinzel-300 leading-relaxed">
+        <h4 class="text-5xl cinzel-300 leading-relaxed">
           Tattoo Artist für Fantasie, Mythologie und spirituelle Körperkunst.
-        </p>
-        <p class="mt-6 text-base sm:text-lg text-gray-300">
+        </h4>
+        <p class="mt-6 text-base sm:text-lg text-gray-300 cinzel-300">
           Meine Arbeiten erzählen Geschichten, verbinden Seele und Haut.
         </p>
       </div>
@@ -30,7 +30,7 @@
     >
       <div class="w-full lg:w-1/2" data-aos="fade-right">
         <NuxtImg
-          src="/img/portrait.jpg"
+          src="/img/me/hunt-hocke.jpg"
           alt="Portrait des Künstlers"
           class="rounded-2xl shadow-xl object-cover w-full max-w-md mx-auto"
         />
@@ -171,15 +171,3 @@ onMounted(() => {
   });
 });
 </script>
-
-<style scoped>
-.cinzel-500 {
-  font-family: "Cinzel", serif;
-  font-weight: 500;
-}
-
-.cinzel-300 {
-  font-family: "Cinzel", serif;
-  font-weight: 300;
-}
-</style>
