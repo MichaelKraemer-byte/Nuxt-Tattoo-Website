@@ -1,6 +1,6 @@
 <template>
   <div class="max-w-3xl mx-auto px-6 py-12 text-center py-40">
-    <h1 class="text-3xl poppins-600 mb-8 text-white">Impressum</h1>
+    <h1 class="text-3xl poppins-600 mb-8 text-white cinzel-500">Impressum</h1>
 
     <div
       class="text-left space-y-6 text-sm leading-relaxed text-gray-800 dark:text-gray-200"

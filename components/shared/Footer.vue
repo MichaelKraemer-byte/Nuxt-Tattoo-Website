@@ -2,29 +2,29 @@
   <footer
     class="bg-black/15 backdrop-blur-md py-12 shadow-md text-center text-sm text-gray-600"
   >
-    <div class="container mx-auto px-4 text-gray-100">
-      <p class="text-gray-100">
-        © {{ new Date().getFullYear() }} Mika Krämer Consciousness
+    <div class="container mx-auto px-4 text-gray-100 cinzel-300">
+      <p class="text-gray-100 cinzel-300">
+        © {{ new Date().getFullYear() }} Mika K. Consciousness
       </p>
 
       <div class="flex justify-center flex-wrap gap-4 mt-4">
         <button
           @click="openCookieBanner"
-          class="btn-custom-2 hover:text-orange-800 cursor-pointer text-gray-100 text-lg"
+          class="btn-custom-2 hover:text-orange-800 cursor-pointer text-gray-100 text-lg cinzel-300"
         >
           Cookie-Einstellungen
         </button>
 
         <NuxtLink
           to="/shared/privacy-policy"
-          class="btn-custom-2 hover:text-orange-800 cursor-pointer text-gray-100 text-lg"
+          class="btn-custom-2 hover:text-orange-800 cursor-pointer text-gray-100 text-lg cinzel-300"
         >
           Datenschutzerklärung
         </NuxtLink>
 
         <NuxtLink
           to="/shared/imprint"
-          class="btn-custom-2 hover:text-orange-800 cursor-pointer text-gray-100 text-lg"
+          class="btn-custom-2 hover:text-orange-800 cursor-pointer text-gray-100 text-lg cinzel-300"
         >
           Impressum
         </NuxtLink>

@@ -23,7 +23,7 @@
       <nav class="hidden md:flex items-center space-x-6">
         <NuxtLink
           to="/gallery"
-          class="btn-custom-2 py-2 text-white text-sm sm:text-lg font-medium hover:text-orange-600"
+          class="btn-custom-2 py-2 text-white text-sm sm:text-lg font-medium hover:text-orange-600 cinzel-300"
         >
           Gallery
         </NuxtLink>
@@ -35,7 +35,7 @@
         </NuxtLink> -->
         <NuxtLink
           to="/about"
-          class="btn-custom-2 py-2 text-white text-sm sm:text-lg font-medium hover:text-orange-600"
+          class="btn-custom-2 py-2 text-white text-sm sm:text-lg font-medium hover:text-orange-600 cinzel-300"
         >
           About
         </NuxtLink>
@@ -43,7 +43,7 @@
 
       <!-- "Book" Button -->
       <NuxtLink
-        to="/contact"
+        to="/#BookingForm"
         class="cinzel-500 btn btn-custom inline-block px-4 py-1.5 text-sm sm:text-lg sm:px-6 sm:py-2 font-medium bg-orange-600 hover:bg-orange-500 rounded-sm shadow-md transition-all transform hover:scale-105"
       >
         Book now
@@ -80,14 +80,14 @@
       <nav class="flex flex-col items-start space-y-4">
         <NuxtLink
           to="/gallery"
-          class="btn-custom-2 py-2 text-white text-xl font-medium hover:text-orange-600"
+          class="btn-custom-2 py-2 text-white text-xl font-medium hover:text-orange-600 cinzel-300"
           @click="closeMenu"
         >
           Gallery
         </NuxtLink>
         <NuxtLink
           to="/about"
-          class="btn-custom-2 py-2 text-white text-xl font-medium hover:text-orange-600"
+          class="btn-custom-2 py-2 text-white text-xl font-medium hover:text-orange-600 cinzel-300"
           @click="closeMenu"
         >
           About

@@ -7,6 +7,7 @@
           loading="lazy"
           class="tattoo-img"
           :alt="`Tattoo ${i}`"
+          format="webp"
         />
       </div>
     </div>

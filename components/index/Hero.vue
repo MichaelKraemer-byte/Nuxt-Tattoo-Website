@@ -2,13 +2,6 @@
   <section
     class="relative w-full h-screen flex items-center justify-center bg-[#0f0f0f] text-white overflow-hidden"
   >
-    <!-- Hintergrundbild -->
-    <!-- <NuxtImg
-      src="/img/hero-image-cropped-edit.jpg"
-      alt="Mika the tattoo artist"
-      class="absolute inset-0 w-full h-full object-cover opacity-60"
-    /> -->
-    <!-- 🎥 Hintergrundvideo -->
     <video
       autoplay
       muted
@@ -29,6 +22,7 @@
     <div class="relative z-1 text-center max-w-xl px-6 sm:px-8 md:px-12">
       <!-- Logo -->
       <NuxtImg
+        format="webp"
         class="animate-fade-in mx-auto"
         src="/logo/mkc-tattooart.svg"
         alt="MKC Tattoo Art Logo"
