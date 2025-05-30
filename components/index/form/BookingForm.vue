@@ -13,6 +13,7 @@
         <div>
           <label class="block mb-1">Vorname</label>
           <input
+            maxlength="50"
             v-model="form.firstName"
             type="text"
             required
@@ -22,6 +23,7 @@
         <div>
           <label class="block mb-1">Nachname</label>
           <input
+            maxlength="50"
             v-model="form.lastName"
             type="text"
             required
@@ -34,6 +36,7 @@
       <div>
         <label class="block mb-1">E-Mail</label>
         <input
+          maxlength="50"
           v-model="form.email"
           type="email"
           required
@@ -44,6 +47,7 @@
       <!-- Volljährigkeit -->
       <div class="flex items-center space-x-2">
         <input
+          maxlength="50"
           id="isAdult"
           v-model="form.isAdult"
           type="checkbox"
@@ -81,6 +85,7 @@
         </label>
 
         <textarea
+          maxlength="1000"
           v-model="form.description"
           rows="4"
           class="w-full bg-zinc-800 text-white border border-zinc-700 rounded-sm px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
@@ -98,6 +103,7 @@
       <!-- Datenschutzerklärung -->
       <div class="flex items-center space-x-2">
         <input
+          maxlength="50"
           id="privacyPolicy"
           v-model="form.privacyPolicy"
           type="checkbox"
@@ -133,6 +139,16 @@
       v-if="showConfirmation"
       @close="showConfirmation = false"
     />
+  </div>
+  <!-- Fortschrittsanzeige beim Senden -->
+  <div
+    v-if="isInSubmitProcess"
+    class="relative w-full h-2 bg-zinc-700 rounded overflow-hidden mb-4"
+  >
+    <div
+      class="absolute top-0 left-0 h-full bg-orange-500 animate-progress"
+      style="width: 100%"
+    ></div>
   </div>
 </template>
 
@@ -325,3 +341,18 @@ const submitForm = async () => {
   isInSubmitProcess.value = false;
 };
 </script>
+
+<style scoped>
+@keyframes progressBar {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.animate-progress {
+  animation: progressBar 2.5s linear forwards;
+}
+</style>

@@ -2,6 +2,7 @@
   <div class="relative" ref="dropdownRef">
     <label class="block mb-1">Wunschstelle</label>
     <input
+      maxlength="50"
       required
       v-model="query"
       type="text"

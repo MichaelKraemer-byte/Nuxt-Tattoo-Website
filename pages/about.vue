@@ -1,18 +1,19 @@
 <template>
-  <div class="bg-black text-white">
+  <div class=" text-white">
     <!-- HERO SECTION -->
     <section
       class="relative h-screen flex flex-col justify-center items-center text-center px-6"
       data-aos="fade-in"
     >
       <NuxtImg
+        format="webp"
         src="/img/hero-me.jpg"
         alt="Tattoo Artist bei der Arbeit"
         class="absolute inset-0 w-full h-full object-cover opacity-30"
       />
       <div class="relative z-10 max-w-3xl">
         <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold cinzel-500 mb-4">
-          Ich bin [Name]
+          Ich bin Mika
         </h1>
         <p class="text-lg sm:text-xl cinzel-300 leading-relaxed">
           Tattoo Artist für Fantasie, Mythologie und spirituelle Körperkunst.
