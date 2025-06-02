@@ -3,7 +3,7 @@
     <!-- Section 1 -->
     <ClientOnly>
       <section
-        class="mx-auto max-w-screen-2xl px-4 sm:px-6 md:px-10 lg:px-16 xl:px-32 flex flex-col lg:flex-row items-center pt-40 sm:pt-60 lg:pt-96 gap-12 sm:gap-16 lg:gap-24"
+        class="mx-auto max-w-screen-2xl px-4 sm:px-6 md:px-10 lg:px-16 xl:px-32 flex flex-col lg:flex-row items-center pt-40 sm:pt-60 lg:pt-96 gap-12 sm:gap-16 lg:gap-24 overflow-hidden lg:overflow-visible"
       >
         <!-- Galerie -->
         <div
@@ -15,7 +15,7 @@
               format="webp"
               src="/img/tung-monster.png"
               alt="Tattoo Galerie"
-              class="w-full max-w-[420px] h-auto object-contain swinging transition-transform duration-500 ease-in-out hover:scale-150 hover:z-10 active:scale-150"
+              class="w-full max-w-[420px] h-auto object-contain swinging transition-transform duration-500 ease-in-out hover:scale-125 hover:z-10 active:scale-125"
             />
           </div>
         </div>
@@ -24,22 +24,22 @@
         <div
           data-aos="fade-up"
           data-aos-delay="200"
-          class="w-full lg:w-1/2 text-center lg:text-left px-2 sm:px-4"
+          class="w-full lg:w-1/2 text-center lg:text-left lg:px-2 sm:px-4"
         >
-          <div class="flex sm:flex-row items-center w-full">
-            <img
+          <div class="flex items-center w-full text-center flex-col">
+            <NuxtImg
               format="webp"
               src="/img/auge.png"
               class="w-12 md:w-32 h-auto mb-4 scale-x-[-1]"
             />
             <h2
-              class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight cinzel-500 mx-6"
+              class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight cinzel-600 mx-3 lg:mx-6"
             >
               Fantasy, Mythology & Folklore
             </h2>
           </div>
           <p
-            class="text-base sm:text-lg text-gray-300 leading-relaxed cinzel-300"
+            class="text-base sm:text-lg text-gray-300 leading-relaxed poppins-300 text-center"
           >
             „Ich erschaffe Kreaturen und Wesen in allen Formen, Sagen und
             Legenden, schreibe über sie Geschichten und erwecke sie zum Leben."
@@ -51,7 +51,7 @@
     <!-- Section 2 -->
     <ClientOnly>
       <section
-        class="mx-auto max-w-screen-2xl px-4 sm:px-6 md:px-10 lg:px-16 xl:px-32 flex flex-col lg:flex-row-reverse items-center pt-24 sm:pt-36 gap-12 sm:gap-16 lg:gap-24"
+        class="mx-auto max-w-screen-2xl px-4 sm:px-6 md:px-10 lg:px-16 xl:px-32 flex flex-col lg:flex-row-reverse items-center pt-24 sm:pt-36 gap-12 sm:gap-16 lg:gap-24 overflow-hidden lg:overflow-visible"
       >
         <!-- Galerie -->
         <div
@@ -72,22 +72,22 @@
         <div
           data-aos="fade-right"
           data-aos-delay="200"
-          class="w-full lg:w-1/2 flex flex-col justify-center text-center lg:text-left px-2 sm:px-4"
+          class="w-full lg:w-1/2 flex flex-col justify-center text-center lg:text-left lg:px-2 sm:px-4"
         >
-          <div class="flex sm:flex-row items-center w-full">
-            <img
+          <div class="flex items-center w-full text-center flex-col">
+            <NuxtImg
               format="webp"
               src="/img/auge.png"
               class="w-12 md:w-32 h-auto mb-4 scale-x-[-1]"
             />
             <h2
-              class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight cinzel-500 mx-6"
+              class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight cinzel-600 mx-3 lg:mx-6"
             >
               Mindfulness, Nature & Awakening
             </h2>
           </div>
           <p
-            class="text-base sm:text-lg text-gray-300 leading-relaxed cinzel-300"
+            class="text-base sm:text-lg text-gray-300 leading-relaxed poppins-300 text-center"
           >
             „In ornamentaler Anordnung verbinde ich symbolisch Anatomie, Natur
             und Spiritualität zu einem künstlerischen Ausdruck von Achtsamkeit
@@ -101,7 +101,7 @@
     <!-- Section 1 -->
     <ClientOnly>
       <section
-        class="mx-auto max-w-screen-2xl px-4 sm:px-6 md:px-10 lg:px-16 xl:px-32 flex flex-col lg:flex-row items-center pt-24 sm:pt-36 pb-36 sm:pb-56 gap-12 sm:gap-16 lg:gap-24"
+        class="mx-auto max-w-screen-2xl px-4 sm:px-6 md:px-10 lg:px-16 xl:px-32 overflow-hidden lg:overflow-visible flex flex-col lg:flex-row items-center pt-24 sm:pt-36 pb-36 sm:pb-56 gap-12 sm:gap-16 lg:gap-24"
       >
         <!-- Galerie -->
         <div
@@ -122,22 +122,22 @@
         <div
           data-aos="fade-up"
           data-aos-delay="200"
-          class="w-full lg:w-1/2 text-center lg:text-left px-2 sm:px-4"
+          class="w-full lg:w-1/2 text-center lg:text-left lg:px-2 sm:px-4"
         >
-          <div class="flex sm:flex-row items-center w-full">
-            <img
+          <div class="flex items-center w-full text-center flex-col">
+            <NuxtImg
               format="webp"
               src="/img/auge.png"
               class="w-12 md:w-32 h-auto mb-4 scale-x-[-1]"
             />
             <h2
-              class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight cinzel-500 mx-6"
+              class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight cinzel-600 mx-3 lg:mx-6"
             >
               As you wish
             </h2>
           </div>
           <p
-            class="text-base sm:text-lg text-gray-300 leading-relaxed cinzel-300"
+            class="text-base sm:text-lg text-gray-300 leading-relaxed poppins-300 text-center"
           >
             „Sende mir einen Raben.<br />
             So lasset uns ein Kunstwerk auf deiner Haut erschaffen, das deinen

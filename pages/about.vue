@@ -7,24 +7,23 @@
     >
       <NuxtImg
         format="webp"
-        src="/img/me/finger-pistole-copy.jpg"
+        src="\img\me\finger-pistole-copy2.jpg"
         alt="Tattoo Artist bei der Arbeit"
         class="absolute inset-0 w-full h-full object-cover opacity-30"
       />
       <div class="relative z-10 max-w-3xl">
-        <div
-          class="flex sm:flex-row items-center justify-center text-center w-full"
-        >
-          <h1 class="text-5xl sm:text-6xl font-bold cinzel-500 mb-4 mx-2">
-            Ich bin Mika
-          </h1>
-        </div>
+        <h1 class="text-5xl sm:text-6xl font-bold cinzel-700 mb-4 mx-2">
+          Kunst & Gegenwärtigkeit
+        </h1>
         <h4 class="text-3xl cinzel-300 leading-relaxed">
-          Künstler, Tätowierer, Abenteurer – mein Weg ist meine Kunst.
+          – Ich bin Mika –<br />
+          Tätowierer, Geschichtenerzähler und kreativer Wanderer zwischen
+          Welten.
         </h4>
-        <p class="mt-6 text-lg text-gray-300 cinzel-300 hidden md:block">
-          Meine Arbeiten erzählen Geschichten, die dich unter deiner Haut
-          begleiten.
+        <p class="mt-6 text-lg text-gray-300 poppins-200 hidden md:block">
+          Mit jedem Stich bringe ich Wesen, Symbole und Energien auf deine Haut,
+          die dich an deine Natur, deine Kraft und den gegenwärtigen Moment
+          erinnern.
         </p>
       </div>
     </section>
@@ -58,7 +57,7 @@
         data-aos="fade-left"
       >
         <div
-          class="flex sm:flex-row items-center justify-center lg:justify-start w-full"
+          class="flex flex-col items-center justify-center lg:justify-start w-full"
         >
           <img
             format="webp"
@@ -69,14 +68,20 @@
             Wer ich bin
           </h2>
         </div>
-        <p class="text-lg text-gray-300 cinzel-300 leading-relaxed mb-12">
+        <p
+          class="text-lg text-gray-300 poppins-300 leading-relaxed mb-12 text-center"
+        >
           Ich bin Wildnispädagoge, Zeichner, Stoiker – heute Tätowierer mit
           Seele. Als Kind wollte ich Künstler sein, doch mein Weg führte erst in
           die Wildnis und Psychologie. Meine Kunst ist Ausdruck, Geschichte und
           Selbstermächtigung.
         </p>
-        <h3 class="text-4xl font-bold mb-4 cinzel-500">Warum ich tätowiere</h3>
-        <p class="text-lg text-gray-300 cinzel-300 leading-relaxed">
+        <h3 class="text-4xl font-bold mb-4 cinzel-500 text-center">
+          Warum ich tätowiere
+        </h3>
+        <p
+          class="text-lg text-gray-300 poppins-300 leading-relaxed text-center"
+        >
           Ich liebe es, mit Menschen in die Tiefe zu gehen. Die Haut ist für
           mich nicht nur Leinwand, sondern Schwelle – zwischen Innen und Außen,
           Vergangenheit und Zukunft. Jedes Tattoo ist für mich ein Dialog: Was
@@ -89,7 +94,7 @@
     <!-- SECTION: Timeline "Mein Weg" -->
     <section class="bg-[#0a0a0a] py-24 px-6" data-aos="fade-up">
       <div
-        class="flex sm:flex-row items-center justify-center text-center w-full mb-4"
+        class="flex flex-col items-center justify-center text-center w-full mb-4"
       >
         <img
           format="webp"
@@ -99,11 +104,6 @@
         <h2 class="text-5xl sm:text-6xl font-bold cinzel-500 mb-4 mx-6">
           Mein Weg
         </h2>
-        <img
-          format="webp"
-          src="/img/auge.png"
-          class="w-12 md:w-32 h-auto mb-4 sm:mb-5"
-        />
       </div>
       <ol class="relative border-l border-gray-700 max-w-2xl mx-auto">
         <li class="mb-10 ml-6">
@@ -261,7 +261,7 @@
         class="w-full lg:w-1/2 text-center lg:text-left"
         data-aos="fade-left"
       >
-        <div class="flex sm:flex-row items-center w-full">
+        <div class="flex flex-col items-center w-full">
           <img
             format="webp"
             src="/img/auge.png"
@@ -271,7 +271,9 @@
             Stil & Inspiration
           </h2>
         </div>
-        <p class="text-lg text-gray-300 cinzel-300 leading-relaxed">
+        <p
+          class="text-lg text-gray-300 poppins-300 leading-relaxed text-center"
+        >
           Meine Motive sind Ausdruck innerer Welten – mystisch, organisch,
           spirituell. Ich arbeite bevorzugt in Schwarz-Weiß, mit starkem
           Kontrast, feinen Linien und symbolischer Tiefe. Dabei lasse ich mich
@@ -285,9 +287,7 @@
 
     <!-- SECTION: Das Auge -->
     <section class="bg-[#0a0a0a] py-24 px-6 text-center" data-aos="fade-up">
-      <div
-        class="flex sm:flex-row items-center text-center justify-center w-full"
-      >
+      <div class="flex flex-col items-center text-center justify-center w-full">
         <img
           format="webp"
           src="/img/auge.png"
@@ -295,7 +295,7 @@
         />
         <h2 class="text-4xl font-bold mb-4 cinzel-500 mx-6">Das Auge</h2>
       </div>
-      <p class="text-lg text-gray-300 cinzel-300 max-w-3xl mx-auto">
+      <p class="text-lg text-gray-300 poppins-300 max-w-3xl mx-auto">
         In vielen meiner Tattoos taucht das Auge auf – ein Symbol der
         Achtsamkeit. Es erinnert an den gegenwärtigen Moment, an das Jetzt –
         jenen Raum, in dem alles eins ist: stetig, ewig, ungeteilt. In der
@@ -308,11 +308,13 @@
 
     <!-- SECTION: Testimonials -->
     <section class="py-28 px-4 sm:px-8 lg:px-16" data-aos="zoom-in">
-      <!-- Überschrift mit Augen -->
       <div
-        class="flex flex-row items-center justify-center text-center w-full mb-8"
+        class="flex flex-col items-center justify-center text-center w-full mb-8"
       >
-        <img src="/img/auge.png" class="w-12 lg:w-32 h-auto scale-x-[-1]" />
+        <img
+          src="/img/auge.png"
+          class="w-12 lg:w-32 h-auto mb-4 scale-x-[-1]"
+        />
         <h2 class="text-3xl sm:text-4xl font-bold cinzel-500 mx-6">
           Stimmen meiner Kunden
         </h2>
@@ -393,10 +395,18 @@
       class="py-24 px-6 max-w-3xl w-full mx-auto text-center flex flex-col justify-center items-center"
       data-aos="fade-up"
     >
-      <h2 class="text-4xl font-bold mb-6 cinzel-500">
-        Lass uns gemeinsam etwas Bedeutendes erschaffen
-      </h2>
-      <p class="text-lg cinzel-300 mb-6">
+      <div
+        class="flex flex-col items-center justify-center text-center w-full mb-8"
+      >
+        <img
+          src="/img/auge.png"
+          class="w-12 lg:w-32 h-auto mb-4 scale-x-[-1]"
+        />
+        <h2 class="text-4xl font-bold cinzel-500">
+          Lass uns gemeinsam echte Kunst mit Bedeutung erschaffen
+        </h2>
+      </div>
+      <p class="text-lg poppins-300 mb-6">
         Wenn du bereit bist für mehr als ein Motiv – sondern für ein Zeichen auf
         deinem Weg – dann sende mir einen Raben.
       </p>

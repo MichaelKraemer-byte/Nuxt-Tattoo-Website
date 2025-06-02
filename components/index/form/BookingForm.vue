@@ -1,9 +1,9 @@
 <template>
   <div
     id="BookingForm"
-    class="max-w-full sm:max-w-2xl mx-auto p-6 bg-zinc-900 rounded-lg shadow-xl text-white space-y-6 mb-40"
+    class="max-w-full sm:max-w-2xl mx-auto p-6 bg-zinc-900 rounded-lg shadow-xl text-white space-y-6 mb-40 poppins-200"
   >
-    <h2 class="text-3xl font-bold text-orange-500 cinzel-500 text-center">
+    <h2 class="!text-xl lg:!text-3xl cinzel-500 text-center">
       📜 Sende einen Raben 🐦‍⬛
     </h2>
 
@@ -114,7 +114,7 @@
           Ich habe die
           <nuxt-link
             to="/shared/privacy-policy"
-            class="text-orange-500 hover:underline cinzel-300"
+            class="text-orange-500 hover:underline poppins-200"
           >
             Datenschutzerklärung
           </nuxt-link>
@@ -125,7 +125,7 @@
       <!-- Absenden -->
       <button
         type="submit"
-        class="mt-6 w-full border-2 border-orange-500 px-6 py-3 rounded-sm hover:bg-orange-400 transition cursor-pointer"
+        class="w-full cursor-pointer cinzel-500 btn btn-custom inline-block px-4 py-1.5 text-sm sm:text-lg sm:px-6 sm:py-2 font-medium bg-black hover:bg-orange-500 border-orange-500 border-[2px] rounded-sm shadow-md transition-all transform hover:scale-105"
         :class="{
           'opacity-50 cursor-not-allowed hover:bg-transparent':
             isInSubmitProcess,
