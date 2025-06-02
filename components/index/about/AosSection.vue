@@ -26,11 +26,18 @@
           data-aos-delay="200"
           class="w-full lg:w-1/2 text-center lg:text-left px-2 sm:px-4"
         >
-          <h2
-            class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight cinzel-500"
-          >
-            Fantasy, Mythology & Folklore
-          </h2>
+          <div class="flex sm:flex-row items-center w-full">
+            <img
+              format="webp"
+              src="/img/auge.png"
+              class="w-12 md:w-32 h-auto mb-4 scale-x-[-1]"
+            />
+            <h2
+              class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight cinzel-500 mx-6"
+            >
+              Fantasy, Mythology & Folklore
+            </h2>
+          </div>
           <p
             class="text-base sm:text-lg text-gray-300 leading-relaxed cinzel-300"
           >
@@ -67,11 +74,18 @@
           data-aos-delay="200"
           class="w-full lg:w-1/2 flex flex-col justify-center text-center lg:text-left px-2 sm:px-4"
         >
-          <h2
-            class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight cinzel-500"
-          >
-            Mindfulness, Nature & Awakening
-          </h2>
+          <div class="flex sm:flex-row items-center w-full">
+            <img
+              format="webp"
+              src="/img/auge.png"
+              class="w-12 md:w-32 h-auto mb-4 scale-x-[-1]"
+            />
+            <h2
+              class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight cinzel-500 mx-6"
+            >
+              Mindfulness, Nature & Awakening
+            </h2>
+          </div>
           <p
             class="text-base sm:text-lg text-gray-300 leading-relaxed cinzel-300"
           >
@@ -110,11 +124,18 @@
           data-aos-delay="200"
           class="w-full lg:w-1/2 text-center lg:text-left px-2 sm:px-4"
         >
-          <h2
-            class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight cinzel-500"
-          >
-            As you wish
-          </h2>
+          <div class="flex sm:flex-row items-center w-full">
+            <img
+              format="webp"
+              src="/img/auge.png"
+              class="w-12 md:w-32 h-auto mb-4 scale-x-[-1]"
+            />
+            <h2
+              class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight cinzel-500 mx-6"
+            >
+              As you wish
+            </h2>
+          </div>
           <p
             class="text-base sm:text-lg text-gray-300 leading-relaxed cinzel-300"
           >

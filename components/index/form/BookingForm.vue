@@ -3,7 +3,7 @@
     id="BookingForm"
     class="max-w-full sm:max-w-2xl mx-auto p-6 bg-zinc-900 rounded-lg shadow-xl text-white space-y-6 mb-40"
   >
-    <h2 class="text-3xl font-bold text-orange-500 cinzel-500">
+    <h2 class="text-3xl font-bold text-orange-500 cinzel-500 text-center">
       📜 Sende einen Raben 🐦‍⬛
     </h2>
 
