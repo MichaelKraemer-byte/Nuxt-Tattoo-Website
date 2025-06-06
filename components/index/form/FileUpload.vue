@@ -78,6 +78,10 @@
         </span>
       </p>
     </transition>
+
+    <p class="!text-xs text-gray-400">
+      Nur Bilder hochladen, deren Verarbeitung du zustimmst.
+    </p>
   </div>
 </template>
 

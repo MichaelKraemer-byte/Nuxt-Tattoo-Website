@@ -1,155 +1,160 @@
 <template>
-  <div
-    id="BookingForm"
-    class="max-w-full sm:max-w-2xl mx-auto p-6 bg-zinc-900 rounded-lg shadow-xl text-white space-y-6 mb-40 poppins-200"
-  >
-    <h2 class="!text-xl lg:!text-3xl cinzel-500 text-center">
-      📜 Sende einen Raben 🐦‍⬛
-    </h2>
-
-    <form @submit.prevent="submitForm" class="space-y-5">
-      <!-- Name -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div>
-          <label class="block mb-1">Vorname</label>
-          <input
-            maxlength="50"
-            v-model="form.firstName"
-            type="text"
-            required
-            class="w-full bg-zinc-800 text-white border border-zinc-700 rounded-sm px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
-          />
-        </div>
-        <div>
-          <label class="block mb-1">Nachname</label>
-          <input
-            maxlength="50"
-            v-model="form.lastName"
-            type="text"
-            required
-            class="w-full bg-zinc-800 text-white border border-zinc-700 rounded-sm px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
-          />
-        </div>
-      </div>
-
-      <!-- Email -->
-      <div>
-        <label class="block mb-1">E-Mail</label>
-        <input
-          maxlength="50"
-          v-model="form.email"
-          type="email"
-          required
-          class="w-full bg-zinc-800 text-white border border-zinc-700 rounded-sm px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
-        />
-      </div>
-
-      <!-- Volljährigkeit -->
-      <div class="flex items-center space-x-2">
-        <input
-          maxlength="50"
-          id="isAdult"
-          v-model="form.isAdult"
-          type="checkbox"
-          required
-          class="w-5 h-5 text-orange-500 bg-zinc-800 border-zinc-600 rounded focus:ring-2 focus:ring-orange-500 focus:outline-none cursor-pointer"
-        />
-        <label for="isAdult" class="text-white select-none cursor-pointer">
-          Ich bin volljährig (18+)
-        </label>
-      </div>
-
-      <!-- Wunschdatum -->
-      <div>
-        <label class="block mb-1">Wunschdatum</label>
-        <FormDatepicker v-model="form.date" :asap="form.asap" />
-      </div>
-
-      <!-- Wunschstelle (Dropdown-Komponente) -->
-      <Dropdown v-model="form.spot" />
-
-      <!-- Beschreibung mit Tooltip -->
-      <div class="relative">
-        <label class="items-center gap-2 group cursor-pointer">
-          Beschreibung / Idee
-          <span class="text-orange-400">❔</span>
-          <div class="relative mb-1">
-            <div
-              class="pointer-events-none absolute top-full inset-x-0 mx-auto mt-1 w-full max-w-[90vw] sm:max-w-[20rem] text-sm bg-zinc-800 border border-orange-500 text-white p-3 rounded-sm shadow-lg opacity-0 group-hover:opacity-100 transition duration-200 z-10"
-            >
-              Beschreibe bitte so genau wie möglich: Motiv, Größe, Stil
-              (Realistic, Linework, Blackwork etc.), Farben, Bedeutung,
-              Gesundheitliches – alles was wichtig sein könnte. 🙏
-            </div>
-          </div>
-        </label>
-
-        <textarea
-          maxlength="1000"
-          v-model="form.description"
-          rows="4"
-          class="w-full bg-zinc-800 text-white border border-zinc-700 rounded-sm px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
-        ></textarea>
-      </div>
-
-      <!-- Datei-Upload -->
-      <FileUpload
-        :files="form.files"
-        required
-        ref="fileUploadRef"
-        @update:files="(newFiles) => (form.files = newFiles)"
-      />
-
-      <!-- Datenschutzerklärung -->
-      <div class="flex items-center space-x-2">
-        <input
-          maxlength="50"
-          id="privacyPolicy"
-          v-model="form.privacyPolicy"
-          type="checkbox"
-          required
-          class="w-5 h-5 text-orange-500 bg-zinc-800 border-zinc-600 rounded focus:ring-2 focus:ring-orange-500 focus:outline-none cursor-pointer"
-        />
-        <label for="privacyPolicy" class="text-white cursor-pointer">
-          Ich habe die
-          <nuxt-link
-            to="/shared/privacy-policy"
-            class="text-orange-500 hover:underline poppins-200"
-          >
-            Datenschutzerklärung
-          </nuxt-link>
-          gelesen und akzeptiere sie.
-        </label>
-      </div>
-
-      <!-- Absenden -->
-      <button
-        type="submit"
-        class="w-full cursor-pointer cinzel-500 btn btn-custom inline-block px-4 py-1.5 text-sm sm:text-lg sm:px-6 sm:py-2 font-medium bg-black hover:bg-orange-500 border-orange-500 border-[2px] rounded-sm shadow-md transition-all transform hover:scale-105"
-        :class="{
-          'opacity-50 cursor-not-allowed hover:bg-transparent':
-            isInSubmitProcess,
-        }"
-        :disabled="isInSubmitProcess"
-      >
-        Anfrage senden
-      </button>
-    </form>
-    <ConfirmationToast
-      v-if="showConfirmation"
-      @close="showConfirmation = false"
-    />
-  </div>
-  <!-- Fortschrittsanzeige beim Senden -->
-  <div
-    v-if="isInSubmitProcess"
-    class="relative w-full h-2 bg-zinc-700 rounded overflow-hidden mb-4"
-  >
+  <client-only>
     <div
-      class="absolute top-0 left-0 h-full bg-orange-500 animate-progress"
-      style="width: 100%"
-    ></div>
-  </div>
+      id="BookingForm"
+      class="max-w-full sm:max-w-2xl mx-auto px-4 py-6 sm:p-6 bg-zinc-900 rounded-lg shadow-xl text-white space-y-6 mb-40 poppins-200"
+      data-aos="fade-in"
+    >
+      <h2 class="!text-xl lg:!text-3xl cinzel-500 text-center">
+        📜 Sende einen Raben 🐦‍⬛
+      </h2>
+
+      <form @submit.prevent="submitForm" class="space-y-5">
+        <!-- Name -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block mb-1">Vorname</label>
+            <input
+              maxlength="50"
+              v-model="form.firstName"
+              type="text"
+              required
+              class="w-full bg-zinc-800 text-white border border-zinc-700 rounded-sm px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
+            />
+          </div>
+          <div>
+            <label class="block mb-1">Nachname</label>
+            <input
+              maxlength="50"
+              v-model="form.lastName"
+              type="text"
+              required
+              class="w-full bg-zinc-800 text-white border border-zinc-700 rounded-sm px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
+            />
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div>
+          <label class="block mb-1">E-Mail</label>
+          <input
+            maxlength="50"
+            v-model="form.email"
+            type="email"
+            required
+            class="w-full bg-zinc-800 text-white border border-zinc-700 rounded-sm px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
+          />
+        </div>
+
+        <!-- Volljährigkeit -->
+        <div class="flex items-center space-x-2">
+          <input
+            maxlength="50"
+            id="isAdult"
+            v-model="form.isAdult"
+            type="checkbox"
+            required
+            class="w-5 h-5 text-orange-500 bg-zinc-800 border-zinc-600 rounded focus:ring-2 focus:ring-orange-500 focus:outline-none cursor-pointer"
+          />
+          <label for="isAdult" class="text-white select-none cursor-pointer">
+            Ich bin volljährig (18+)
+          </label>
+        </div>
+
+        <!-- Wunschdatum -->
+        <div>
+          <label class="block mb-1">Wunschdatum</label>
+          <FormDatepicker v-model="form.date" :asap="form.asap" />
+        </div>
+
+        <!-- Wunschstelle (Dropdown-Komponente) -->
+        <Dropdown v-model="form.spot" />
+
+        <!-- Beschreibung mit Tooltip -->
+        <div class="relative">
+          <label class="items-center gap-2 group cursor-pointer">
+            Beschreibung / Idee
+            <span class="text-orange-400">❔</span>
+            <div class="relative mb-1">
+              <div
+                class="pointer-events-none absolute top-full inset-x-0 mx-auto mt-1 w-full max-w-[90vw] sm:max-w-[20rem] text-sm bg-zinc-800 border border-orange-500 text-white p-3 rounded-sm shadow-lg opacity-0 group-hover:opacity-100 transition duration-200 z-10"
+              >
+                Beschreibe bitte so genau wie möglich: Motiv, Größe, Stil
+                (Realistic, Linework, Blackwork etc.), Farben, Bedeutung,
+                Gesundheitliches – alles was wichtig sein könnte. 🙏
+              </div>
+            </div>
+          </label>
+
+          <textarea
+            placeholder="Beschreibe dein Wunsch-Tattoo möglichst genau: Motiv, Größe, Stil (z. B. Realistic, Linework, Blackwork), Farben, Bedeutung, gesundheitliche Hinweise – alles, was für mich wichtig sein könnte. 🙏"
+            maxlength="1000"
+            v-model="form.description"
+            rows="4"
+            class="w-full bg-zinc-800 text-white border border-zinc-700 rounded-sm px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500 custom-scrollbar"
+          ></textarea>
+        </div>
+
+        <!-- Datei-Upload -->
+        <FileUpload
+          :files="form.files"
+          required
+          ref="fileUploadRef"
+          @update:files="(newFiles) => (form.files = newFiles)"
+        />
+
+        <!-- Datenschutzerklärung -->
+        <div class="flex items-center space-x-2">
+          <input
+            maxlength="50"
+            id="privacyPolicy"
+            v-model="form.privacyPolicy"
+            type="checkbox"
+            required
+            class="w-5 h-5 text-orange-500 bg-zinc-800 border-zinc-600 rounded focus:ring-2 focus:ring-orange-500 focus:outline-none cursor-pointer"
+          />
+          <label for="privacyPolicy" class="text-white text-sm cursor-pointer">
+            Ich habe die
+            <nuxt-link
+              to="/shared/privacy-policy"
+              class="text-orange-500 hover:underline poppins-200 text-sm"
+            >
+              Datenschutzerklärung
+            </nuxt-link>
+            gelesen und akzeptiere sie. Mir ist bekannt, dass meine Daten zur
+            Bearbeitung meiner Anfrage gespeichert und verarbeitet werden.
+          </label>
+        </div>
+
+        <!-- Absenden -->
+        <button
+          type="submit"
+          class="w-full cursor-pointer cinzel-500 btn btn-custom inline-block px-4 py-1.5 text-sm sm:text-lg sm:px-6 sm:py-2 font-medium bg-black hover:bg-orange-500 border-orange-500 border-[2px] rounded-sm shadow-md transition-all transform hover:scale-105"
+          :class="{
+            'opacity-50 cursor-not-allowed hover:bg-transparent':
+              isInSubmitProcess,
+          }"
+          :disabled="isInSubmitProcess"
+        >
+          Anfrage senden
+        </button>
+      </form>
+      <ConfirmationToast
+        v-if="showConfirmation"
+        @close="showConfirmation = false"
+      />
+    </div>
+    <!-- Fortschrittsanzeige beim Senden -->
+    <div
+      v-if="isInSubmitProcess"
+      class="relative w-full h-2 bg-zinc-700 rounded overflow-hidden mb-4"
+    >
+      <div
+        class="absolute top-0 left-0 h-full bg-orange-500 animate-progress"
+        style="width: 100%"
+      ></div>
+    </div>
+  </client-only>
 </template>
 
 <script setup>
@@ -354,5 +359,27 @@ const submitForm = async () => {
 
 .animate-progress {
   animation: progressBar 2.5s linear forwards;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: oklch(0.21 0.006 285.885);
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: oklch(0.21 0.006 285.885);
+}
+
+textarea.custom-scrollbar {
+  scrollbar-color: oklch(0.21 0.006 285.885) transparent;
+  scrollbar-width: thin;
 }
 </style>

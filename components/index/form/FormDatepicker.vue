@@ -136,6 +136,12 @@ defineEmits(["update:modelValue"]);
   font-size: 20px;
 }
 
+::v-deep .dp__input::placeholder {
+  color: rgba(255, 255, 255, 0.5); /* z. B. leicht transparent weiß */
+  /* Achtung: margin funktioniert NICHT hier, nur padding */
+  padding-left: 10px; /* Funktioniert nur teilweise, besser im Eltern-Input regeln */
+}
+
 /* Responsive Anpassungen */
 @media (max-width: 320px) {
   ::v-deep .dp__calendar_item {

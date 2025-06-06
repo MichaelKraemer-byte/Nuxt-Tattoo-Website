@@ -103,6 +103,76 @@
         Anfrage). Gesetzliche Aufbewahrungspflichten bleiben unberührt.
       </p>
 
+      <p>
+        Wir versenden E-Mails über den Dienst „Gmail“ des Anbieters Google
+        Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. Dabei
+        kann es zur Übermittlung personenbezogener Daten an Server von Google
+        LLC in den USA kommen. Die Datenübertragung erfolgt auf Grundlage von
+        Standardvertragsklauseln der EU-Kommission. Trotz dieser Maßnahmen kann
+        in den USA kein mit der EU vergleichbares Datenschutzniveau
+        gewährleistet werden. Weitere Informationen finden Sie in der
+        Datenschutzerklärung von Google:
+        <a
+          href="https://policies.google.com/privacy"
+          target="_blank"
+          rel="noopener"
+          >https://policies.google.com/privacy</a
+        >.
+      </p>
+      <h3 class="text-xl font-semibold mb-2">
+        Bild-Uploads (Dateianhänge im Kontaktformular)
+      </h3>
+      <p>
+        Wenn Sie im Kontaktformular Bilder hochladen (z. B. Motivreferenzen oder
+        Fotos Ihrer Hautstellen), verarbeiten wir diese Dateien ausschließlich
+        zum Zweck der Bewertung und Bearbeitung Ihrer Tattoo‑Anfrage.
+      </p>
+
+      <h4 class="mt-4 font-semibold">Rechtsgrundlage</h4>
+      <p>
+        Die Verarbeitung erfolgt – je nach Inhalt der Bilder – auf Grundlage von
+        Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahmen bzw.
+        Vertragsdurchführung) und auf Grundlage Ihrer ausdrücklichen
+        Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO sowie, soweit besondere
+        Kategorien personenbezogener Daten betroffen sein können (z. B. Tattoos
+        an intimen Körperstellen oder Hinweise auf Gesundheit, Religion,
+        Weltanschauung), zusätzlich Art. 9 Abs. 2 lit. a DSGVO.
+      </p>
+
+      <h4 class="mt-4 font-semibold">Speicherdauer (Bilder)</h4>
+      <p>
+        Die Bilder werden in unserem E-Mail-Postfach gespeichert und
+        grundsätzlich nicht automatisch gelöscht. Wenn Sie die Löschung Ihrer
+        Bilder wünschen, können Sie uns jederzeit dazu auffordern. In diesem
+        Fall löschen wir Ihre E-Mail und alle damit verbundenen Dateianhänge,
+        sofern keine gesetzlichen Aufbewahrungspflichten bestehen.
+      </p>
+
+      <h4 class="mt-4 font-semibold">Empfänger</h4>
+      <p>
+        Das Bildmaterial wird nicht an Dritte weitergegeben. Lediglich unser
+        E‑Mail‑Dienstleister
+        <strong>Gmail (Google Ireland Ltd.)</strong> erhält die Daten, da das
+        Formular als E‑Mail an uns übertragen wird. Weitere Informationen finden
+        Sie im Abschnitt „E-Mail‑Versand über Gmail“.
+      </p>
+
+      <h4 class="mt-4 font-semibold">Übermittlung in Drittländer</h4>
+      <p>
+        Beim E-Mail-Versand über Gmail kann es zu einer Übermittlung an Server
+        der Google LLC in den USA kommen. Die Übermittlung erfolgt auf Grundlage
+        der EU‑Standardvertragsklauseln. Ein mit der EU vergleichbares
+        Datenschutzniveau kann in den USA dennoch nicht garantiert werden.
+      </p>
+
+      <h4 class="mt-4 font-semibold">Widerruf der Einwilligung</h4>
+      <p>
+        Sie können Ihre Einwilligung zur Verarbeitung Ihrer Bilder jederzeit mit
+        Wirkung für die Zukunft widerrufen. In diesem Fall löschen wir Ihre
+        E-Mail samt Dateianhängen, sofern keine gesetzlichen
+        Aufbewahrungspflichten bestehen.
+      </p>
+
       <h2>2. Hosting</h2>
       <p>Wir hosten die Inhalte unserer Website bei folgendem Anbieter:</p>
       <h3>All-Inkl</h3>
@@ -184,7 +254,7 @@
         E-Mail-Adressen o. &Auml;.) entscheidet.
       </p>
 
-      <h3>Speicherdauer</h3>
+      <h3>Speicherdauer (allgemein)</h3>
       <p>
         Soweit innerhalb dieser Datenschutzerkl&auml;rung keine speziellere
         Speicherdauer genannt wurde, verbleiben Ihre personenbezogenen Daten bei
@@ -314,29 +384,29 @@
         jederzeit an uns wenden. Das Recht auf Einschr&auml;nkung der
         Verarbeitung besteht in folgenden F&auml;llen:
       </p>
-      <ul>
+      <ul class="poppins-200">
         <li>
-          Wenn Sie die Richtigkeit Ihrer bei uns gespeicherten personenbezogenen
-          Daten bestreiten, ben&ouml;tigen wir in der Regel Zeit, um dies zu
-          &uuml;berpr&uuml;fen. F&uuml;r die Dauer der Pr&uuml;fung haben Sie
-          das Recht, die Einschr&auml;nkung der Verarbeitung Ihrer
-          personenbezogenen Daten zu verlangen.
+          - Wenn Sie die Richtigkeit Ihrer bei uns gespeicherten
+          personenbezogenen Daten bestreiten, ben&ouml;tigen wir in der Regel
+          Zeit, um dies zu &uuml;berpr&uuml;fen. F&uuml;r die Dauer der
+          Pr&uuml;fung haben Sie das Recht, die Einschr&auml;nkung der
+          Verarbeitung Ihrer personenbezogenen Daten zu verlangen.
         </li>
         <li>
-          Wenn die Verarbeitung Ihrer personenbezogenen Daten
+          - Wenn die Verarbeitung Ihrer personenbezogenen Daten
           unrechtm&auml;&szlig;ig geschah/geschieht, k&ouml;nnen Sie statt der
           L&ouml;schung die Einschr&auml;nkung der Datenverarbeitung verlangen.
         </li>
         <li>
-          Wenn wir Ihre personenbezogenen Daten nicht mehr ben&ouml;tigen, Sie
+          - Wenn wir Ihre personenbezogenen Daten nicht mehr ben&ouml;tigen, Sie
           sie jedoch zur Aus&uuml;bung, Verteidigung oder Geltendmachung von
           Rechtsanspr&uuml;chen ben&ouml;tigen, haben Sie das Recht, statt der
           L&ouml;schung die Einschr&auml;nkung der Verarbeitung Ihrer
           personenbezogenen Daten zu verlangen.
         </li>
         <li>
-          Wenn Sie einen Widerspruch nach Art. 21 Abs. 1 DSGVO eingelegt haben,
-          muss eine Abw&auml;gung zwischen Ihren und unseren Interessen
+          - Wenn Sie einen Widerspruch nach Art. 21 Abs. 1 DSGVO eingelegt
+          haben, muss eine Abw&auml;gung zwischen Ihren und unseren Interessen
           vorgenommen werden. Solange noch nicht feststeht, wessen Interessen
           &uuml;berwiegen, haben Sie das Recht, die Einschr&auml;nkung der
           Verarbeitung Ihrer personenbezogenen Daten zu verlangen.
@@ -660,11 +730,6 @@
         können dort auswählen, welchen Kategorien Sie zustimmen möchten. Die
         Einwilligungen werden auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO und §
         25 Abs. 1 TDDDG gespeichert und sind jederzeit widerrufbar.
-      </p>
-
-      <p>
-        Wir nutzen das Consent-Tool „Borlabs Cookie“ (Anbieter: Borlabs GmbH,
-        Rübenkamp 32, 22305 Hamburg).
       </p>
     </div>
   </div>
