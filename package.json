@@ -16,7 +16,7 @@
     "@nuxt/image": "^1.10.0",
     "@nuxt/scripts": "^0.11.2",
     "@nuxt/ui": "^3.0.1",
-    "@nuxtjs/tailwindcss": "^6.12.1",
+    "@nuxtjs/tailwindcss": "^6.14.0",
     "@unhead/vue": "^2.0.0",
     "@vuepic/vue-datepicker": "^11.0.2",
     "@vueuse/motion": "^3.0.3",

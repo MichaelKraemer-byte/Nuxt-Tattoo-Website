@@ -25,7 +25,7 @@ export default defineNuxtConfig({
     "@nuxt/icon",
     "@nuxt/scripts",
     "@nuxt/ui",
-    "nuxt-tailwindcss4",
+    "@nuxtjs/tailwindcss",
     [
       "@nuxt/image",
       {
