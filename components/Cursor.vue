@@ -13,6 +13,7 @@
 import { ref, reactive, onMounted, onBeforeUnmount } from "vue";
 
 const cursor = ref(null);
+const isMobile = ref(false); // mobile/Tablet check
 
 const position = reactive({ x: 0, y: 0 });
 const lastPosition = reactive({ x: 0, y: 0 });
@@ -26,6 +27,8 @@ const ease = 0.15;
 const cursorFilter = ref(null);
 
 function animate() {
+  if (isMobile.value) return; // Keine Animation auf mobile
+
   currentX += (position.x - currentX) * ease;
   currentY += (position.y - currentY) * ease;
 
@@ -47,6 +50,7 @@ function animate() {
 }
 
 function onMouseMove(e) {
+  if (isMobile.value) return;
   position.x = e.clientX - 10;
   position.y = e.clientY - 10;
 
@@ -88,33 +92,46 @@ function onMouseMove(e) {
 }
 
 function onMouseEnterButton() {
+  if (isMobile.value) return;
   isActive.value = true;
 }
 
 function onMouseLeaveButton() {
+  if (isMobile.value) return;
   isActive.value = false;
 }
 
 onMounted(() => {
-  window.addEventListener("mousemove", onMouseMove);
+  const ua = navigator.userAgent;
+  isMobile.value =
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua);
 
-  const buttons = document.querySelectorAll("button, a");
-  buttons.forEach((btn) => {
-    btn.addEventListener("mouseenter", onMouseEnterButton);
-    btn.addEventListener("mouseleave", onMouseLeaveButton);
-  });
+  if (!isMobile.value) {
+    window.addEventListener("mousemove", onMouseMove);
 
-  animate();
+    const buttons = document.querySelectorAll("button, a");
+    buttons.forEach((btn) => {
+      btn.addEventListener("mouseenter", onMouseEnterButton);
+      btn.addEventListener("mouseleave", onMouseLeaveButton);
+    });
+
+    animate();
+  } else {
+    if (cursor.value) cursor.value.style.display = "none";
+    if (cursorFilter.value) cursorFilter.value.style.display = "none";
+  }
 });
 
 onBeforeUnmount(() => {
-  window.removeEventListener("mousemove", onMouseMove);
+  if (!isMobile.value) {
+    window.removeEventListener("mousemove", onMouseMove);
 
-  const buttons = document.querySelectorAll("button, a");
-  buttons.forEach((btn) => {
-    btn.removeEventListener("mouseenter", onMouseEnterButton);
-    btn.removeEventListener("mouseleave", onMouseLeaveButton);
-  });
+    const buttons = document.querySelectorAll("button, a");
+    buttons.forEach((btn) => {
+      btn.removeEventListener("mouseenter", onMouseEnterButton);
+      btn.removeEventListener("mouseleave", onMouseLeaveButton);
+    });
+  }
 });
 </script>
 

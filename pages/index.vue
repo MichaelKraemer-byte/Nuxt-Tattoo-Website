@@ -1,13 +1,18 @@
 <template>
-  <Hero />
-  <HomeAbout />
-  <BookingForm />
+  <div>
+    <Hero />
+    <AosSection></AosSection>
+    <BookingForm />
+  </div>
 </template>
 
 <style scoped></style>
 
-<script setup>
+<script setup lang="ts">
 import BookingForm from "../components/index/form/BookingForm.vue";
 import Hero from "../components/index/Hero.vue";
-import HomeAbout from "../components/index/about/HomeAbout.vue";
+import AosSection from "../components/index/about/AosSection.vue";
+import { useSeoIndex } from "../composables/useSeo";
+
+useSeoIndex();
 </script>

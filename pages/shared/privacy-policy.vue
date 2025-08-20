@@ -103,7 +103,7 @@
         Anfrage). Gesetzliche Aufbewahrungspflichten bleiben unberührt.
       </p>
 
-      <p>
+      <!-- <p>
         Wir versenden E-Mails über den Dienst „Gmail“ des Anbieters Google
         Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. Dabei
         kann es zur Übermittlung personenbezogener Daten an Server von Google
@@ -118,8 +118,32 @@
           rel="noopener"
           >https://policies.google.com/privacy</a
         >.
+      </p> -->
+
+      <p>
+        Die über das Kontaktformular übermittelten Daten werden durch den Dienst
+        <strong>Web3Forms</strong> an uns weitergeleitet und per E-Mail an
+        unsere <strong>Gmail-Adresse</strong> zugestellt, wo sie gespeichert
+        werden. Hierfür nutzen wir den E-Mail-Dienst „Gmail“ des Anbieters
+        Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland.
+        Dabei kann es zur Übermittlung personenbezogener Daten an Server der
+        Google LLC in den USA kommen.
       </p>
-      <h3 class="text-xl font-semibold mb-2">
+      <p>
+        Die Datenübertragung erfolgt auf Grundlage von Standardvertragsklauseln
+        der EU-Kommission. Trotz dieser Maßnahmen kann in den USA kein mit der
+        EU vergleichbares Datenschutzniveau gewährleistet werden. Weitere
+        Informationen finden Sie in der Datenschutzerklärung von Google:
+        <a
+          href="https://policies.google.com/privacy"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          https://policies.google.com/privacy </a
+        >.
+      </p>
+
+      <!-- <h3 class="text-xl font-semibold mb-2">
         Bild-Uploads (Dateianhänge im Kontaktformular)
       </h3>
       <p>
@@ -171,6 +195,41 @@
         Wirkung für die Zukunft widerrufen. In diesem Fall löschen wir Ihre
         E-Mail samt Dateianhängen, sofern keine gesetzlichen
         Aufbewahrungspflichten bestehen.
+      </p> -->
+
+      <h3>Verwendung von Web3Forms</h3>
+      <p>
+        Für das Absenden unseres Kontaktformulars nutzen wir den Dienst
+        <strong>„Web3Forms“</strong> (HarbourFront Technologies&nbsp;Ltd.,
+        3rd&nbsp;Floor, 86-90 Paul Street, London&nbsp;EC2A&nbsp;4NE,
+        Vereinigtes Königreich). Die von Ihnen eingegebenen Daten werden dabei
+        über die Server von Web3Forms an uns per&nbsp;E-Mail weitergeleitet.
+      </p>
+      <p>
+        Web3Forms verarbeitet die Formulardaten ausschließlich zum Zweck der
+        technischen Bereitstellung und Weiterleitung. Eine Speicherung auf den
+        Servern von Web3Forms erfolgt nur kurzfristig und automatisiert zum
+        Zweck der Zustellung und Protokollierung.
+      </p>
+      <p>
+        Die Verarbeitung erfolgt auf Grundlage von
+        Art.&nbsp;6&nbsp;Abs.&nbsp;1&nbsp;lit.&nbsp;b DSGVO, soweit Ihre Anfrage
+        mit der Erfüllung eines Vertrags oder vorvertraglicher Maßnahmen
+        zusammenhängt, sowie auf Grundlage von
+        Art.&nbsp;6&nbsp;Abs.&nbsp;1&nbsp;lit.&nbsp;f DSGVO (berechtigtes
+        Interesse an einer funktionsfähigen und sicheren
+        Formularbereitstellung).
+      </p>
+      <p>
+        Weitere Informationen finden Sie in der Datenschutzerklärung von
+        Web3Forms:&nbsp;
+        <a
+          href="https://web3forms.com/privacy"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          https://web3forms.com/privacy
+        </a>
       </p>
 
       <h2>2. Hosting</h2>

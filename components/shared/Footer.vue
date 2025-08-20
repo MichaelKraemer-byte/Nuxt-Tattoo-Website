@@ -45,8 +45,6 @@ const cookieStore = useCookieStore();
 
 // Funktion zum Öffnen des Cookie-Banners
 function openCookieBanner() {
-  console.log("opencookiebanner function in footer active");
   cookieStore.showCookieBanner = true;
-  console.log(cookieStore.showCookieBanner);
 }
 </script>

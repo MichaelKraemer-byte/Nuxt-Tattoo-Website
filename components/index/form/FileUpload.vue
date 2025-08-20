@@ -79,7 +79,7 @@
       </p>
     </transition>
 
-    <p class="!text-xs text-gray-400">
+    <p class="!text-xs text-gray-400 my-1">
       Nur Bilder hochladen, deren Verarbeitung du zustimmst.
     </p>
   </div>

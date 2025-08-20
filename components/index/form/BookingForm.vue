@@ -9,7 +9,15 @@
         📜 Sende einen Raben 🐦‍⬛
       </h2>
 
-      <form @submit.prevent="submitForm" class="space-y-5">
+      <form
+        @submit.prevent="submitForm"
+        enctype="multipart/form-data"
+        class="space-y-5"
+        required
+      >
+        <!-- Botcheck -->
+        <input type="hidden" name="botcheck" v-model="botcheck" />
+
         <!-- Name -->
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
@@ -46,6 +54,18 @@
           />
         </div>
 
+        <!-- Telefonnummer -->
+        <div>
+          <label class="block mb-1">Telefonnummer</label>
+          <input
+            maxlength="30"
+            v-model="form.phone"
+            type="tel"
+            required
+            class="w-full bg-zinc-800 text-white border border-zinc-700 rounded-sm px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
+          />
+        </div>
+
         <!-- Volljährigkeit -->
         <div class="flex items-center space-x-2">
           <input
@@ -54,7 +74,7 @@
             v-model="form.isAdult"
             type="checkbox"
             required
-            class="w-5 h-5 text-orange-500 bg-zinc-800 border-zinc-600 rounded focus:ring-2 focus:ring-orange-500 focus:outline-none cursor-pointer"
+            class="w-5 h-5 bg-zinc-800 border-zinc-600 rounded cursor-pointer"
           />
           <label for="isAdult" class="text-white select-none cursor-pointer">
             Ich bin volljährig (18+)
@@ -89,31 +109,35 @@
           <textarea
             placeholder="Beschreibe dein Wunsch-Tattoo möglichst genau: Motiv, Größe, Stil (z. B. Realistic, Linework, Blackwork), Farben, Bedeutung, gesundheitliche Hinweise – alles, was für mich wichtig sein könnte. 🙏"
             maxlength="1000"
+            minlength="20"
             v-model="form.description"
             rows="4"
             class="w-full bg-zinc-800 text-white border border-zinc-700 rounded-sm px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500 custom-scrollbar"
           ></textarea>
         </div>
 
-        <!-- Datei-Upload -->
+        <!-- Datei-Upload
         <FileUpload
           :files="form.files"
           required
           ref="fileUploadRef"
           @update:files="(newFiles) => (form.files = newFiles)"
-        />
+        />  -->
 
         <!-- Datenschutzerklärung -->
-        <div class="flex items-center space-x-2">
+        <div class="flex items-start space-x-3">
           <input
             maxlength="50"
             id="privacyPolicy"
             v-model="form.privacyPolicy"
             type="checkbox"
             required
-            class="w-5 h-5 text-orange-500 bg-zinc-800 border-zinc-600 rounded focus:ring-2 focus:ring-orange-500 focus:outline-none cursor-pointer"
+            class="w-10 h-5 mt-1 bg-zinc-800 border-zinc-600 rounded cursor-pointer"
           />
-          <label for="privacyPolicy" class="text-white text-sm cursor-pointer">
+          <label
+            for="privacyPolicy"
+            class="text-white text-sm cursor-pointer leading-relaxed"
+          >
             Ich habe die
             <nuxt-link
               to="/shared/privacy-policy"
@@ -125,6 +149,13 @@
             Bearbeitung meiner Anfrage gespeichert und verarbeitet werden.
           </label>
         </div>
+
+        <p
+          v-if="validationError"
+          class="text-center text-sm text-red-400 bg-red-900 bg-opacity-30 border border-red-600 rounded-sm px-4 py-2 transition-opacity duration-300 ease-in-out"
+        >
+          {{ validationError }}
+        </p>
 
         <!-- Absenden -->
         <button
@@ -138,46 +169,48 @@
         >
           Anfrage senden
         </button>
+        <!-- Fortschrittsanzeige beim Senden -->
+        <div
+          v-if="isInSubmitProcess"
+          class="relative w-full h-2 bg-zinc-700 rounded overflow-hidden mb-4"
+        >
+          <div
+            class="absolute top-0 left-0 h-full bg-orange-500 animate-progress"
+            style="width: 100%"
+          ></div>
+        </div>
       </form>
-      <ConfirmationToast
-        v-if="showConfirmation"
-        @close="showConfirmation = false"
-      />
-    </div>
-    <!-- Fortschrittsanzeige beim Senden -->
-    <div
-      v-if="isInSubmitProcess"
-      class="relative w-full h-2 bg-zinc-700 rounded overflow-hidden mb-4"
-    >
-      <div
-        class="absolute top-0 left-0 h-full bg-orange-500 animate-progress"
-        style="width: 100%"
-      ></div>
     </div>
   </client-only>
+  <ConfirmationToast
+    v-if="showConfirmation"
+    @close="showConfirmation = false"
+  />
 </template>
 
 <script setup>
 import { ref, watch, onMounted } from "vue";
-import FileUpload from "./FileUpload.vue";
+// import FileUpload from "./FileUpload.vue";
 import FormDatepicker from "./FormDatepicker.vue";
 import Dropdown from "./Dropdown.vue";
 import ConfirmationToast from "~/components/ConfirmationToast.vue";
+
+const botcheck = ref("");
+const validationError = ref("");
 
 const showConfirmation = ref(false);
 
 // Funktion zum Umwandeln von Dateien in Base64
 const fileToBase64 = (file) => {
-  return new Promise((resolve, reject) => {
-    // Stelle sicher, dass es sich um ein gültiges File-Objekt handelt
-    if (file instanceof File) {
-      const reader = new FileReader();
-      reader.onloadend = () => resolve(reader.result);
-      reader.onerror = reject;
-      reader.readAsDataURL(file);
-    } else {
-      reject(new Error("Die übergebene Datei ist kein gültiges File-Objekt"));
+  return new Promise((resolve) => {
+    if (!(file instanceof File)) {
+      resolve(null); // Kein File → null zurückgeben
+      return;
     }
+    const reader = new FileReader();
+    reader.onloadend = () => resolve(reader.result);
+    reader.onerror = () => resolve(null); // Fehler → null zurückgeben
+    reader.readAsDataURL(file);
   });
 };
 
@@ -186,11 +219,12 @@ const form = ref({
   firstName: "",
   lastName: "",
   email: "",
+  phone: "",
   isAdult: false,
   spot: "",
   date: "",
   description: "",
-  files: [], // Die Dateien werden als Base64 gespeichert
+  files: [],
   privacyPolicy: false,
 });
 
@@ -202,6 +236,7 @@ onMounted(() => {
     form.value.firstName = localStorage.getItem("firstName") || "";
     form.value.lastName = localStorage.getItem("lastName") || "";
     form.value.email = localStorage.getItem("email") || "";
+    form.value.phone = localStorage.getItem("phone") || "";
     form.value.isAdult = JSON.parse(localStorage.getItem("isAdult")) || false;
     form.value.spot = localStorage.getItem("spot") || "";
     form.value.date = localStorage.getItem("date") || "";
@@ -249,6 +284,7 @@ watch(
       localStorage.setItem("firstName", newForm.firstName);
       localStorage.setItem("lastName", newForm.lastName);
       localStorage.setItem("email", newForm.email);
+      localStorage.setItem("phone", newForm.phone);
       localStorage.setItem("isAdult", JSON.stringify(newForm.isAdult));
       localStorage.setItem("spot", newForm.spot);
       localStorage.setItem("date", newForm.date);
@@ -278,41 +314,78 @@ watch(
   { deep: true } // Um auch tief verschachtelte Änderungen zu überwachen
 );
 
-const fileUploadRef = ref(null);
+// const fileUploadRef = ref(null);
 
 const submitForm = async () => {
-  if (!fileUploadRef.value.validateFiles()) return;
-  if (!form.value.isAdult || !form.value.privacyPolicy) return;
+  // Leere vorherige Fehler
+  validationError.value = "";
+
+  // if (!fileUploadRef.value.validateFiles()) return;
+  if (
+    !form.value.firstName ||
+    !form.value.lastName ||
+    !form.value.email ||
+    !form.value.phone ||
+    !form.value.isAdult ||
+    !form.value.privacyPolicy
+  ) {
+    validationError.value = "Bitte fülle alle Pflichtfelder korrekt aus.";
+    setTimeout(() => {
+      validationError.value = "";
+    }, 5000);
+    return;
+  }
   if (isInSubmitProcess.value) return;
 
   isInSubmitProcess.value = true;
 
   try {
-    const validFiles = form.value.files
-      .map((f) => f.file)
-      .filter((file) => file instanceof File);
+    // FormData erstellen
+    const formData = new FormData();
+    formData.append("access_key", "95ac643a-7c51-4ac0-b1dd-98b308af0290");
+    formData.append("name", `${form.value.firstName} ${form.value.lastName}`);
+    formData.append("email", form.value.email);
+    formData.append("phone", form.value.phone);
+    formData.append("subject", "Neue Buchungsanfrage");
+    formData.append(
+      "message",
+      `📥 Neue Anfrage\n
+        👤 Name: ${form.value.firstName} ${form.value.lastName}
+        📧 E-Mail: ${form.value.email}
+        📞 Telefon: ${form.value.phone}
+        🎯 Wunschstelle: ${form.value.spot}
+        📅 Wunschdatum: ${form.value.date}
+        ✅ Volljährig: ${form.value.isAdult ? "Ja" : "Nein"}
+        🔐 Datenschutz akzeptiert: ${form.value.privacyPolicy ? "Ja" : "Nein"}
 
-    if (validFiles.length !== form.value.files.length) {
-      alert("Einige Dateien waren ungültig und wurden übersprungen.");
-    }
+        📝 Beschreibung:
+        ${form.value.description}`
+    );
+    formData.append("botcheck", ""); // leer lassen
 
-    const base64Files = await Promise.all(validFiles.map(fileToBase64));
+    // Alle Dateien anhängen (echte File-Objekte)
+    // form.value.files
+    //   .filter((item) => item.file instanceof File)
+    //   .forEach((item, index) => {
+    //     formData.append("files[]", item.file, item.file.name);
+    //   });
 
-    const res = await $fetch("/api/send-email", {
+    const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
-      body: {
-        ...form.value,
-        files: base64Files,
-      },
+      body: formData, // ACHTUNG: Kein Content-Type-Header, der wird automatisch gesetzt
     });
 
-    if (res.success) {
+    const result = await response.json();
+
+    if (result.success) {
       showConfirmation.value = true;
 
-      // Formular zurücksetzen:
+      // Formular & Speicher zurücksetzen:
       form.value = {
         firstName: "",
         lastName: "",
+        email: "",
+        phone: "",
         isAdult: false,
         spot: "",
         date: "",
@@ -321,28 +394,18 @@ const submitForm = async () => {
         privacyPolicy: false,
       };
 
-      // Optional: auch FileUpload-Komponente resetten (falls nötig)
-      if (fileUploadRef.value?.reset) {
-        fileUploadRef.value.reset();
-      }
-
-      // Falls du localStorage nutzt, dann auch dort löschen:
-      localStorage.removeItem("firstName");
-      localStorage.removeItem("lastName");
-      localStorage.removeItem("email");
-      localStorage.removeItem("isAdult");
-      localStorage.removeItem("spot");
-      localStorage.removeItem("date");
-      localStorage.removeItem("description");
-      localStorage.removeItem("privacyPolicy");
-      localStorage.removeItem("files");
+      // fileUploadRef.value?.reset?.();
+      localStorage.clear();
+      validationError.value = "";
     } else {
-      alert("Fehler beim Senden der E-Mail: " + res.error);
+      validationError.value = "Fehler beim Senden: " + result.message;
     }
-  } catch (err) {
-    console.error("Sende-Fehler:", err);
-    alert("Es ist ein Fehler aufgetreten.");
+  } catch (error) {
+    console.error("Web3Forms Fehler:", error);
+    validationError.value =
+      "Technischer Fehler: " + (error.message || "Unbekannter Fehler");
   }
+
   isInSubmitProcess.value = false;
 };
 </script>

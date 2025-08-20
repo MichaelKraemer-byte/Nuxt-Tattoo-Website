@@ -7,7 +7,7 @@
           v-if="cookieStore.consentGiven && cookieStore.instagramIframeSrc"
           :src="cookieStore.instagramIframeSrc"
           allowtransparency="true"
-          class="w-full min-h-screen border-0 overflow-hidden shadow-lg rounded-lg"
+          class="w-full min-h-screen border-0 overflow-hidden shadow-lg rounded-lg fade-in"
         ></iframe>
 
         <div
@@ -40,6 +40,10 @@
 import { ref, onMounted } from "vue";
 import { useCookieStore } from "../stores/cookieStore";
 
+// Für Galerie-Seite
+import { useSeoGallery } from "../composables/useSeo";
+useSeoGallery();
+
 const cookieStore = useCookieStore();
 const isHydrated = ref(false); // Wird true, sobald wir im Browser sind
 
@@ -52,3 +56,22 @@ function openCookieBanner() {
   cookieStore.showCookieBanner = true;
 }
 </script>
+
+<style scoped>
+.fade-in {
+  opacity: 0;
+  animation: fade-in 1s ease forwards;
+}
+
+/* Animation */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>

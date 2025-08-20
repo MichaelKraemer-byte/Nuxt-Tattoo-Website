@@ -21,8 +21,7 @@
     <!-- Inhalt -->
     <div class="relative z-1 text-center max-w-xl px-6 sm:px-8 md:px-12">
       <!-- Logo -->
-      <NuxtImg
-        format="webp"
+      <img
         class="animate-fade-in mx-auto"
         src="/logo/mkc-tattooart.svg"
         alt="MKC Tattoo Art Logo"

@@ -11,11 +11,10 @@
           class="w-full lg:w-1/2 grid grid-cols-2 sm:grid-cols-3 gap-1"
         >
           <div class="col-span-2 sm:col-span-3 flex justify-center">
-            <NuxtImg
-              format="webp"
+            <img
               src="/img/tung-monster.png"
               alt="Tattoo Galerie"
-              class="w-full max-w-[420px] h-auto object-contain swinging transition-transform duration-500 ease-in-out hover:scale-125 hover:z-10 active:scale-125"
+              class="w-full max-w-[420px] h-auto object-contain swinging transition-transform duration-500 ease-in-out md:hover:scale-125 hover:z-10 lg:active:scale-125"
             />
           </div>
         </div>
@@ -27,8 +26,7 @@
           class="w-full lg:w-1/2 text-center lg:text-left lg:px-2 sm:px-4"
         >
           <div class="flex items-center w-full text-center flex-col">
-            <NuxtImg
-              format="webp"
+            <img
               src="/img/auge.png"
               class="w-12 md:w-32 h-auto mb-4 scale-x-[-1]"
             />
@@ -59,11 +57,10 @@
           class="w-full lg:w-1/2 grid grid-cols-2 sm:grid-cols-3 gap-1"
         >
           <div class="col-span-2 sm:col-span-3 flex justify-center">
-            <NuxtImg
-              format="webp"
+            <img
               src="/img/arms-of-soulway.PNG"
               alt="Tattoo Galerie"
-              class="w-auto max-h-[700px] object-contain swinging spin-slow transition-transform duration-500 ease-in-out hover:scale-150 hover:z-10 active:scale-150"
+              class="w-auto max-h-[700px] object-contain swinging spin-slow transition-transform duration-500 ease-in-out md:hover:scale-125 hover:z-10 md:active:scale-125"
             />
           </div>
         </div>
@@ -75,8 +72,7 @@
           class="w-full lg:w-1/2 flex flex-col justify-center text-center lg:text-left lg:px-2 sm:px-4"
         >
           <div class="flex items-center w-full text-center flex-col">
-            <NuxtImg
-              format="webp"
+            <img
               src="/img/auge.png"
               class="w-12 md:w-32 h-auto mb-4 scale-x-[-1]"
             />
@@ -109,11 +105,10 @@
           class="w-full lg:w-1/2 grid grid-cols-2 sm:grid-cols-3 gap-1"
         >
           <div class="col-span-2 sm:col-span-3 flex justify-center">
-            <NuxtImg
-              format="webp"
-              src="img/helping-plant.png"
+            <img
+              src="/img/helping-plant.png"
               alt="Tattoo Galerie"
-              class="w-full max-w-[320px] h-auto object-contain swinging-2 transition-transform duration-500 ease-in-out hover:scale-150 hover:z-10 active:scale-150"
+              class="w-full max-w-[320px] h-auto object-contain swinging-2 transition-transform duration-500 ease-in-out md:hover:scale-125 hover:z-10 md:active:scale-125"
             />
           </div>
         </div>
@@ -125,8 +120,7 @@
           class="w-full lg:w-1/2 text-center lg:text-left lg:px-2 sm:px-4"
         >
           <div class="flex items-center w-full text-center flex-col">
-            <NuxtImg
-              format="webp"
+            <img
               src="/img/auge.png"
               class="w-12 md:w-32 h-auto mb-4 scale-x-[-1]"
             />

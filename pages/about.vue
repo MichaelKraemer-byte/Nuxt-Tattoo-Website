@@ -6,8 +6,7 @@
         class="relative h-screen flex flex-col justify-center items-center text-center px-6"
         data-aos="fade-in"
       >
-        <NuxtImg
-          format="webp"
+        <img
           src="\img\me\finger-pistole-copy2.jpg"
           alt="Tattoo Artist bei der Arbeit"
           class="absolute inset-0 w-full h-full object-cover opacity-30"
@@ -36,7 +35,7 @@
     >
       <client-only>
         <!-- Swiper-Bildbereich -->
-        <div class="w-full lg:w-1/2" data-aos="fade-right">
+        <div class="w-full lg:w-1/2 overflow-hidden" data-aos="fade-right">
           <Swiper
             :modules="[Pagination, Navigation]"
             :pagination="{ clickable: true }"
@@ -44,9 +43,8 @@
             class="max-w-md mx-auto rounded-2xl overflow-hidden"
           >
             <SwiperSlide v-for="(image, index) in personalImages" :key="index">
-              <NuxtImg
+              <img
                 :src="image"
-                format="webp"
                 alt="Portrait des Künstlers"
                 class="rounded-2xl shadow-xl object-cover w-full h-auto"
               />
@@ -65,7 +63,6 @@
             class="flex flex-col items-center justify-center lg:justify-start w-full"
           >
             <img
-              format="webp"
               src="/img/auge.png"
               class="w-12 md:w-32 h-auto mb-4 sm:mb-5 sm:mr-6 scale-x-[-1]"
             />
@@ -104,7 +101,6 @@
           class="flex flex-col items-center justify-center text-center w-full mb-4"
         >
           <img
-            format="webp"
             src="/img/auge.png"
             class="w-12 md:w-32 h-auto mb-4 sm:mb-5 scale-x-[-1]"
           />
@@ -208,6 +204,7 @@
         >
           <!-- Swipe-Galerie kommt hier rein -->
           <Swiper
+            ref="swiperRef"
             :modules="[Pagination, Navigation]"
             :pagination="{ clickable: true }"
             :navigation="true"
@@ -215,54 +212,48 @@
           >
             <SwiperSlide>
               <div class="relative w-full aspect-[3/4]">
-                <NuxtImg
-                  format="webp"
-                  src="/img/freshTattoos/4.jpg"
+                <img
+                  src="/img/freshTattoos/4.webp"
                   class="rounded-xl object-cover w-full h-full absolute inset-0 transition-transform duration-700 ease-in-out hover:scale-105"
                 />
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div class="relative w-full aspect-[3/4]">
-                <NuxtImg
-                  format="webp"
-                  src="/img/freshTattoos/15.jpg"
+                <img
+                  src="/img/freshTattoos/15.webp"
                   class="rounded-xl object-cover w-full h-full absolute inset-0 transition-transform duration-700 ease-in-out hover:scale-105"
                 />
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div class="relative w-full aspect-[3/4]">
-                <NuxtImg
-                  format="webp"
-                  src="/img/freshTattoos/16.jpg"
+                <img
+                  src="/img/freshTattoos/16.webp"
                   class="rounded-xl object-cover w-full h-full absolute inset-0 transition-transform duration-700 ease-in-out hover:scale-105"
                 />
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div class="relative w-full aspect-[3/4]">
-                <NuxtImg
-                  format="webp"
-                  src="/img/freshTattoos/1.jpg"
+                <img
+                  src="/img/freshTattoos/1.webp"
                   class="rounded-xl object-cover w-full h-full absolute inset-0 transition-transform duration-700 ease-in-out hover:scale-105"
                 />
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div class="relative w-full aspect-[3/4]">
-                <NuxtImg
-                  format="webp"
-                  src="/img/freshTattoos/9.jpg"
+                <img
+                  src="/img/freshTattoos/9.webp"
                   class="rounded-xl object-cover w-full h-full absolute inset-0 transition-transform duration-700 ease-in-out hover:scale-105"
                 />
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div class="relative w-full aspect-[3/4]">
-                <NuxtImg
-                  format="webp"
-                  src="/img/freshTattoos/2.jpg"
+                <img
+                  src="/img/freshTattoos/2.webp"
                   class="rounded-xl object-cover w-full h-full absolute inset-0 transition-transform duration-700 ease-in-out hover:scale-105"
                 />
               </div>
@@ -275,7 +266,6 @@
         >
           <div class="flex flex-col items-center w-full">
             <img
-              format="webp"
               src="/img/auge.png"
               class="w-12 md:w-32 h-auto mb-4 sm:mb-5 scale-x-[-1]"
             />
@@ -306,7 +296,6 @@
           class="flex flex-col items-center text-center justify-center w-full"
         >
           <img
-            format="webp"
             src="/img/auge.png"
             class="w-12 lg:w-32 h-auto mb-4 sm:mb-5 scale-x-[-1]"
           />
@@ -326,7 +315,10 @@
 
     <client-only>
       <!-- SECTION: Testimonials -->
-      <section class="py-28 px-4 sm:px-8 lg:px-16" data-aos="zoom-in">
+      <section
+        class="py-28 px-4 sm:px-8 lg:px-16 overflow-hidden"
+        data-aos="zoom-in"
+      >
         <div
           class="flex flex-col items-center justify-center text-center w-full mb-8"
         >
@@ -335,6 +327,7 @@
             class="w-12 lg:w-32 h-auto mb-4 scale-x-[-1]"
           />
           <h2 class="text-3xl sm:text-4xl font-bold cinzel-500 mx-6">
+            - Healed -<br />
             Stimmen meiner Kunden
           </h2>
         </div>
@@ -345,25 +338,26 @@
         </p>
 
         <!-- Swiper -->
-        <!-- Swiper -->
-        <div class="w-full sm:px-6 lg:px-12">
+        <div class="w-full sm:px-6 lg:px-12 overflow-hidden">
           <Swiper
             :modules="[Pagination, Navigation]"
             :pagination="{ clickable: true }"
             :navigation="true"
-            :spaceBetween="32"
+            :spaceBetween="spaceBetween"
+            class="overflow-hidden"
           >
             <SwiperSlide
               v-for="testimonial in testimonials"
               :key="testimonial.name"
             >
-              <div class="w-full max-w-3xl mx-auto py-12 px-4 sm:px-8">
+              <div
+                class="w-full max-w-3xl mx-auto py-12 px-4 sm:px-8 box-border overflow-hidden"
+              >
                 <div
                   class="flex flex-col lg:flex-row items-center gap-6 bg-[#18181b] p-6 sm:p-8 rounded-3xl shadow-[0_0_25px_rgba(246,92,26,0.3)] transition-shadow duration-500 hover:shadow-[0_0_40px_rgba(246,92,26,0.5)]"
                 >
                   <!-- Tattoo Bild -->
-                  <NuxtImg
-                    format="webp"
+                  <img
                     :src="testimonial.image"
                     class="w-full lg:w-1/2 h-64 lg:h-[500px] object-cover rounded-xl"
                   />
@@ -392,8 +386,7 @@
 
                     <!-- Name + Avatar -->
                     <div class="mt-6 flex items-center gap-4">
-                      <NuxtImg
-                        format="webp"
+                      <img
                         :src="testimonial.avatar"
                         class="w-12 h-12 rounded-full object-cover border-2 border-[#f65c1a]"
                       />
@@ -413,7 +406,7 @@
     <client-only>
       <!-- SECTION: CTA -->
       <section
-        class="py-24 px-6 max-w-3xl w-full mx-auto text-center flex flex-col justify-center items-center"
+        class="pb-24 pt-12 px-6 max-w-3xl w-full mx-auto text-center flex flex-col justify-center items-center"
         data-aos="fade-up"
       >
         <div
@@ -453,8 +446,25 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
+const spaceBetween = ref(32); // Default Abstand
+const swiperRef = ref(null);
+
+// Für About-Seite
+import { useSeoAbout } from "../composables/useSeo";
+useSeoAbout();
+
 onMounted(() => {
   AOS.init({ duration: 800, once: true });
+  // wenn du einen Ref zum Swiper hast, z.B. mit ref="swiperRef" im Template:
+  swiperRef.value?.swiper.update(); // force update
+  swiperRef.value?.swiper.slideTo(0, 0); // setze initial auf Slide 0 ohne Animation
+  if (window.innerWidth < 640) {
+    // sm breakpoint Tailwind
+    spaceBetween.value = 16; // kleinerer Abstand auf mobil
+  }
+  setTimeout(() => {
+    swiperRef.value?.swiper.update();
+  }, 100);
 });
 
 const personalImages = ["/img/me/hunt-hocke.jpg", "/img/me/hunt-front.jpg"];
@@ -462,26 +472,32 @@ const personalImages = ["/img/me/hunt-hocke.jpg", "/img/me/hunt-front.jpg"];
 const testimonials = [
   {
     name: "Maik Griep",
-    text: "Das Tätowieren bei Mika war ruhig und klar. Ich mochte, wie achtsam er arbeitet. Man merkt, dass er sich viel mit Kunst beschäftigt und dass für ihn jedes Motiv zählt.",
+    text: "Mika ist entspannt, leidenschaftlich und präzise. Wenn ihn ein Motiv inspiriert, steht für ihn die Kunst im Vordergrund – nicht der finanzielle Aspekt.",
     image: "/img/healedTattoos/dryade.jpg",
     avatar: "/img/testimonials/maik-g.png",
   },
   {
     name: "Niklas Wasmuth",
-    text: "Ich habe mich bei Mika einfach wohlgefühlt. Kein Druck, keine Show – nur echtes Interesse und ruhige Konzentration. Das Ergebnis ist genau das, was ich wollte.",
+    text: "Ich feier Mikas Kunst total. Wie er sich mit allen Wesen und Formen immer so kreativ austoben kann ist etwas einzigartiges.",
     image: "/img/healedTattoos/fvahik.jpg",
     avatar: "/img/testimonials/niklas-w.png",
   },
-  {
-    name: "Wiebke Voss-Plassonke",
-    text: "Ich hab mir ein Unikat gewünscht, den Weg meiner Seele verewigt auf meinem rechten Arm. Michael hat dies perfekt umgesetzt. Ich bin sehr glücklich mit dem Ergebnis!",
-    image: "/img/healedTattoos/wiebke-schlaufe-2.jpg",
-    avatar: "/img/testimonials/wiebke-v.png",
-  },
+  // {
+  //   name: "Wiebke Voss-Plassonke",
+  //   text: "Ich hab mir ein Unikat gewünscht, den Weg meiner Seele verewigt auf meinem rechten Arm. Michael hat dies perfekt umgesetzt. Ich bin sehr glücklich mit dem Ergebnis!",
+  //   image: "/img/healedTattoos/wiebke-schlaufe-2.jpg",
+  //   avatar: "/img/testimonials/wiebke-v.png",
+  // },
 ];
 </script>
 
 <style scoped>
+body,
+html {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
 .swiper-container {
   width: 100%;
   max-width: 500px;

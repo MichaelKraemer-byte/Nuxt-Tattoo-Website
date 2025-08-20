@@ -2,12 +2,11 @@
   <section ref="galleryContainer" class="horizontal-gallery-wrapper py-20">
     <div ref="gallery" class="horizontal-gallery">
       <div v-for="i in 11" :key="i" class="image-wrapper gallery-image">
-        <NuxtImg
+        <img
           :src="`/img/freshTattoos/${i}.jpg`"
           loading="lazy"
           class="tattoo-img"
           :alt="`Tattoo ${i}`"
-          format="webp"
         />
       </div>
     </div>
