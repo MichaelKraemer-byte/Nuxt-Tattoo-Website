@@ -14,9 +14,9 @@ export default defineNuxtConfig({
     },
   },
   // Performance-Optimierungen
-  ssr: true, // ⇦ SSR aktiviert für bessere Performance
+  ssr: false, // ⇦ SSR deaktiviert für statisches Hosting
   nitro: {
-    preset: "node", // ⇦ Node.js preset für bessere Performance
+    preset: "static", // ⇦ Static preset für All-Inkl Hosting
     compressPublicAssets: true,
     minify: true,
   },
@@ -31,14 +31,12 @@ export default defineNuxtConfig({
         output: {
           manualChunks: {
             vendor: ["vue", "vue-router"],
-            ui: ["@nuxt/ui"],
           },
         },
-        external: ["lightningcss", "@tailwindcss/oxide"], // Exclude native modules
       },
     },
     optimizeDeps: {
-      include: ["vue", "vue-router", "@nuxt/ui"],
+      include: ["vue", "vue-router"],
     },
   },
   // i18n Konfiguration
@@ -58,7 +56,6 @@ export default defineNuxtConfig({
     "@nuxt/fonts",
     "@nuxt/icon",
     "@nuxt/scripts",
-    "@nuxt/ui",
     "@nuxtjs/tailwindcss",
     [
       "@nuxt/image",

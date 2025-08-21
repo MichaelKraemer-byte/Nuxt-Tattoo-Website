@@ -120,7 +120,7 @@
   <transition name="slide-fade">
     <div
       v-if="isMenuOpen"
-      class="fixed pr-15 p-10 top-10 right-0 bg-[#121212] rounded-sm h-auto transform z-100 shadow-md border border-[#FFFFFF80] border-solid"
+      class="fixed pr-15 p-10 top-10 right-0 bg-[#121212] rounded-sm h-auto transform z-[9999] shadow-md border border-[#FFFFFF80] border-solid"
     >
       <nav class="flex flex-col items-start space-y-4">
         <!-- Language Switcher for Mobile -->
