@@ -1,12 +1,12 @@
 <template>
   <div class="relative" ref="dropdownRef">
-    <label class="block mb-1">Wunschstelle</label>
+    <label class="block mb-1">{{ t.form.placement }}</label>
     <input
       maxlength="50"
       required
       v-model="query"
       type="text"
-      placeholder="z. B. linker Unterarm"
+      :placeholder="t.form.placeholder.placement"
       @input="filterSpots"
       @keydown.down.prevent="highlightNext"
       @keydown.up.prevent="highlightPrev"
@@ -22,7 +22,7 @@
       <div
         class="px-4 py-2 text-xs text-gray-400 border-b border-zinc-700 bg-zinc-800 sticky top-0 z-10"
       >
-        Du darfst auch etwas Eigenes eingeben – das sind nur Vorschläge 🤗.
+        {{ t.form.dropdownHint }}
       </div>
 
       <li
@@ -45,6 +45,9 @@
 <script setup>
 import { ref, watch, onMounted, onUnmounted } from "vue";
 import { spotSuggestions } from "~/utils/spotSuggestions.js";
+import { useI18n } from "~/composables/useI18n";
+
+const { t } = useI18n();
 
 // Referenz auf die gesamte Komponente
 const dropdownRef = ref(null);

@@ -13,17 +13,14 @@
         />
         <div class="relative z-10 max-w-3xl">
           <h1 class="text-5xl sm:text-6xl font-bold cinzel-700 mb-4 mx-2">
-            Kunst & Gegenwärtigkeit
+            {{ t.about.hero.title }}
           </h1>
           <h4 class="text-3xl cinzel-300 leading-relaxed">
-            – Ich bin Mika –<br />
-            Tätowierer, Geschichtenerzähler und kreativer Wanderer zwischen
-            Welten.
+            {{ t.about.hero.subtitle }}<br />
+            {{ t.about.hero.description }}
           </h4>
           <p class="mt-6 text-lg text-gray-300 poppins-200 hidden md:block">
-            Mit jedem Stich bringe ich Wesen, Symbole und Energien auf deine
-            Haut, die dich an deine Natur, deine Kraft und den gegenwärtigen
-            Moment erinnern.
+            {{ t.about.hero.longDescription }}
           </p>
         </div>
       </section>
@@ -67,28 +64,21 @@
               class="w-12 md:w-32 h-auto mb-4 sm:mb-5 sm:mr-6 scale-x-[-1]"
             />
             <h2 class="text-5xl sm:text-6xl font-bold cinzel-500 mb-4">
-              Wer ich bin
+              {{ t.about.personal.title }}
             </h2>
           </div>
           <p
             class="text-lg text-gray-300 poppins-300 leading-relaxed mb-12 text-center"
           >
-            Ich bin Wildnispädagoge, Zeichner, Stoiker – heute Tätowierer mit
-            Seele. Als Kind wollte ich Künstler sein, doch mein Weg führte erst
-            in die Wildnis und Psychologie. Meine Kunst ist Ausdruck, Geschichte
-            und Selbstermächtigung.
+            {{ t.about.personal.description }}
           </p>
           <h3 class="text-4xl font-bold mb-4 cinzel-500 text-center">
-            Warum ich tätowiere
+            {{ t.about.personal.whyTitle }}
           </h3>
           <p
             class="text-lg text-gray-300 poppins-300 leading-relaxed text-center"
           >
-            Ich liebe es, mit Menschen in die Tiefe zu gehen. Die Haut ist für
-            mich nicht nur Leinwand, sondern Schwelle – zwischen Innen und
-            Außen, Vergangenheit und Zukunft. Jedes Tattoo ist für mich ein
-            Dialog: Was möchtest du zeigen? Woran willst du dich anbinden? Ich
-            tätowiere nicht nur, ich begleite Wandlung.
+            {{ t.about.personal.whyDescription }}
           </p>
         </div>
       </client-only>
@@ -105,7 +95,7 @@
             class="w-12 md:w-32 h-auto mb-4 sm:mb-5 scale-x-[-1]"
           />
           <h2 class="text-5xl sm:text-6xl font-bold cinzel-500 mb-4 mx-6">
-            Mein Weg
+            {{ t.about.timeline.title }}
           </h2>
         </div>
         <ol class="relative border-l border-gray-700 max-w-2xl mx-auto">
@@ -113,12 +103,11 @@
             <span
               class="absolute w-4 h-4 bg-orange-600 rounded-full -left-2"
             ></span>
-            <h3 class="text-xl font-semibold">2018: Wildnispädagoge</h3>
+            <h3 class="text-xl font-semibold">
+              {{ t.about.timeline.items["2018"].title }}
+            </h3>
             <p class="text-gray-400">
-              Ich arbeitete mit Kindern und Jugendlichen, brachte ihnen die
-              Natur näher – mein erster bewusster Dienst an etwas Größerem. Doch
-              der Wunsch, spirituelle Kunst zu schaffen, begleitete mich leise
-              weiter.
+              {{ t.about.timeline.items["2018"].description }}
             </p>
           </li>
           <li class="mb-10 ml-6">
@@ -126,12 +115,10 @@
               class="absolute w-4 h-4 bg-orange-600 rounded-full -left-2"
             ></span>
             <h3 class="text-xl font-semibold">
-              2019: Tattoo-Ausbildung ausgeschlagen
+              {{ t.about.timeline.items["2019"].title }}
             </h3>
             <p class="text-gray-400">
-              Mein damaliger Nachbar in Hannover – ein erfahrener Tätowierer –
-              bot mir eine Ausbildung an. Doch ich lehnte ab. Mein Herz schlug
-              zu der Zeit noch für die pädagogische Arbeit in der Wildnis.
+              {{ t.about.timeline.items["2019"].description }}
             </p>
           </li>
           <li class="mb-10 ml-6">
@@ -139,26 +126,10 @@
               class="absolute w-4 h-4 bg-orange-600 rounded-full -left-2"
             ></span>
             <h3 class="text-xl font-semibold">
-              2020: Autodidaktischer Einstieg
+              {{ t.about.timeline.items["2020"].title }}
             </h3>
             <p class="text-gray-400">
-              Die Leidenschaft für Tätowierung ließ mich nicht los. Zwei Jahre
-              später griff ich selbst zur Tattoomaschine – ohne Ausbildung, aber
-              mit Hingabe. Ich lernte durch Erfahrung, Austausch und stetige
-              Praxis.
-            </p>
-          </li>
-          <li class="mb-10 ml-6">
-            <span
-              class="absolute w-4 h-4 bg-orange-600 rounded-full -left-2"
-            ></span>
-            <h3 class="text-xl font-semibold">2022–2024: Australien</h3>
-            <p class="text-gray-400">
-              Um künstlerisch frei zu sein, brauchte ich finanzielle
-              Unabhängigkeit. In Australien arbeitete ich alleine bis zur
-              Erschöpfung – über 16 Monate hinweg, 65 Stunden pro Woche – in
-              Küchen, auf Farmen, in riesigen Lagerhallen. Ziel: sparen, um
-              meine Vision leben zu können.
+              {{ t.about.timeline.items["2020"].description }}
             </p>
           </li>
           <li class="mb-10 ml-6">
@@ -166,13 +137,21 @@
               class="absolute w-4 h-4 bg-orange-600 rounded-full -left-2"
             ></span>
             <h3 class="text-xl font-semibold">
-              2024: Südostasien & Software-Entwicklung
+              {{ t.about.timeline.items["2022-2024"].title }}
             </h3>
             <p class="text-gray-400">
-              Nach dieser intensiven Zeit reiste ich durch Indonesien und
-              Vietnam. Ich lernte Motorradfahren, fand Freunde – und begann eine
-              Online-Ausbildung zum Software-Entwickler, um remote zu arbeiten
-              und meine Kunst ortsunabhängig leben zu können.
+              {{ t.about.timeline.items["2022-2024"].description }}
+            </p>
+          </li>
+          <li class="mb-10 ml-6">
+            <span
+              class="absolute w-4 h-4 bg-orange-600 rounded-full -left-2"
+            ></span>
+            <h3 class="text-xl font-semibold">
+              {{ t.about.timeline.items["2024"].title }}
+            </h3>
+            <p class="text-gray-400">
+              {{ t.about.timeline.items["2024"].description }}
             </p>
           </li>
           <li class="ml-6">
@@ -180,13 +159,10 @@
               class="absolute w-4 h-4 bg-orange-600 rounded-full -left-2"
             ></span>
             <h3 class="text-xl font-semibold">
-              2024 - 2025: Hunt Atelier Münster
+              {{ t.about.timeline.items["2024-2025"].title }}
             </h3>
             <p class="text-gray-400">
-              Zurück in Deutschland schloss ich meine Ausbildung ab und fand
-              einen Platz im Hunt Atelier – einem Studio, das meine Werte teilt.
-              Hier lebe ich, was ich bin: Künstler, Tätowierer, jemand, der
-              durch Ausdruck heilt und Geschichten auf Haut erzählt.
+              {{ t.about.timeline.items["2024-2025"].description }}
             </p>
           </li>
         </ol>
@@ -270,20 +246,13 @@
               class="w-12 md:w-32 h-auto mb-4 sm:mb-5 scale-x-[-1]"
             />
             <h2 class="text-4xl font-bold mb-4 cinzel-500 mx-6">
-              Stil & Inspiration
+              {{ t.about.style.title }}
             </h2>
           </div>
           <p
             class="text-lg text-gray-300 poppins-300 leading-relaxed text-center"
           >
-            Meine Motive sind Ausdruck innerer Welten – mystisch, organisch,
-            spirituell. Ich arbeite bevorzugt in Schwarz-Weiß, mit starkem
-            Kontrast, feinen Linien und symbolischer Tiefe. Dabei lasse ich mich
-            von Formen der Natur als auch Anatomie inspirieren und verwende
-            symbolisch das Auge als Kraftquelle der Gegenwärtigkeit. In einem
-            freien, intuitiven Prozess verbinde ich diese Elemente mit
-            formschaffenden Schattierungen, um Klarheit visuell
-            herauszuarbeiten.
+            {{ t.about.style.description }}
           </p>
         </div>
       </section>
@@ -299,16 +268,12 @@
             src="/img/auge.png"
             class="w-12 lg:w-32 h-auto mb-4 sm:mb-5 scale-x-[-1]"
           />
-          <h2 class="text-4xl font-bold mb-4 cinzel-500 mx-6">Das Auge</h2>
+          <h2 class="text-4xl font-bold mb-4 cinzel-500 mx-6">
+            {{ t.about.eye.title }}
+          </h2>
         </div>
         <p class="text-lg text-gray-300 poppins-300 max-w-3xl mx-auto">
-          In vielen meiner Tattoos taucht das Auge auf – ein Symbol der
-          Achtsamkeit. Es erinnert an den gegenwärtigen Moment, an das Jetzt –
-          jenen Raum, in dem alles eins ist: stetig, ewig, ungeteilt. In der
-          Präsenz liegt Kraft. Meine Kunst ist eine Einladung, sich zu erinnern
-          – immer dann, wenn dein Blick das Tattoo streift und dich aus dem Sog
-          der Gedanken zurück ins Sein holt. Ein stiller Ruf an das Bewusstsein:
-          Du bist hier. Du bist ganz.
+          {{ t.about.eye.description }}
         </p>
       </section>
     </client-only>
@@ -327,14 +292,14 @@
             class="w-12 lg:w-32 h-auto mb-4 scale-x-[-1]"
           />
           <h2 class="text-3xl sm:text-4xl font-bold cinzel-500 mx-6">
-            - Healed -<br />
-            Stimmen meiner Kunden
+            {{ t.about.testimonials.title }}<br />
+            {{ t.about.testimonials.subtitle }}
           </h2>
         </div>
 
         <!-- Hinweis -->
         <p class="text-sm text-center text-gray-500 italic">
-          *Die Tattoos sind 3–6 Monate abgeheilt & die Bilder sind unbearbeitet*
+          {{ t.about.testimonials.note }}
         </p>
 
         <!-- Swiper -->
@@ -417,19 +382,18 @@
             class="w-12 lg:w-32 h-auto mb-4 scale-x-[-1]"
           />
           <h2 class="text-4xl font-bold cinzel-500">
-            Lass uns gemeinsam echte Kunst erschaffen
+            {{ t.about.cta.title }}
           </h2>
         </div>
         <p class="text-lg poppins-300 mb-6">
-          Wenn du bereit bist für mehr als ein Motiv – sondern für ein Zeichen
-          auf deinem Weg – dann sende mir einen Raben.
+          {{ t.about.cta.description }}
         </p>
         <!-- "Book" Button -->
         <NuxtLink
           to="/#BookingForm"
           class="cinzel-500 btn btn-custom inline-block px-4 py-1.5 text-sm sm:text-lg sm:px-6 sm:py-2 font-medium bg-[#f65c1a] text-white hover:bg-orange-500 rounded-sm shadow-md transition-all transform hover:scale-105"
         >
-          Raben senden
+          {{ t.about.cta.button }}
         </NuxtLink>
       </section>
     </client-only>
@@ -445,7 +409,9 @@ import { Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import { useI18n } from "~/composables/useI18n";
 
+const { t } = useI18n();
 const spaceBetween = ref(32); // Default Abstand
 const swiperRef = ref(null);
 

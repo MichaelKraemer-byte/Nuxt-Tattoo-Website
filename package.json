@@ -4,10 +4,12 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
+    "build:analyze": "ANALYZE=true nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "lighthouse": "lighthouse http://localhost:3000 --output=html --output-path=./lighthouse-report.html"
   },
   "dependencies": {
     "@nuxt/eslint": "^1.2.0",
@@ -34,6 +36,7 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.16",
-    "sass-embedded": "^1.86.0"
+    "sass-embedded": "^1.86.0",
+    "lighthouse": "^11.6.0"
   }
 }

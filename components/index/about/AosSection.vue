@@ -33,14 +33,13 @@
             <h2
               class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight cinzel-600 mx-3 lg:mx-6"
             >
-              Fantasy, Mythology & Folklore
+              {{ t.aos.features.artistic.title }}
             </h2>
           </div>
           <p
             class="text-base sm:text-lg text-gray-300 leading-relaxed poppins-300 text-center"
           >
-            „Ich erschaffe Kreaturen und Wesen in allen Formen, Sagen und
-            Legenden, schreibe über sie Geschichten und erwecke sie zum Leben."
+            {{ t.aos.features.artistic.description }}
           </p>
         </div>
       </section>
@@ -79,22 +78,19 @@
             <h2
               class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight cinzel-600 mx-3 lg:mx-6"
             >
-              Mindfulness, Nature & Awakening
+              {{ t.aos.features.spiritual.title }}
             </h2>
           </div>
           <p
             class="text-base sm:text-lg text-gray-300 leading-relaxed poppins-300 text-center"
           >
-            „In ornamentaler Anordnung verbinde ich symbolisch Anatomie, Natur
-            und Spiritualität zu einem künstlerischen Ausdruck von Achtsamkeit
-            und Verbundenheit. Meine spirituellen Tattoos erinnern dich an die
-            Kraft des Augenblicks.“
+            {{ t.aos.features.spiritual.description }}
           </p>
         </div>
       </section>
     </ClientOnly>
 
-    <!-- Section 1 -->
+    <!-- Section 3 -->
     <ClientOnly>
       <section
         class="mx-auto max-w-screen-2xl px-4 sm:px-6 md:px-10 lg:px-16 xl:px-32 overflow-hidden lg:overflow-visible flex flex-col lg:flex-row items-center pt-24 sm:pt-36 pb-36 sm:pb-56 gap-12 sm:gap-16 lg:gap-24"
@@ -127,15 +123,13 @@
             <h2
               class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight cinzel-600 mx-3 lg:mx-6"
             >
-              As you wish
+              {{ t.aos.features.quality.title }}
             </h2>
           </div>
           <p
             class="text-base sm:text-lg text-gray-300 leading-relaxed poppins-300 text-center"
           >
-            „Sende mir einen Raben.<br />
-            So lasset uns ein Kunstwerk auf deiner Haut erschaffen, das deinen
-            Vorstellungen entspricht und welches meinen Zauber inne hält."
+            {{ t.aos.features.quality.description }}
           </p>
         </div>
       </section>
@@ -147,6 +141,9 @@
 import { onMounted } from "vue";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useI18n } from "~/composables/useI18n";
+
+const { t } = useI18n();
 
 onMounted(() => {
   AOS.init({

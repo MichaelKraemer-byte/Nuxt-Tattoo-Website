@@ -6,7 +6,7 @@
       data-aos="fade-in"
     >
       <h2 class="!text-xl lg:!text-3xl cinzel-500 text-center">
-        📜 Sende einen Raben 🐦‍⬛
+        {{ t.form.title }}
       </h2>
 
       <form
@@ -21,22 +21,24 @@
         <!-- Name -->
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label class="block mb-1">Vorname</label>
+            <label class="block mb-1">{{ t.form.name }}</label>
             <input
               maxlength="50"
               v-model="form.firstName"
               type="text"
               required
+              :placeholder="t.form.placeholder.name"
               class="w-full bg-zinc-800 text-white border border-zinc-700 rounded-sm px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
             />
           </div>
           <div>
-            <label class="block mb-1">Nachname</label>
+            <label class="block mb-1">{{ t.form.name }}</label>
             <input
               maxlength="50"
               v-model="form.lastName"
               type="text"
               required
+              :placeholder="t.form.placeholder.name"
               class="w-full bg-zinc-800 text-white border border-zinc-700 rounded-sm px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
             />
           </div>
@@ -44,24 +46,26 @@
 
         <!-- Email -->
         <div>
-          <label class="block mb-1">E-Mail</label>
+          <label class="block mb-1">{{ t.form.email }}</label>
           <input
             maxlength="50"
             v-model="form.email"
             type="email"
             required
+            :placeholder="t.form.placeholder.email"
             class="w-full bg-zinc-800 text-white border border-zinc-700 rounded-sm px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
           />
         </div>
 
         <!-- Telefonnummer -->
         <div>
-          <label class="block mb-1">Telefonnummer</label>
+          <label class="block mb-1">{{ t.form.phone }}</label>
           <input
             maxlength="30"
             v-model="form.phone"
             type="tel"
             required
+            :placeholder="t.form.placeholder.phone"
             class="w-full bg-zinc-800 text-white border border-zinc-700 rounded-sm px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
           />
         </div>
@@ -77,13 +81,13 @@
             class="w-5 h-5 bg-zinc-800 border-zinc-600 rounded cursor-pointer"
           />
           <label for="isAdult" class="text-white select-none cursor-pointer">
-            Ich bin volljährig (18+)
+            {{ t.form.required }} (18+)
           </label>
         </div>
 
         <!-- Wunschdatum -->
         <div>
-          <label class="block mb-1">Wunschdatum</label>
+          <label class="block mb-1">{{ t.form.date }}</label>
           <FormDatepicker v-model="form.date" :asap="form.asap" />
         </div>
 
@@ -93,21 +97,19 @@
         <!-- Beschreibung mit Tooltip -->
         <div class="relative">
           <label class="items-center gap-2 group cursor-pointer">
-            Beschreibung / Idee
+            {{ t.form.description }}
             <span class="text-orange-400">❔</span>
             <div class="relative mb-1">
               <div
                 class="pointer-events-none absolute top-full inset-x-0 mx-auto mt-1 w-full max-w-[90vw] sm:max-w-[20rem] text-sm bg-zinc-800 border border-orange-500 text-white p-3 rounded-sm shadow-lg opacity-0 group-hover:opacity-100 transition duration-200 z-10"
               >
-                Beschreibe bitte so genau wie möglich: Motiv, Größe, Stil
-                (Realistic, Linework, Blackwork etc.), Farben, Bedeutung,
-                Gesundheitliches – alles was wichtig sein könnte. 🙏
+                {{ t.form.placeholder.description }}
               </div>
             </div>
           </label>
 
           <textarea
-            placeholder="Beschreibe dein Wunsch-Tattoo möglichst genau: Motiv, Größe, Stil (z. B. Realistic, Linework, Blackwork), Farben, Bedeutung, gesundheitliche Hinweise – alles, was für mich wichtig sein könnte. 🙏"
+            :placeholder="t.form.placeholder.description"
             maxlength="1000"
             minlength="20"
             v-model="form.description"
@@ -138,15 +140,13 @@
             for="privacyPolicy"
             class="text-white text-sm cursor-pointer leading-relaxed"
           >
-            Ich habe die
+            {{ t.form.required }}:
             <nuxt-link
               to="/shared/privacy-policy"
               class="text-orange-500 hover:underline poppins-200 text-sm"
             >
-              Datenschutzerklärung
+              {{ t.navigation.privacyPolicy }}
             </nuxt-link>
-            gelesen und akzeptiere sie. Mir ist bekannt, dass meine Daten zur
-            Bearbeitung meiner Anfrage gespeichert und verarbeitet werden.
           </label>
         </div>
 
@@ -167,7 +167,7 @@
           }"
           :disabled="isInSubmitProcess"
         >
-          Anfrage senden
+          {{ t.form.submit }}
         </button>
         <!-- Fortschrittsanzeige beim Senden -->
         <div
@@ -194,7 +194,9 @@ import { ref, watch, onMounted } from "vue";
 import FormDatepicker from "./FormDatepicker.vue";
 import Dropdown from "./Dropdown.vue";
 import ConfirmationToast from "~/components/ConfirmationToast.vue";
+import { useI18n } from "~/composables/useI18n";
 
+const { t } = useI18n();
 const botcheck = ref("");
 const validationError = ref("");
 
@@ -329,7 +331,7 @@ const submitForm = async () => {
     !form.value.isAdult ||
     !form.value.privacyPolicy
   ) {
-    validationError.value = "Bitte fülle alle Pflichtfelder korrekt aus.";
+    validationError.value = t.form.error;
     setTimeout(() => {
       validationError.value = "";
     }, 5000);

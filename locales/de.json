@@ -1,0 +1,385 @@
+{
+  "navigation": {
+    "gallery": "Galerie",
+    "about": "Über mich",
+    "bookNow": "Jetzt buchen",
+    "privacyPolicy": "Datenschutz",
+    "imprint": "Impressum"
+  },
+  "hero": {
+    "videoNotSupported": "Dein Browser unterstützt kein Video.",
+    "bookButton": "Buchen"
+  },
+  "gallery": {
+    "instagramNotVisible": "📌 Instagram-Inhalte sind gerade nicht sichtbar.",
+    "acceptCookies": "Bitte akzeptiere die",
+    "cookiesInBanner": "Cookies im Banner",
+    "toShowFeed": "um den Feed anzuzeigen.",
+    "iframeLoaded": "Instagram iframe geladen"
+  },
+  "about": {
+    "title": "Über uns",
+    "description": "Willkommen bei MKC Tattoo Art",
+    "hero": {
+      "title": "Kunst & Gegenwärtigkeit",
+      "subtitle": "– Ich bin Mika –",
+      "description": "Tätowierer, Geschichtenerzähler und kreativer Wanderer zwischen Welten.",
+      "longDescription": "Mit jedem Stich bringe ich Wesen, Symbole und Energien auf deine Haut, die dich an deine Natur, deine Kraft und den gegenwärtigen Moment erinnern."
+    },
+    "personal": {
+      "title": "Wer ich bin",
+      "description": "Ich bin Wildnispädagoge, Zeichner, Stoiker – heute Tätowierer mit Seele. Als Kind wollte ich Künstler sein, doch mein Weg führte erst in die Wildnis und Psychologie. Meine Kunst ist Ausdruck, Geschichte und Selbstermächtigung.",
+      "whyTitle": "Warum ich tätowiere",
+      "whyDescription": "Ich liebe es, mit Menschen in die Tiefe zu gehen. Die Haut ist für mich nicht nur Leinwand, sondern Schwelle – zwischen Innen und Außen, Vergangenheit und Zukunft. Jedes Tattoo ist für mich ein Dialog: Was möchtest du zeigen? Woran willst du dich anbinden? Ich tätowiere nicht nur, ich begleite Wandlung."
+    },
+    "timeline": {
+      "title": "Mein Weg",
+      "items": {
+        "2018": {
+          "title": "2018: Wildnispädagoge",
+          "description": "Ich arbeitete mit Kindern und Jugendlichen, brachte ihnen die Natur näher – mein erster bewusster Dienst an etwas Größerem. Doch der Wunsch, spirituelle Kunst zu schaffen, begleitete mich leise weiter."
+        },
+        "2019": {
+          "title": "2019: Tattoo-Ausbildung ausgeschlagen",
+          "description": "Mein damaliger Nachbar in Hannover – ein erfahrener Tätowierer – bot mir eine Ausbildung an. Doch ich lehnte ab. Mein Herz schlug zu der Zeit noch für die pädagogische Arbeit in der Wildnis."
+        },
+        "2020": {
+          "title": "2020: Autodidaktischer Einstieg",
+          "description": "Die Leidenschaft für Tätowierung ließ mich nicht los. Zwei Jahre später griff ich selbst zur Tattoomaschine – ohne Ausbildung, aber mit Hingabe. Ich lernte durch Erfahrung, Austausch und stetige Praxis."
+        },
+        "2022-2024": {
+          "title": "2022–2024: Australien",
+          "description": "Um künstlerisch frei zu sein, brauchte ich finanzielle Unabhängigkeit. In Australien arbeitete ich alleine bis zur Erschöpfung – über 16 Monate hinweg, 65 Stunden pro Woche – in Küchen, auf Farmen, in riesigen Lagerhallen. Ziel: sparen, um meine Vision leben zu können."
+        },
+        "2024": {
+          "title": "2024: Südostasien & Software-Entwicklung",
+          "description": "Nach dieser intensiven Zeit reiste ich durch Indonesien und Vietnam. Ich lernte Motorradfahren, fand Freunde – und begann eine Online-Ausbildung zum Software-Entwickler, um remote zu arbeiten und meine Kunst ortsunabhängig leben zu können."
+        },
+        "2024-2025": {
+          "title": "2024 - 2025: Hunt Atelier Münster",
+          "description": "Zurück in Deutschland schloss ich meine Ausbildung ab und fand einen Platz im Hunt Atelier – einem Studio, das meine Werte teilt. Hier lebe ich, was ich bin: Künstler, Tätowierer, jemand, der durch Ausdruck heilt und Geschichten auf Haut erzählt."
+        }
+      }
+    },
+    "style": {
+      "title": "Stil & Inspiration",
+      "description": "Meine Motive sind Ausdruck innerer Welten – mystisch, organisch, spirituell. Ich arbeite bevorzugt in Schwarz-Weiß, mit starkem Kontrast, feinen Linien und symbolischer Tiefe. Dabei lasse ich mich von Formen der Natur als auch Anatomie inspirieren und verwende symbolisch das Auge als Kraftquelle der Gegenwärtigkeit. In einem freien, intuitiven Prozess verbinde ich diese Elemente mit formschaffenden Schattierungen, um Klarheit visuell herauszuarbeiten."
+    },
+    "eye": {
+      "title": "Das Auge",
+      "description": "In vielen meiner Tattoos taucht das Auge auf – ein Symbol der Achtsamkeit. Es erinnert an den gegenwärtigen Moment, an das Jetzt – jenen Raum, in dem alles eins ist: stetig, ewig, ungeteilt. In der Präsenz liegt Kraft. Meine Kunst ist eine Einladung, sich zu erinnern – immer dann, wenn dein Blick das Tattoo streift und dich aus dem Sog der Gedanken zurück ins Sein holt. Ein stiller Ruf an das Bewusstsein: Du bist hier. Du bist ganz."
+    },
+    "testimonials": {
+      "title": "- Healed -",
+      "subtitle": "Stimmen meiner Kunden",
+      "note": "*Die Tattoos sind 3–6 Monate abgeheilt & die Bilder sind unbearbeitet*"
+    },
+    "cta": {
+      "title": "Lass uns gemeinsam echte Kunst erschaffen",
+      "description": "Wenn du bereit bist für mehr als ein Motiv – sondern für ein Zeichen auf deinem Weg – dann sende mir einen Raben.",
+      "button": "Raben senden"
+    }
+  },
+  "aos": {
+    "title": "Willkommen bei MKC Tattoo Art",
+    "subtitle": "Wo Kunst auf Haut trifft",
+    "description": "In meinem Studio verbinde ich traditionelle Tattoo-Techniken mit moderner Kunst und spiritueller Tiefe. Jedes Tattoo ist ein einzigartiges Werk, das deine Geschichte erzählt und deine Seele widerspiegelt.",
+    "features": {
+      "artistic": {
+        "title": "Künstlerische Exzellenz",
+        "description": "Jedes Design wird individuell für dich erstellt und mit höchster Präzision ausgeführt."
+      },
+      "spiritual": {
+        "title": "Spirituelle Tiefe",
+        "description": "Meine Motive tragen symbolische Bedeutung und verbinden dich mit deiner inneren Kraft."
+      },
+      "quality": {
+        "title": "Höchste Qualität",
+        "description": "Verwendung der besten Materialien und sterile Arbeitsbedingungen für deine Sicherheit."
+      }
+    }
+  },
+  "form": {
+    "title": "Buchungsanfrage",
+    "subtitle": "Lass uns gemeinsam dein perfektes Tattoo erschaffen",
+    "description": "Fülle das Formular aus und ich melde mich innerhalb von 24 Stunden bei dir.",
+    "firstName": "Vorname",
+    "lastName": "Nachname",
+    "email": "E-Mail",
+    "phone": "Telefon",
+    "date": "Gewünschter Termin",
+    "description": "Beschreibung des Tattoos",
+    "size": "Größe",
+    "placement": "Platzierung",
+    "style": "Stil",
+    "budget": "Budget",
+    "submit": "Anfrage senden",
+    "success": "Ihre Anfrage wurde erfolgreich gesendet!",
+    "error": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.",
+    "required": "Pflichtfeld",
+    "optional": "Optional",
+    "placeholder": {
+      "name": "Dein vollständiger Name",
+      "email": "deine.email@beispiel.de",
+      "phone": "+49 123 456789",
+      "description": "Beschreibe dein gewünschtes Tattoo...",
+      "size": "z.B. 5x5cm, Handfläche groß, etc.",
+      "placement": "z.B. Unterarm, Schulter, Rücken...",
+      "style": "z.B. Minimalistisch, Realistisch, Tribal...",
+      "budget": "Dein Budget-Rahmen"
+    },
+    "dropdownHint": "Du darfst auch etwas Eigenes eingeben – das sind nur Vorschläge 🤗."
+  },
+  "imprint": {
+    "title": "Impressum",
+    "legalInfo": {
+      "title": "Angaben gemäß § 5 TMG",
+      "company": "MKC Art",
+      "name": "Mika Krämer",
+      "street": "Emdener Str. 11",
+      "city": "48155 Münster",
+      "country": "Deutschland"
+    },
+    "contact": {
+      "title": "Kontakt",
+      "phone": "Telefon",
+      "phoneNumber": "0157 / 34434856",
+      "email": "E-Mail",
+      "emailAddress": "mail@kraemer-michael.net"
+    },
+    "responsible": {
+      "title": "Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV",
+      "name": "Michael Krämer",
+      "street": "Emdener Str. 11",
+      "city": "48155 Münster"
+    },
+    "liability": {
+      "content": {
+        "title": "Haftung für Inhalte",
+        "description": "Die Inhalte meiner Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann ich jedoch keine Gewähr übernehmen."
+      },
+      "links": {
+        "title": "Haftung für Links",
+        "description": "Mein Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte ich keinen Einfluss habe. Deshalb kann ich für diese fremden Inhalte auch keine Gewähr übernehmen."
+      }
+    },
+    "copyright": {
+      "title": "Urheberrecht",
+      "description": "Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers."
+    }
+  },
+  "privacy": {
+    "title": "Datenschutzerklärung",
+    "sections": {
+      "overview": {
+        "title": "1. Datenschutz auf einen Blick",
+        "general": {
+          "title": "Allgemeine Hinweise",
+          "description": "Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können. Ausführliche Informationen zum Thema Datenschutz entnehmen Sie unserer unter diesem Text aufgeführten Datenschutzerklärung."
+        },
+        "dataCollection": {
+          "title": "Datenerfassung auf dieser Website",
+          "responsible": {
+            "title": "Wer ist verantwortlich für die Datenerfassung auf dieser Website?",
+            "description": "Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten können Sie dem Abschnitt „Hinweis zur Verantwortlichen Stelle\" in dieser Datenschutzerklärung entnehmen."
+          },
+          "how": {
+            "title": "Wie erfassen wir Ihre Daten?",
+            "description": "Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich z. B. um Daten handeln, die Sie in ein Kontaktformular eingeben. Andere Daten werden automatisch oder nach Ihrer Einwilligung beim Besuch der Website durch unsere IT-Systeme erfasst. Das sind vor allem technische Daten (z. B. Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs). Die Erfassung dieser Daten erfolgt automatisch, sobald Sie diese Website betreten."
+          },
+          "purpose": {
+            "title": "Wofür nutzen wir Ihre Daten?",
+            "description": "Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu gewährleisten. Andere Daten können zur Analyse Ihres Nutzerverhaltens verwendet werden. Sofern über die Website Verträge geschlossen oder angebahnt werden können, werden die übermittelten Daten auch für Vertragsangebote, Bestellungen oder sonstige Auftragsanfragen verarbeitet."
+          },
+          "rights": {
+            "title": "Welche Rechte haben Sie bezüglich Ihrer Daten?",
+            "description": "Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung oder Löschung dieser Daten zu verlangen. Wenn Sie eine Einwilligung zur Datenverarbeitung erteilt haben, können Sie diese Einwilligung jederzeit für die Zukunft widerrufen. Außerdem haben Sie das Recht, unter bestimmten Umständen die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen. Des Weiteren steht Ihnen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu.",
+            "contact": "Hierzu sowie zu weiteren Fragen zum Thema Datenschutz können Sie sich jederzeit an uns wenden."
+          }
+        },
+        "analytics": {
+          "title": "Analyse-Tools und Tools von Drittanbietern",
+          "description": "Beim Besuch dieser Website kann Ihr Surf-Verhalten statistisch ausgewertet werden. Das geschieht vor allem mit sogenannten Analyseprogrammen.",
+          "details": "Detaillierte Informationen zu diesen Analyseprogrammen finden Sie in der folgenden Datenschutzerklärung."
+        },
+        "contactForm": {
+          "title": "Kontaktformular und E-Mail-Kontakt",
+          "description": "Wenn Sie uns per Kontaktformular Anfragen zukommen lassen oder uns per E-Mail kontaktieren, werden Ihre Angaben aus dem Anfrageformular oder Ihrer E-Mail inklusive der daraus hervorgehenden personenbezogenen Daten (z.B. Name, E-Mail-Adresse, Telefonnummer, Geburtsdatum, Motivwünsche, Bildmaterial) bei uns gespeichert und verarbeitet, um Ihre Anfrage zu bearbeiten.",
+          "noSharing": "Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.",
+          "legalBasis": "Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist (z.B. Terminvereinbarung, Beratung, Tattoo-Kalkulation). In allen anderen Fällen beruht die Verarbeitung auf Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) und/oder auf unserem berechtigten Interesse an der effektiven Bearbeitung der an uns gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO).",
+          "retention": "Die von Ihnen an uns übersandten Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck für die Datenspeicherung entfällt (z.B. nach abgeschlossener Bearbeitung Ihrer Anfrage). Zwingende gesetzliche Bestimmungen – insbesondere Aufbewahrungsfristen – bleiben unberührt."
+        },
+        "web3forms": {
+          "title": "Verwendung von Web3Forms",
+          "description": "Für den Versand unseres Kontaktformulars nutzen wir den Dienst \"Web3Forms\" (HarbourFront Technologies Ltd., 3rd Floor, 86-90 Paul Street, London EC2A 4NE, United Kingdom). Die von Ihnen eingegebenen Daten werden über Web3Forms-Server per E-Mail an uns weitergeleitet.",
+          "processing": "Web3Forms verarbeitet die Formulardaten ausschließlich zum Zweck der technischen Bereitstellung und Weiterleitung. Eine Speicherung auf Web3Forms-Servern erfolgt nur kurzzeitig und automatisch zum Zweck der Zustellung und Protokollierung.",
+          "legalBasis": "Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags oder vorvertraglicher Maßnahmen zusammenhängt, sowie auf Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer funktionalen und sicheren Formularbereitstellung).",
+          "moreInfo": "Weitere Informationen finden Sie in der Datenschutzerklärung von Web3Forms:",
+          "privacyLink": "https://web3forms.com/privacy"
+        }
+      },
+      "hosting": {
+        "title": "2. Hosting und Server",
+        "description": "Diese Website wird bei All-Inkl gehostet. Hier erfahren Sie, was das für Ihre Daten bedeutet.",
+        "allInkl": {
+          "title": "All-Inkl Hosting",
+          "description": "Unser Hoster All-Inkl (All-Inkl.com Neue Medien Münnich, Hauptstraße 68, 02742 Friedersdorf) verarbeitet Daten im Auftrag des Websitebetreibers. Weitere Informationen finden Sie in der",
+          "link": "Datenschutzerklärung von All-Inkl",
+          "legalBasis": "Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer sicheren und effizienten Website-Bereitstellung).",
+          "processing": {
+            "title": "Was verarbeitet All-Inkl?",
+            "description": "All-Inkl verarbeitet technische Daten wie IP-Adressen, Zugriffszeiten, übertragene Datenmengen und Browser-Informationen. Diese Daten werden für die technische Bereitstellung der Website benötigt."
+          }
+        }
+      },
+      "general": {
+        "title": "3. Allgemeine Datenschutzbestimmungen",
+        "privacy": {
+          "title": "Datenschutz",
+          "description": "Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Diese Datenschutzerklärung informiert Sie über Art, Umfang und Zweck der Verarbeitung personenbezogener Daten auf dieser Website.",
+          "dataCollection": "Personenbezogene Daten werden nur im notwendigen Umfang und nur für die Zwecke erhoben, für die sie erhoben wurden.",
+          "security": "Wir setzen technische und organisatorische Sicherheitsmaßnahmen ein, um Ihre Daten gegen Manipulation, Verlust, Zerstörung oder gegen den Zugriff unberechtigter Personen zu schützen."
+        },
+        "responsible": {
+          "title": "Verantwortliche Stelle",
+          "description": "Verantwortlich für die Datenverarbeitung auf dieser Website ist:",
+          "address": "Mika Krämer, Emdener Str. 11, 48155 Münster, Deutschland",
+          "contact": "E-Mail: mail@kraemer-michael.net, Telefon: 0157 / 34434856",
+          "definition": "Die verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten entscheidet."
+        },
+        "retention": {
+          "title": "Speicherdauer",
+          "description": "Ihre Daten werden nur so lange gespeichert, wie es für die Erfüllung der genannten Zwecke erforderlich ist oder gesetzliche Aufbewahrungsfristen dies vorschreiben."
+        },
+        "legalBasis": {
+          "title": "Rechtsgrundlagen der Datenverarbeitung",
+          "description": "Die Verarbeitung Ihrer Daten erfolgt auf Grundlage der DSGVO. Die konkreten Rechtsgrundlagen finden Sie bei den jeweiligen Verarbeitungsvorgängen."
+        },
+        "recipients": {
+          "title": "Empfänger Ihrer Daten",
+          "description": "Ihre Daten werden nur an diejenigen weitergegeben, die sie zur Erfüllung der genannten Zwecke benötigen. Eine Weitergabe an Dritte erfolgt nur, wenn Sie eingewilligt haben oder dies gesetzlich vorgeschrieben ist."
+        },
+        "withdrawal": {
+          "title": "Widerruf Ihrer Einwilligung",
+          "description": "Sie können Ihre Einwilligung zur Datenverarbeitung jederzeit widerrufen. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Datenverarbeitung bleibt davon unberührt."
+        },
+        "objection": {
+          "title": "Widerspruchsrecht",
+          "description": "Sie haben das Recht, der Verarbeitung Ihrer Daten zu widersprechen, wenn diese auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO erfolgt.",
+          "directMarketing": "Sie haben das Recht, der Verarbeitung Ihrer Daten für Zwecke der Direktwerbung zu widersprechen."
+        },
+        "complaint": {
+          "title": "Beschwerderecht",
+          "description": "Sie haben das Recht, sich bei der zuständigen Aufsichtsbehörde zu beschweren, wenn Sie der Ansicht sind, dass die Verarbeitung Ihrer Daten gegen die DSGVO verstößt."
+        },
+        "dataPortability": {
+          "title": "Datenübertragbarkeit",
+          "description": "Sie haben das Recht, Ihre Daten in einem strukturierten, gängigen und maschinenlesbaren Format zu erhalten und diese an einen anderen Verantwortlichen zu übermitteln."
+        },
+        "access": {
+          "title": "Auskunftsrecht",
+          "description": "Sie haben das Recht, unentgeltlich Auskunft über Ihre gespeicherten personenbezogenen Daten zu erhalten."
+        },
+        "restriction": {
+          "title": "Einschränkung der Verarbeitung",
+          "description": "Sie haben das Recht, die Einschränkung der Verarbeitung Ihrer Daten zu verlangen, wenn eine der folgenden Voraussetzungen vorliegt:",
+          "cases": {
+            "accuracy": "Die Richtigkeit der personenbezogenen Daten wird von Ihnen bestritten",
+            "unlawful": "Die Verarbeitung ist unrechtmäßig",
+            "noLongerNeeded": "Die personenbezogenen Daten werden für die Zwecke der Verarbeitung nicht mehr benötigt",
+            "objection": "Sie haben Widerspruch gegen die Verarbeitung eingelegt"
+          },
+          "processing": "Die Einschränkung bleibt so lange bestehen, bis die Gründe für die Einschränkung weggefallen sind."
+        },
+        "ssl": {
+          "title": "SSL- bzw. TLS-Verschlüsselung",
+          "description": "Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte eine SSL-bzw. TLS-Verschlüsselung.",
+          "encryption": "Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von \"http://\" auf \"https://\" wechselt und an dem Schloss-Symbol in Ihrer Browserzeile."
+        }
+      },
+      "dataCollection": {
+        "title": "4. Datenerfassung auf dieser Website",
+        "cookies": {
+          "title": "Cookies",
+          "description": "Diese Website verwendet Cookies. Cookies sind kleine Textdateien, die auf Ihrem Endgerät gespeichert werden.",
+          "types": "Wir verwenden verschiedene Arten von Cookies: technische Cookies für die Funktionalität der Website und Analyse-Cookies für die Verbesserung der Nutzererfahrung.",
+          "functions": "Cookies haben verschiedene Funktionen: Sie können die Website funktionsfähig machen, die Sicherheit erhöhen oder die Nutzerfreundlichkeit verbessern.",
+          "legalBasis": "Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer funktionalen Website).",
+          "settings": "Sie können Cookies in Ihren Browsereinstellungen jederzeit löschen oder die Verwendung von Cookies einschränken.",
+          "which": "Welche Cookies gesetzt werden, können Sie in Ihren Browsereinstellungen einsehen."
+        },
+        "contactForm": {
+          "title": "Kontaktformular",
+          "description": "Wenn Sie uns über das Kontaktformular eine Nachricht senden, werden die von Ihnen eingegebenen Daten zur Bearbeitung Ihrer Anfrage gespeichert.",
+          "legalBasis": "Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung oder vorvertragliche Maßnahmen).",
+          "retention": "Ihre Daten werden gelöscht, sobald Ihre Anfrage bearbeitet wurde und keine gesetzlichen Aufbewahrungsfristen entgegenstehen."
+        },
+        "email": {
+          "title": "E-Mail-Kontakt",
+          "description": "Wenn Sie uns per E-Mail kontaktieren, werden Ihre E-Mail-Adresse und der Inhalt Ihrer Nachricht zur Bearbeitung Ihrer Anfrage gespeichert.",
+          "legalBasis": "Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung oder vorvertragliche Maßnahmen).",
+          "retention": "Ihre Daten werden gelöscht, sobald Ihre Anfrage bearbeitet wurde und keine gesetzlichen Aufbewahrungsfristen entgegenstehen."
+        }
+      },
+      "socialMedia": {
+        "title": "5. Social Media und externe Dienste",
+        "instagram": {
+          "title": "Instagram",
+          "description": "Diese Website verwendet Instagram-Feeds zur Anzeige von Inhalten aus sozialen Medien.",
+          "connection": "Beim Besuch der Seite wird eine Verbindung zu Instagram-Servern hergestellt.",
+          "linking": "Instagram kann dadurch Informationen über Ihren Besuch auf dieser Website sammeln.",
+          "legalBasis": "Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Bereitstellung von Social Media-Inhalten).",
+          "jointResponsibility": "Wir haben mit Instagram eine Vereinbarung über gemeinsame Verantwortlichkeit getroffen.",
+          "dataTransfer": "Daten können in die USA übertragen werden, wo Instagram seinen Sitz hat.",
+          "moreInfo": "Weitere Informationen finden Sie in der",
+          "policyLink": "Datenschutzerklärung von Instagram",
+          "source": "Quelle:",
+          "sourceLink": "e-recht24.de"
+        },
+        "instagramPlugin": {
+          "title": "Instagram-Plugin",
+          "description": "Das Instagram-Plugin ermöglicht es, Instagram-Inhalte direkt auf der Website anzuzeigen.",
+          "linking": "Durch die Einbettung werden Daten an Instagram übertragen.",
+          "legalBasis": "Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Bereitstellung von Social Media-Inhalten).",
+          "jointResponsibility": "Wir haben mit Instagram eine Vereinbarung über gemeinsame Verantwortlichkeit getroffen."
+        },
+        "whatsapp": {
+          "title": "WhatsApp-Kontakt",
+          "description": "Wir bieten die Möglichkeit, uns über WhatsApp zu kontaktieren.",
+          "usage": "Bei der Nutzung von WhatsApp werden Daten an WhatsApp übertragen.",
+          "legalBasis": "Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung oder vorvertragliche Maßnahmen).",
+          "dataProcessing": "WhatsApp verarbeitet Daten gemäß seiner eigenen Datenschutzerklärung.",
+          "note": {
+            "title": "Wichtiger Hinweis",
+            "description": "WhatsApp ist ein Dienst von Meta Platforms Inc. und unterliegt der US-amerikanischen Gesetzgebung."
+          }
+        },
+        "consent": {
+          "title": "Einwilligungsverwaltung",
+          "description": "Für die Verwendung von Cookies und externen Diensten holen wir Ihre Einwilligung ein.",
+          "legalBasis": "Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO (Einwilligung)."
+        }
+      }
+    }
+  },
+  "footer": {
+    "copyright": "© 2024 MKC Tattoo Art. Alle Rechte vorbehalten.",
+    "contact": "Kontakt",
+    "address": "Adresse"
+  },
+  "cookieBanner": {
+    "title": "Cookie-Einstellungen",
+    "description": "Wir verwenden Cookies, um Ihre Erfahrung auf unserer Website zu verbessern.",
+    "accept": "Alle akzeptieren",
+    "decline": "Ablehnen",
+    "settings": "Einstellungen"
+  },
+  "common": {
+    "loading": "Laden...",
+    "error": "Fehler",
+    "success": "Erfolgreich",
+    "close": "Schließen",
+    "save": "Speichern",
+    "cancel": "Abbrechen"
+  }
+}

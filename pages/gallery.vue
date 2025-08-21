@@ -4,10 +4,16 @@
     <div v-if="isHydrated" id="instagram-container">
       <div class="mx-auto max-w-5xl w-full">
         <iframe
-          v-if="cookieStore.consentGiven && cookieStore.instagramIframeSrc"
+          v-if="
+            cookieStore.consentGiven &&
+            cookieStore.instagramIframeSrc &&
+            shouldLoadIframe
+          "
           :src="cookieStore.instagramIframeSrc"
           allowtransparency="true"
+          loading="lazy"
           class="w-full min-h-screen border-0 overflow-hidden shadow-lg rounded-lg fade-in"
+          @load="onIframeLoaded"
         ></iframe>
 
         <div
@@ -18,16 +24,16 @@
             class="max-w-xl w-full border border-dashed border-gray-400 shadow-md rounded-lg p-6 text-center text-gray-700"
           >
             <p class="text-lg font-medium cinzel-300">
-              📌 Instagram-Inhalte sind gerade nicht sichtbar.<br />
-              Bitte akzeptiere die
+              {{ t.gallery.instagramNotVisible }}<br />
+              {{ t.gallery.acceptCookies }}
               <button
                 class="text-orange-400 hover:text-orange-300 transition-colors mx-1 cursor-pointer"
                 @click="openCookieBanner()"
               >
-                Cookies im Banner
+                {{ t.gallery.cookiesInBanner }}
                 <span class="text-white">,</span>
               </button>
-              um den Feed anzuzeigen.
+              {{ t.gallery.toShowFeed }}
             </p>
           </div>
         </div>
@@ -37,23 +43,37 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, nextTick } from "vue";
 import { useCookieStore } from "../stores/cookieStore";
+import { useI18n } from "~/composables/useI18n";
 
 // Für Galerie-Seite
 import { useSeoGallery } from "../composables/useSeo";
 useSeoGallery();
 
 const cookieStore = useCookieStore();
-const isHydrated = ref(false); // Wird true, sobald wir im Browser sind
+const { t } = useI18n();
+const isHydrated = ref(false);
+const shouldLoadIframe = ref(false);
 
-onMounted(() => {
+onMounted(async () => {
   cookieStore.initializeConsentStatus();
   isHydrated.value = true;
+
+  // Verzögertes Laden des iframes für bessere Performance
+  await nextTick();
+  setTimeout(() => {
+    shouldLoadIframe.value = true;
+  }, 100);
 });
 
 function openCookieBanner() {
   cookieStore.showCookieBanner = true;
+}
+
+function onIframeLoaded() {
+  // iframe erfolgreich geladen
+  console.log(t.gallery.iframeLoaded);
 }
 </script>
 

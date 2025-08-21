@@ -1,70 +1,71 @@
 <template>
   <div class="max-w-3xl mx-auto px-6 py-12 text-center py-40">
-    <h1 class="text-3xl poppins-600 mb-8 text-white cinzel-500">Impressum</h1>
+    <h1 class="text-3xl poppins-600 mb-8 text-white cinzel-500">
+      {{ t.imprint.title }}
+    </h1>
 
     <div
       class="text-left space-y-6 text-sm leading-relaxed text-gray-800 dark:text-gray-200"
     >
       <div>
-        <p class="poppins-600 text-xl">Angaben gemäß § 5 TMG</p>
+        <p class="poppins-600 text-xl">{{ t.imprint.legalInfo.title }}</p>
         <p class="poppins-200">
-          MKC Art<br />
-          Mika Krämer<br />
-          Emdener Str. 11<br />
-          48155 Münster<br />
-          Deutschland
+          {{ t.imprint.legalInfo.company }}<br />
+          {{ t.imprint.legalInfo.name }}<br />
+          {{ t.imprint.legalInfo.street }}<br />
+          {{ t.imprint.legalInfo.city }}<br />
+          {{ t.imprint.legalInfo.country }}
         </p>
       </div>
 
       <div>
-        <p class="poppins-600">Kontakt</p>
+        <p class="poppins-600">{{ t.imprint.contact.title }}</p>
         <p class="poppins-200">
-          Telefon: 0157 / 34434856<br />
-          E-Mail: mail@kraemer-michael.net
+          {{ t.imprint.contact.phone }}: {{ t.imprint.contact.phoneNumber
+          }}<br />
+          {{ t.imprint.contact.email }}: {{ t.imprint.contact.emailAddress }}
         </p>
       </div>
 
       <div>
         <p class="poppins-600 text-xl">
-          Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV
+          {{ t.imprint.responsible.title }}
         </p>
         <p class="poppins-200">
-          Michael Krämer<br />
-          Emdener Str. 11<br />
-          48155 Münster
-        </p>
-      </div>
-
-      <div>
-        <p class="poppins-600 text-xl">Haftung für Inhalte</p>
-        <p class="poppins-200">
-          Die Inhalte meiner Seiten wurden mit größter Sorgfalt erstellt. Für
-          die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann ich
-          jedoch keine Gewähr übernehmen.
+          {{ t.imprint.responsible.name }}<br />
+          {{ t.imprint.responsible.street }}<br />
+          {{ t.imprint.responsible.city }}
         </p>
       </div>
 
       <div>
-        <p class="poppins-600 text-xl">Haftung für Links</p>
+        <p class="poppins-600 text-xl">
+          {{ t.imprint.liability.content.title }}
+        </p>
         <p class="poppins-200">
-          Mein Angebot enthält Links zu externen Websites Dritter, auf deren
-          Inhalte ich keinen Einfluss habe. Deshalb kann ich für diese fremden
-          Inhalte auch keine Gewähr übernehmen.
+          {{ t.imprint.liability.content.description }}
         </p>
       </div>
 
       <div>
-        <p class="poppins-600 text-xl">Urheberrecht</p>
+        <p class="poppins-600 text-xl">{{ t.imprint.liability.links.title }}</p>
         <p class="poppins-200">
-          Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen
-          Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung,
-          Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der
-          Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des
-          jeweiligen Autors bzw. Erstellers.
+          {{ t.imprint.liability.links.description }}
+        </p>
+      </div>
+
+      <div>
+        <p class="poppins-600 text-xl">{{ t.imprint.copyright.title }}</p>
+        <p class="poppins-200">
+          {{ t.imprint.copyright.description }}
         </p>
       </div>
     </div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { useI18n } from "~/composables/useI18n";
+
+const { t } = useI18n();
+</script>

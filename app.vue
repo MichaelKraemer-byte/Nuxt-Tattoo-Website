@@ -1,13 +1,12 @@
 <template>
   <div>
     <NuxtRouteAnnouncer />
-    <Header></Header>
-    <Cursor></Cursor>
+    <Header />
+    <Cursor />
     <NuxtPage />
     <FloatingContact />
-
-    <CookieBanner></CookieBanner>
-    <Footer></Footer>
+    <CookieBanner />
+    <Footer />
   </div>
 </template>
 
@@ -18,13 +17,16 @@ import Header from "./components/shared/Header.vue";
 import Footer from "./components/shared/Footer.vue";
 import CookieBanner from "./components/CookieBanner.vue";
 import FloatingContact from "@/components/FloatingContact.vue";
-import { useCookieStore } from "./stores/cookieStore"; // Pinia Store importieren
+import { useCookieStore } from "./stores/cookieStore";
 import Cursor from "./components/Cursor.vue";
-
 
 // Store verwenden und initialisieren
 const cookieStore = useCookieStore();
-cookieStore.initializeConsentStatus();
+
+// Lazy initialization für bessere Performance
+onMounted(() => {
+  cookieStore.initializeConsentStatus();
+});
 </script>
 
 <style>
@@ -44,5 +46,15 @@ cookieStore.initializeConsentStatus();
   width: 100%;
   height: 100%;
   display: none;
+}
+
+/* Performance-Optimierungen für CSS */
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 </style>

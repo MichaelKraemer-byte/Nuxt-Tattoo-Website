@@ -15,16 +15,14 @@
     >
       <div class="max-w-3xl mx-auto text-center">
         <p class="text-lg mb-4 cinzel-300">
-          Um dir ein optimales Erlebnis zu bieten, verwenden wir Cookies – unter
-          anderem für unseren eingebetteten Instagram-Feed. Mehr Infos findest
-          du in unserer
+          {{ t.cookieBanner.description }}
           <NuxtLink
             to="/shared/privacy-policy"
             class="text-orange-400 hover:text-orange-300 transition-colors mx-1 cinzel-300"
           >
-            Datenschutzerklärung
+            {{ t.navigation.privacyPolicy }}
           </NuxtLink>
-          . Bitte stimme zu, um fortzufahren.
+          .
         </p>
 
         <div class="flex justify-center gap-4">
@@ -32,13 +30,13 @@
             @click="cookieStore.acceptCookies"
             class="cinzel-500 px-6 py-2 bg-orange-600 text-white rounded-md hover:bg-orange-700 transition-colors cursor-pointer"
           >
-            Akzeptieren
+            {{ t.cookieBanner.accept }}
           </button>
           <button
             @click="cookieStore.declineCookies"
             class="cinzel-500 px-6 py-2 bg-gray-400 text-white rounded-md hover:bg-gray-500 transition-colors cursor-pointer"
           >
-            Ablehnen
+            {{ t.cookieBanner.decline }}
           </button>
         </div>
       </div>
@@ -47,10 +45,12 @@
 </template>
 
 <script setup>
-import { useCookieStore } from "../stores/cookieStore"; // Pinia Store importieren
+import { useCookieStore } from "../stores/cookieStore";
+import { useI18n } from "~/composables/useI18n";
 
 // Store verwenden
 const cookieStore = useCookieStore();
+const { t } = useI18n();
 
 // Stelle sicher, dass der Zustand nachgeladen wird, nur im Browser
 if (typeof window !== "undefined") {

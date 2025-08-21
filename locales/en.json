@@ -1,0 +1,385 @@
+{
+  "navigation": {
+    "gallery": "Gallery",
+    "about": "About",
+    "bookNow": "Book Now",
+    "privacyPolicy": "Privacy Policy",
+    "imprint": "Imprint"
+  },
+  "hero": {
+    "videoNotSupported": "Your browser does not support video.",
+    "bookButton": "Book"
+  },
+  "gallery": {
+    "instagramNotVisible": "📌 Instagram content is currently not visible.",
+    "acceptCookies": "Please accept the",
+    "cookiesInBanner": "cookies in the banner",
+    "toShowFeed": "to display the feed.",
+    "iframeLoaded": "Instagram iframe loaded"
+  },
+  "about": {
+    "title": "About Us",
+    "description": "Welcome to MKC Tattoo Art",
+    "hero": {
+      "title": "Art & Presence",
+      "subtitle": "– I am Mika –",
+      "description": "Tattoo artist, storyteller and creative wanderer between worlds.",
+      "longDescription": "With every stroke, I bring beings, symbols and energies to your skin that remind you of your nature, your power and the present moment."
+    },
+    "personal": {
+      "title": "Who I am",
+      "description": "I am a wilderness educator, draftsman, stoic – today a tattoo artist with soul. As a child I wanted to be an artist, but my path first led to wilderness and psychology. My art is expression, story and self-empowerment.",
+      "whyTitle": "Why I tattoo",
+      "whyDescription": "I love going deep with people. The skin is not just a canvas for me, but a threshold – between inside and outside, past and future. Every tattoo is a dialogue for me: What do you want to show? What do you want to connect to? I don't just tattoo, I accompany transformation."
+    },
+    "timeline": {
+      "title": "My Path",
+      "items": {
+        "2018": {
+          "title": "2018: Wilderness Educator",
+          "description": "I worked with children and young people, brought them closer to nature – my first conscious service to something greater. But the desire to create spiritual art quietly accompanied me further."
+        },
+        "2019": {
+          "title": "2019: Declined Tattoo Training",
+          "description": "My neighbor in Hannover at the time – an experienced tattoo artist – offered me training. But I declined. My heart was still beating for educational work in the wilderness at that time."
+        },
+        "2020": {
+          "title": "2020: Self-taught Entry",
+          "description": "The passion for tattooing wouldn't let me go. Two years later I picked up the tattoo machine myself – without training, but with dedication. I learned through experience, exchange and constant practice."
+        },
+        "2022-2024": {
+          "title": "2022–2024: Australia",
+          "description": "To be artistically free, I needed financial independence. In Australia I worked alone to exhaustion – over 16 months, 65 hours per week – in kitchens, on farms, in huge warehouses. Goal: save to live my vision."
+        },
+        "2024": {
+          "title": "2024: Southeast Asia & Software Development",
+          "description": "After this intense time I traveled through Indonesia and Vietnam. I learned to ride motorcycles, found friends – and started online training as a software developer to work remotely and live my art independently of location."
+        },
+        "2024-2025": {
+          "title": "2024 - 2025: Hunt Atelier Münster",
+          "description": "Back in Germany I completed my training and found a place at Hunt Atelier – a studio that shares my values. Here I live what I am: artist, tattoo artist, someone who heals through expression and tells stories on skin."
+        }
+      }
+    },
+    "style": {
+      "title": "Style & Inspiration",
+      "description": "My motifs are expressions of inner worlds – mystical, organic, spiritual. I prefer to work in black and white, with strong contrast, fine lines and symbolic depth. I let myself be inspired by forms of nature as well as anatomy and symbolically use the eye as a source of power for presence. In a free, intuitive process I connect these elements with form-creating shading to visually work out clarity."
+    },
+    "eye": {
+      "title": "The Eye",
+      "description": "The eye appears in many of my tattoos – a symbol of mindfulness. It reminds us of the present moment, of the now – that space where everything is one: steady, eternal, undivided. There is power in presence. My art is an invitation to remember – every time your gaze touches the tattoo and pulls you back from the vortex of thoughts into being. A silent call to consciousness: You are here. You are whole."
+    },
+    "testimonials": {
+      "title": "- Healed -",
+      "subtitle": "Voices of my clients",
+      "note": "*The tattoos are 3-6 months healed & the images are unedited*"
+    },
+    "cta": {
+      "title": "Let's create real art together",
+      "description": "If you're ready for more than a motif – but for a sign on your path – then send me a raven.",
+      "button": "Send Raven"
+    }
+  },
+  "aos": {
+    "title": "Welcome to MKC Tattoo Art",
+    "subtitle": "Where Art Meets Skin",
+    "description": "In my studio, I combine traditional tattoo techniques with modern art and spiritual depth. Every tattoo is a unique piece that tells your story and reflects your soul.",
+    "features": {
+      "artistic": {
+        "title": "Artistic Excellence",
+        "description": "Every design is created individually for you and executed with the highest precision."
+      },
+      "spiritual": {
+        "title": "Spiritual Depth",
+        "description": "My motifs carry symbolic meaning and connect you with your inner power."
+      },
+      "quality": {
+        "title": "Highest Quality",
+        "description": "Use of the best materials and sterile working conditions for your safety."
+      }
+    }
+  },
+  "form": {
+    "title": "Booking Request",
+    "subtitle": "Let's create your perfect tattoo together",
+    "description": "Fill out the form and I'll get back to you within 24 hours.",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "phone": "Phone",
+    "date": "Preferred Date",
+    "description": "Tattoo Description",
+    "size": "Size",
+    "placement": "Placement",
+    "style": "Style",
+    "budget": "Budget",
+    "submit": "Send Request",
+    "success": "Your request has been sent successfully!",
+    "error": "An error occurred. Please try again.",
+    "required": "Required",
+    "optional": "Optional",
+    "placeholder": {
+      "name": "Your first name",
+      "email": "your.email@example.com",
+      "phone": "+49 123 456789",
+      "description": "Describe your desired tattoo...",
+      "size": "e.g., 5x5cm, palm-sized, etc.",
+      "placement": "e.g., forearm, shoulder, back...",
+      "style": "e.g., minimalist, realistic, tribal...",
+      "budget": "Your budget range"
+    },
+    "dropdownHint": "You can also enter something of your own – these are just suggestions 🤗."
+  },
+  "imprint": {
+    "title": "Imprint",
+    "legalInfo": {
+      "title": "Information according to § 5 TMG",
+      "company": "MKC Art",
+      "name": "Mika Krämer",
+      "street": "Emdener Str. 11",
+      "city": "48155 Münster",
+      "country": "Germany"
+    },
+    "contact": {
+      "title": "Contact",
+      "phone": "Phone",
+      "phoneNumber": "0157 / 34434856",
+      "email": "Email",
+      "emailAddress": "mail@kraemer-michael.net"
+    },
+    "responsible": {
+      "title": "Responsible for content according to § 55 Abs. 2 RStV",
+      "name": "Michael Krämer",
+      "street": "Emdener Str. 11",
+      "city": "48155 Münster"
+    },
+    "liability": {
+      "content": {
+        "title": "Liability for Content",
+        "description": "The contents of my pages were created with the utmost care. However, I cannot guarantee the accuracy, completeness and timeliness of the content."
+      },
+      "links": {
+        "title": "Liability for Links",
+        "description": "My offer contains links to external third-party websites, over whose content I have no influence. Therefore, I cannot assume any liability for these external contents."
+      }
+    },
+    "copyright": {
+      "title": "Copyright",
+      "description": "The contents and works created by the site operators on these pages are subject to German copyright law. The reproduction, editing, distribution and any kind of exploitation outside the limits of copyright require the written consent of the respective author or creator."
+    }
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "sections": {
+      "overview": {
+        "title": "1. Privacy at a Glance",
+        "general": {
+          "title": "General Information",
+          "description": "The following information provides a simple overview of what happens to your personal data when you visit this website. Personal data is any data with which you can be personally identified. Detailed information on the subject of data protection can be found in our privacy policy listed below this text."
+        },
+        "dataCollection": {
+          "title": "Data Collection on this Website",
+          "responsible": {
+            "title": "Who is responsible for data collection on this website?",
+            "description": "Data processing on this website is carried out by the website operator. You can find their contact details in the section \"Note on the responsible party\" in this privacy policy."
+          },
+          "how": {
+            "title": "How do we collect your data?",
+            "description": "Your data is collected on the one hand by you communicating it to us. This can be, for example, data that you enter in a contact form. Other data is collected automatically or after your consent when visiting the website by our IT systems. These are mainly technical data (e.g., internet browser, operating system or time of page access). This data is collected automatically as soon as you enter this website."
+          },
+          "purpose": {
+            "title": "What do we use your data for?",
+            "description": "Part of the data is collected to ensure error-free provision of the website. Other data may be used to analyze your user behavior. If contracts can be concluded or initiated via the website, the transmitted data will also be processed for contract offers, orders or other service requests."
+          },
+          "rights": {
+            "title": "What rights do you have regarding your data?",
+            "description": "You have the right at any time to receive free information about the origin, recipient and purpose of your stored personal data. You also have the right to request the correction or deletion of this data. If you have given consent to data processing, you can revoke this consent at any time for the future. You also have the right to request restriction of the processing of your personal data under certain circumstances. Furthermore, you have the right to lodge a complaint with the competent supervisory authority.",
+            "contact": "For this purpose and for further questions on the subject of data protection, you can contact us at any time."
+          }
+        },
+        "analytics": {
+          "title": "Analysis Tools and Third-Party Tools",
+          "description": "When visiting this website, your surfing behavior can be statistically evaluated. This happens primarily with so-called analysis programs.",
+          "details": "Detailed information about these analysis programs can be found in the following privacy policy."
+        },
+        "contactForm": {
+          "title": "Contact Form and Email Contact",
+          "description": "When you send us inquiries via contact form or contact us by email, your information from the form or email including all resulting personal data (e.g., name, email address, phone number, date of birth, motif wishes, image material) will be stored and processed by us for the purpose of processing your request.",
+          "noSharing": "We do not share this data without your consent.",
+          "legalBasis": "The processing of this data is based on Art. 6 para. 1 lit. b GDPR, insofar as your request is related to the fulfillment of a contract or is necessary for the implementation of pre-contractual measures (e.g., appointment scheduling, consultation, tattoo calculation). In all other cases, the processing is based on your consent (Art. 6 para. 1 lit. a GDPR) and/or on our legitimate interest in the effective processing of requests addressed to us (Art. 6 para. 1 lit. f GDPR).",
+          "retention": "The data you send to us will remain with us until you ask us to delete it, revoke your consent to storage, or the purpose for data storage ceases to apply (e.g., after your request has been processed). Mandatory legal provisions - in particular retention periods - remain unaffected."
+        },
+        "web3forms": {
+          "title": "Use of Web3Forms",
+          "description": "For sending our contact form, we use the service \"Web3Forms\" (HarbourFront Technologies Ltd., 3rd Floor, 86-90 Paul Street, London EC2A 4NE, United Kingdom). The data you enter is forwarded to us via Web3Forms servers by email.",
+          "processing": "Web3Forms processes the form data exclusively for the purpose of technical provision and forwarding. Storage on Web3Forms servers only occurs briefly and automatically for the purpose of delivery and logging.",
+          "legalBasis": "The processing is based on Art. 6 para. 1 lit. b GDPR, insofar as your request is related to the fulfillment of a contract or pre-contractual measures, as well as on Art. 6 para. 1 lit. f GDPR (legitimate interest in a functional and secure form provision).",
+          "moreInfo": "For more information, see Web3Forms' privacy policy:",
+          "privacyLink": "https://web3forms.com/privacy"
+        }
+      },
+      "hosting": {
+        "title": "2. Hosting and Servers",
+        "description": "This website is hosted by All-Inkl. Here you can learn what this means for your data.",
+        "allInkl": {
+          "title": "All-Inkl Hosting",
+          "description": "Our host All-Inkl (All-Inkl.com Neue Medien Münnich, Hauptstraße 68, 02742 Friedersdorf) processes data on behalf of the website operator. For more information, see the",
+          "link": "Privacy Policy of All-Inkl",
+          "legalBasis": "The processing is based on Art. 6 para. 1 lit. f GDPR (legitimate interest in a secure and efficient website provision).",
+          "processing": {
+            "title": "What does All-Inkl process?",
+            "description": "All-Inkl processes technical data such as IP addresses, access times, data volumes transferred and browser information. This data is required for the technical provision of the website."
+          }
+        }
+      },
+      "general": {
+        "title": "3. General Data Protection Provisions",
+        "privacy": {
+          "title": "Data Protection",
+          "description": "The protection of your personal data is important to us. This privacy policy informs you about the nature, scope and purpose of processing personal data on this website.",
+          "dataCollection": "Personal data is only collected to the extent necessary and only for the purposes for which it was collected.",
+          "security": "We implement technical and organizational security measures to protect your data against manipulation, loss, destruction or access by unauthorized persons."
+        },
+        "responsible": {
+          "title": "Responsible Party",
+          "description": "Responsible for data processing on this website is:",
+          "address": "Mika Krämer, Emdener Str. 11, 48155 Münster, Germany",
+          "contact": "Email: mail@kraemer-michael.net, Phone: 0157 / 34434856",
+          "definition": "The responsible party is the natural or legal person who alone or jointly with others decides on the purposes and means of processing personal data."
+        },
+        "retention": {
+          "title": "Retention Period",
+          "description": "Your data will only be stored for as long as is necessary to fulfill the stated purposes or as required by legal retention periods."
+        },
+        "legalBasis": {
+          "title": "Legal Basis for Data Processing",
+          "description": "The processing of your data is based on the GDPR. The specific legal bases can be found in the respective processing operations."
+        },
+        "recipients": {
+          "title": "Recipients of Your Data",
+          "description": "Your data will only be passed on to those who need it to fulfill the stated purposes. Disclosure to third parties only occurs if you have given your consent or if this is legally required."
+        },
+        "withdrawal": {
+          "title": "Withdrawal of Your Consent",
+          "description": "You can revoke your consent to data processing at any time. The lawfulness of the data processing carried out until the revocation remains unaffected."
+        },
+        "objection": {
+          "title": "Right to Object",
+          "description": "You have the right to object to the processing of your data if this is based on Art. 6 para. 1 lit. f GDPR.",
+          "directMarketing": "You have the right to object to the processing of your data for direct marketing purposes."
+        },
+        "complaint": {
+          "title": "Right to Complain",
+          "description": "You have the right to lodge a complaint with the competent supervisory authority if you believe that the processing of your data violates the GDPR."
+        },
+        "dataPortability": {
+          "title": "Data Portability",
+          "description": "You have the right to receive your data in a structured, commonly used and machine-readable format and to transmit this data to another responsible party."
+        },
+        "access": {
+          "title": "Right of Access",
+          "description": "You have the right to receive free information about your stored personal data."
+        },
+        "restriction": {
+          "title": "Restriction of Processing",
+          "description": "You have the right to request restriction of the processing of your data if one of the following conditions applies:",
+          "cases": {
+            "accuracy": "The accuracy of the personal data is contested by you",
+            "unlawful": "The processing is unlawful",
+            "noLongerNeeded": "The personal data is no longer needed for the purposes of processing",
+            "objection": "You have objected to the processing"
+          },
+          "processing": "The restriction remains in place until the reasons for the restriction no longer apply."
+        },
+        "ssl": {
+          "title": "SSL or TLS Encryption",
+          "description": "This page uses SSL or TLS encryption for security reasons and to protect the transmission of confidential content.",
+          "encryption": "You can recognize an encrypted connection by the fact that the address line of the browser changes from \"http://\" to \"https://\" and by the lock symbol in your browser line."
+        }
+      },
+      "dataCollection": {
+        "title": "4. Data Collection on this Website",
+        "cookies": {
+          "title": "Cookies",
+          "description": "This website uses cookies. Cookies are small text files that are stored on your device.",
+          "types": "We use different types of cookies: technical cookies for website functionality and analysis cookies for improving user experience.",
+          "functions": "Cookies have various functions: they can make the website functional, increase security or improve user-friendliness.",
+          "legalBasis": "The processing is based on Art. 6 para. 1 lit. f GDPR (legitimate interest in a functional website).",
+          "settings": "You can delete cookies in your browser settings at any time or restrict the use of cookies.",
+          "which": "Which cookies are set can be viewed in your browser settings."
+        },
+        "contactForm": {
+          "title": "Contact Form",
+          "description": "When you send us a message via the contact form, the data you enter will be stored to process your request.",
+          "legalBasis": "The processing is based on Art. 6 para. 1 lit. b GDPR (contract fulfillment or pre-contractual measures).",
+          "retention": "Your data will be deleted as soon as your request has been processed and no legal retention periods apply."
+        },
+        "email": {
+          "title": "Email Contact",
+          "description": "When you contact us by email, your email address and the content of your message will be stored to process your request.",
+          "legalBasis": "The processing is based on Art. 6 para. 1 lit. b GDPR (contract fulfillment or pre-contractual measures).",
+          "retention": "Your data will be deleted as soon as your request has been processed and no legal retention periods apply."
+        }
+      },
+      "socialMedia": {
+        "title": "5. Social Media and External Services",
+        "instagram": {
+          "title": "Instagram",
+          "description": "This website uses Instagram feeds to display content from social media.",
+          "connection": "When visiting the page, a connection to Instagram servers is established.",
+          "linking": "Instagram can thereby collect information about your visit to this website.",
+          "legalBasis": "The processing is based on Art. 6 para. 1 lit. f GDPR (legitimate interest in providing social media content).",
+          "jointResponsibility": "We have entered into an agreement on joint responsibility with Instagram.",
+          "dataTransfer": "Data may be transferred to the USA, where Instagram is based.",
+          "moreInfo": "For more information, see the",
+          "policyLink": "Privacy Policy of Instagram",
+          "source": "Source:",
+          "sourceLink": "e-recht24.de"
+        },
+        "instagramPlugin": {
+          "title": "Instagram Plugin",
+          "description": "The Instagram plugin allows Instagram content to be displayed directly on the website.",
+          "linking": "By embedding, data is transferred to Instagram.",
+          "legalBasis": "The processing is based on Art. 6 para. 1 lit. f GDPR (legitimate interest in providing social media content).",
+          "jointResponsibility": "We have entered into an agreement on joint responsibility with Instagram."
+        },
+        "whatsapp": {
+          "title": "WhatsApp Contact",
+          "description": "We offer the possibility to contact us via WhatsApp.",
+          "usage": "When using WhatsApp, data is transferred to WhatsApp.",
+          "legalBasis": "The processing is based on Art. 6 para. 1 lit. b GDPR (contract fulfillment or pre-contractual measures).",
+          "dataProcessing": "WhatsApp processes data according to its own privacy policy.",
+          "note": {
+            "title": "Important Note",
+            "description": "WhatsApp is a service of Meta Platforms Inc. and is subject to US legislation."
+          }
+        },
+        "consent": {
+          "title": "Consent Management",
+          "description": "For the use of cookies and external services, we obtain your consent.",
+          "legalBasis": "The processing is based on Art. 6 para. 1 lit. a GDPR (consent)."
+        }
+      }
+    }
+  },
+  "footer": {
+    "copyright": "© 2024 MKC Tattoo Art. All rights reserved.",
+    "contact": "Contact",
+    "address": "Address"
+  },
+  "cookieBanner": {
+    "title": "Cookie Settings",
+    "description": "We use cookies to improve your experience on our website.",
+    "accept": "Accept All",
+    "decline": "Decline",
+    "settings": "Settings"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "close": "Close",
+    "save": "Save",
+    "cancel": "Cancel"
+  }
+}

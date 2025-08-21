@@ -4,7 +4,7 @@
   >
     <div class="container mx-auto px-4 text-gray-100 cinzel-300">
       <p class="text-gray-100 cinzel-300">
-        © {{ new Date().getFullYear() }} Mika K. Consciousness
+        {{ t.footer.copyright }}
       </p>
 
       <div class="flex justify-center flex-wrap gap-4 mt-4">
@@ -12,21 +12,21 @@
           @click="openCookieBanner"
           class="btn-custom-2 hover:text-orange-800 cursor-pointer text-gray-100 text-lg cinzel-300"
         >
-          Cookie-Einstellungen
+          {{ t.cookieBanner.title }}
         </button>
 
         <NuxtLink
           to="/shared/privacy-policy"
           class="btn-custom-2 hover:text-orange-800 cursor-pointer text-gray-100 text-lg cinzel-300"
         >
-          Datenschutzerklärung
+          {{ t.navigation.privacyPolicy }}
         </NuxtLink>
 
         <NuxtLink
           to="/shared/imprint"
           class="btn-custom-2 hover:text-orange-800 cursor-pointer text-gray-100 text-lg cinzel-300"
         >
-          Impressum
+          {{ t.navigation.imprint }}
         </NuxtLink>
       </div>
     </div>
@@ -38,10 +38,12 @@
 </styles>
 
 <script setup>
-import { useCookieStore } from "../../stores/cookieStore"; // Pinia Store importieren
+import { useCookieStore } from "../../stores/cookieStore";
+import { useI18n } from "~/composables/useI18n";
 
 // Store verwenden
 const cookieStore = useCookieStore();
+const { t } = useI18n();
 
 // Funktion zum Öffnen des Cookie-Banners
 function openCookieBanner() {
