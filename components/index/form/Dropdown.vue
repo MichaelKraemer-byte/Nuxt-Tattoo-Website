@@ -44,15 +44,20 @@
 </template>
 
 <script setup>
-import { ref, watch, onMounted, onUnmounted, nextTick } from "vue";
+import { ref, watch, onMounted, onUnmounted, nextTick, computed } from "vue";
 import { spotSuggestions } from "~/utils/spotSuggestions.js";
+import { spotSuggestionsEn } from "~/utils/spotSuggestionsEn.js";
 import { useI18n } from "~/composables/useI18n";
 
-const { t } = useI18n();
+const { t, currentLanguage } = useI18n();
 
 // Referenz auf die gesamte Komponente
 const dropdownRef = ref(null);
 let ignoreNextUpdate = false;
+
+const currentSpotSuggestions = computed(() => {
+  return currentLanguage.value === "en" ? spotSuggestionsEn : spotSuggestions;
+});
 
 // Prop und Emit für die Verbindung zu v-model
 const props = defineProps({
@@ -94,7 +99,7 @@ const filterSpots = () => {
     return;
   }
 
-  filteredSpots.value = spotSuggestions.filter((s) =>
+  filteredSpots.value = currentSpotSuggestions.value.filter((s) =>
     s.toLowerCase().includes(searchQuery)
   );
   highlightedIndex.value = -1;
