@@ -1,0 +1,525 @@
+/* Moderne kinematische Effekte für die Tattoo-Website */
+
+/* Glasmorphismus-Effekte */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+}
+
+/* Moderne Hover-Effekte */
+.modern-hover {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modern-hover:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Kinematische Text-Animationen */
+.cinematic-text {
+  background: linear-gradient(45deg, #d4af37, #f4d03f, #d4af37);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: cinematic-shift 3s ease-in-out infinite;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+}
+
+@keyframes cinematic-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Moderne Button-Animationen */
+.modern-button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+  font-weight: 700;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+}
+
+.modern-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.15),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.modern-button:hover::before {
+  left: 100%;
+}
+
+.modern-button:hover {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+/* Optimierte CTA Button-Klasse */
+.cta-button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  z-index: 1;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+}
+
+.cta-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.15),
+    transparent
+  );
+  transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+}
+
+.cta-button:hover::before {
+  left: 100%;
+}
+
+.cta-button:hover {
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 1);
+  transform: translateY(-2px) scale(1.02);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.cta-button:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* CTA Button Varianten */
+.cta-button-primary {
+  background: linear-gradient(135deg, #d4af37 0%, #f4d03f 50%, #d4af37 100%);
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease-in-out infinite;
+}
+
+.cta-button-primary:hover {
+  background-position: 100% 100%;
+}
+
+.cta-button-secondary {
+  background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 50%, #2a2a2a 100%);
+  border: 2px solid #d4af37;
+  color: #d4af37;
+}
+
+.cta-button-secondary:hover {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 50%, #1a1a1a 100%);
+  color: white;
+  border-color: #f4d03f;
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.3);
+}
+
+/* CTA Button Focus States für bessere Accessibility */
+.cta-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.4),
+    0 0 0 2px rgba(255, 255, 255, 0.8);
+}
+
+.cta-button:focus-visible {
+  outline: 2px solid #d4af37;
+  outline-offset: 2px;
+}
+
+/* CTA Button Loading States */
+.cta-button.loading {
+  position: relative;
+  color: transparent;
+}
+
+.cta-button.loading::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Responsive CTA Button Anpassungen */
+@media (max-width: 768px) {
+  .cta-button {
+    font-size: 0.9em;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .cta-button:hover {
+    transform: translateY(-1px) scale(1.01);
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-button {
+    font-size: 0.85em;
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+/* CTA Button Pulse Animation für Aufmerksamkeit */
+@keyframes cta-pulse {
+  0%,
+  100% {
+    box-shadow: 0 8px 32px rgba(212, 175, 55, 0.4);
+  }
+  50% {
+    box-shadow: 0 8px 32px rgba(212, 175, 55, 0.8),
+      0 0 0 4px rgba(212, 175, 55, 0.2);
+  }
+}
+
+.cta-button-pulse {
+  animation: cta-pulse 2s ease-in-out infinite;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+}
+
+/* CTA Button Bounce Animation für Interaktivität */
+@keyframes cta-bounce {
+  0%,
+  20%,
+  53%,
+  80%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  40%,
+  43% {
+    transform: translate3d(0, -8px, 0);
+  }
+  70% {
+    transform: translate3d(0, -4px, 0);
+  }
+  90% {
+    transform: translate3d(0, -2px, 0);
+  }
+}
+
+.cta-button-bounce {
+  animation: cta-bounce 1s ease-in-out;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+}
+
+/* CTA Button Glow Effect - Optimiert für weiße Schrift */
+.cta-button-glow {
+  position: relative;
+}
+
+.cta-button-glow::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #d4af37, #f4d03f, #d4af37);
+  border-radius: inherit;
+  z-index: -2;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cta-button-glow:hover::after {
+  opacity: 0.8;
+  animation: spin 2s linear infinite;
+}
+
+/* Zusätzliche Optimierungen für weiße Schrift-Sichtbarkeit */
+.cta-button span,
+.cta-button a {
+  position: relative;
+  z-index: 2;
+  color: inherit;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+}
+
+.cta-button-primary {
+  color: white !important;
+}
+
+.cta-button-primary:hover {
+  color: white !important;
+}
+
+.cta-button-primary:focus {
+  color: white !important;
+}
+
+/* Stärkere Text-Schatten für bessere Lesbarkeit */
+.cta-button-primary {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9), 0 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+.cta-button-primary:hover {
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 1), 0 6px 12px rgba(0, 0, 0, 0.8);
+}
+
+/* Kinematische Schatten */
+.cinematic-shadow {
+  box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.1), 0 4px 8px rgba(0, 0, 0, 0.3),
+    0 8px 16px rgba(0, 0, 0, 0.2), 0 16px 32px rgba(0, 0, 0, 0.1);
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+}
+
+.cinematic-shadow:hover {
+  box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.3), 0 8px 16px rgba(0, 0, 0, 0.4),
+    0 16px 32px rgba(0, 0, 0, 0.3), 0 32px 64px rgba(0, 0, 0, 0.2);
+}
+
+/* Moderne Gradient-Texturen */
+.gold-gradient {
+  background: linear-gradient(
+    135deg,
+    #d4af37 0%,
+    #f4d03f 25%,
+    #d4af37 50%,
+    #f4d03f 75%,
+    #d4af37 100%
+  );
+  background-size: 400% 400%;
+  animation: gradient-shift 4s ease-in-out infinite;
+}
+
+@keyframes gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Kinematische Border-Animationen */
+.cinematic-border {
+  position: relative;
+}
+
+.cinematic-border::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #d4af37, #f4d03f);
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cinematic-border:hover::after {
+  width: 100%;
+}
+
+/* Moderne Card-Effekte */
+.modern-card {
+  background: linear-gradient(
+    145deg,
+    rgba(26, 26, 26, 0.8),
+    rgba(42, 42, 42, 0.6)
+  );
+  border-radius: 20px;
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+}
+
+.modern-card:hover {
+  transform: translateY(-8px) rotateX(5deg);
+  border-color: rgba(212, 175, 55, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(212, 175, 55, 0.1);
+}
+
+/* Transparente Sektionen */
+.transparent-section {
+  background: linear-gradient(
+    135deg,
+    rgba(10, 10, 10, 0.7),
+    rgba(20, 20, 20, 0.5)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+}
+
+/* Transparente Slider */
+.transparent-slider {
+  background: linear-gradient(
+    135deg,
+    rgba(15, 15, 15, 0.6),
+    rgba(25, 25, 25, 0.4)
+  );
+  border: 1px solid rgba(212, 175, 55, 0.1);
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  backdrop-filter: blur(6px);
+}
+
+/* Kinematische Loading-Animationen */
+.cinematic-loading {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(212, 175, 55, 0.3);
+  border-top: 3px solid #d4af37;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Moderne Scroll-Indikatoren */
+.scroll-indicator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, #d4af37, #f4d03f);
+  z-index: 9999;
+  transition: width 0.1s ease;
+}
+
+/* Kinematische Hover-Zustände */
+.cinematic-hover {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+}
+
+.cinematic-hover:hover {
+  transform: perspective(1000px) rotateY(10deg) translateZ(20px);
+  filter: brightness(1.1) contrast(1.1);
+}
+
+/* Moderne Focus-States */
+.modern-focus:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.3),
+    0 0 20px rgba(212, 175, 55, 0.2);
+  transform: scale(1.02);
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+}
+
+/* Kinematische Parallax-Effekte */
+.parallax-element {
+  transition: transform 0.1s ease-out;
+  will-change: transform;
+}
+
+/* Moderne Typography-Enhancements */
+.cinematic-heading {
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.3),
+    0 0 20px rgba(212, 175, 55, 0.2), 0 0 30px rgba(212, 175, 55, 0.1);
+  letter-spacing: 0.05em;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+}
+
+/* Responsive kinematische Effekte */
+@media (max-width: 768px) {
+  .modern-card:hover {
+    transform: translateY(-4px) rotateX(2deg);
+  }
+
+  .cinematic-hover:hover {
+    transform: perspective(500px) rotateY(5deg) translateZ(10px);
+  }
+}
+
+/* Performance-Optimierungen */
+.gpu-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Moderne Dark Mode Anpassungen */
+@media (prefers-color-scheme: dark) {
+  .glass-effect {
+    background: rgba(0, 0, 0, 0.3);
+    border-color: rgba(212, 175, 55, 0.2);
+  }
+}
+
+/* Accessibility-Verbesserungen */
+@media (prefers-reduced-motion: reduce) {
+  .cinematic-text,
+  .gold-gradient,
+  .cinematic-loading {
+    animation: none;
+  }
+
+  .modern-hover:hover,
+  .cinematic-hover:hover {
+    transform: none;
+  }
+}

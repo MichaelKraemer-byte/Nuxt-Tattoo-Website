@@ -18,10 +18,12 @@
         ></div>
 
         <div class="relative z-20 max-w-3xl">
-          <h1 class="text-5xl sm:text-6xl font-bold cinzel-700 mb-4 mx-2">
+          <h1
+            class="text-5xl sm:text-6xl font-bold cinzel-700 mb-4 mx-2 cinematic-heading break-words"
+          >
             {{ t.about.hero.title }}
           </h1>
-          <h4 class="text-3xl cinzel-300 leading-relaxed">
+          <h4 class="text-3xl cinzel-300 leading-relaxed cinematic-heading break-words">
             {{ t.about.hero.subtitle }}<br />
             {{ t.about.hero.description }}
           </h4>
@@ -38,7 +40,10 @@
     >
       <client-only>
         <!-- Swiper-Bildbereich -->
-        <div class="w-full lg:w-1/2 overflow-hidden" data-aos="fade-right">
+        <div
+          class="!w-fit lg:w-1/2 overflow-hidden transparent-slider p-4 rounded-2xl"
+          data-aos="fade-right"
+        >
           <Swiper
             :modules="[Pagination, Navigation]"
             :pagination="{ clickable: true }"
@@ -69,7 +74,9 @@
               src="/img/auge.png"
               class="w-12 md:w-32 h-auto mb-4 sm:mb-5 sm:mr-6 scale-x-[-1]"
             />
-            <h2 class="text-5xl sm:text-6xl font-bold cinzel-500 mb-4">
+            <h2
+              class="text-5xl sm:text-6xl font-bold cinzel-500 mb-4 cinematic-heading break-words"
+            >
               {{ t.about.personal.title }}
             </h2>
           </div>
@@ -78,7 +85,9 @@
           >
             {{ t.about.personal.description }}
           </p>
-          <h3 class="text-4xl font-bold mb-4 cinzel-500 text-center">
+          <h3
+            class="text-4xl font-bold mb-4 cinzel-500 text-center cinematic-heading break-words"
+          >
             {{ t.about.personal.whyTitle }}
           </h3>
           <p
@@ -92,7 +101,7 @@
 
     <client-only>
       <!-- SECTION: Timeline "Mein Weg" -->
-      <section class="bg-[#0a0a0a] py-24 px-6" data-aos="fade-up">
+      <section class="transparent-section py-24 px-6" data-aos="fade-up">
         <div
           class="flex flex-col items-center justify-center text-center w-full mb-4"
         >
@@ -100,16 +109,18 @@
             src="/img/auge.png"
             class="w-12 md:w-32 h-auto mb-4 sm:mb-5 scale-x-[-1]"
           />
-          <h2 class="text-5xl sm:text-6xl font-bold cinzel-500 mb-4 mx-6">
+          <h2
+            class="text-5xl sm:text-6xl font-bold cinzel-500 mb-4 mx-6 cinematic-heading break-words"
+          >
             {{ t.about.timeline.title }}
           </h2>
         </div>
         <ol class="relative border-l border-gray-700 max-w-2xl mx-auto">
           <li class="mb-10 ml-6">
             <span
-              class="absolute w-4 h-4 bg-orange-600 rounded-full -left-2"
+              class="absolute w-4 h-4 bg-gradient-to-r from-[#d4af37] to-[#f4d03f] rounded-full -left-2 shadow-[0_0_12px_rgba(212,175,55,0.6)]"
             ></span>
-            <h3 class="text-xl font-semibold">
+            <h3 class="text-xl font-semibold cinematic-heading">
               {{ t.about.timeline.items["2018"].title }}
             </h3>
             <p class="text-gray-400">
@@ -118,9 +129,9 @@
           </li>
           <li class="mb-10 ml-6">
             <span
-              class="absolute w-4 h-4 bg-orange-600 rounded-full -left-2"
+              class="absolute w-4 h-4 bg-gradient-to-r from-[#d4af37] to-[#f4d03f] rounded-full -left-2 shadow-[0_0_12px_rgba(212,175,55,0.6)]"
             ></span>
-            <h3 class="text-xl font-semibold">
+            <h3 class="text-xl font-semibold cinematic-heading">
               {{ t.about.timeline.items["2019"].title }}
             </h3>
             <p class="text-gray-400">
@@ -129,9 +140,9 @@
           </li>
           <li class="mb-10 ml-6">
             <span
-              class="absolute w-4 h-4 bg-orange-600 rounded-full -left-2"
+              class="absolute w-4 h-4 bg-gradient-to-r from-[#d4af37] to-[#f4d03f] rounded-full -left-2 shadow-[0_0_12px_rgba(212,175,55,0.6)]"
             ></span>
-            <h3 class="text-xl font-semibold">
+            <h3 class="text-xl font-semibold cinematic-heading">
               {{ t.about.timeline.items["2020"].title }}
             </h3>
             <p class="text-gray-400">
@@ -140,9 +151,9 @@
           </li>
           <li class="mb-10 ml-6">
             <span
-              class="absolute w-4 h-4 bg-orange-600 rounded-full -left-2"
+              class="absolute w-4 h-4 bg-gradient-to-r from-[#d4af37] to-[#f4d03f] rounded-full -left-2 shadow-[0_0_12px_rgba(212,175,55,0.6)]"
             ></span>
-            <h3 class="text-xl font-semibold">
+            <h3 class="text-xl font-semibold cinematic-heading">
               {{ t.about.timeline.items["2022-2024"].title }}
             </h3>
             <p class="text-gray-400">
@@ -151,9 +162,9 @@
           </li>
           <li class="mb-10 ml-6">
             <span
-              class="absolute w-4 h-4 bg-orange-600 rounded-full -left-2"
+              class="absolute w-4 h-4 bg-gradient-to-r from-[#d4af37] to-[#f4d03f] rounded-full -left-2 shadow-[0_0_12px_rgba(212,175,55,0.6)]"
             ></span>
-            <h3 class="text-xl font-semibold">
+            <h3 class="text-xl font-semibold cinematic-heading">
               {{ t.about.timeline.items["2024"].title }}
             </h3>
             <p class="text-gray-400">
@@ -162,9 +173,9 @@
           </li>
           <li class="ml-6">
             <span
-              class="absolute w-4 h-4 bg-orange-600 rounded-full -left-2"
+              class="absolute w-4 h-4 bg-gradient-to-r from-[#d4af37] to-[#f4d03f] rounded-full -left-2 shadow-[0_0_12px_rgba(212,175,55,0.6)]"
             ></span>
-            <h3 class="text-xl font-semibold">
+            <h3 class="text-xl font-semibold cinematic-heading">
               {{ t.about.timeline.items["2024-2025"].title }}
             </h3>
             <p class="text-gray-400">
@@ -181,7 +192,7 @@
         class="max-w-screen-2xl mx-auto px-6 py-24 flex flex-col lg:flex-row items-center gap-12"
       >
         <div
-          class="w-full lg:w-1/2 swiper-container overflow-hidden rounded-xl"
+          class="w-full lg:w-1/2 swiper-container overflow-hidden rounded-xl transparent-slider p-4"
           data-aos="fade-right"
         >
           <!-- Swipe-Galerie kommt hier rein -->
@@ -251,7 +262,7 @@
               src="/img/auge.png"
               class="w-12 md:w-32 h-auto mb-4 sm:mb-5 scale-x-[-1]"
             />
-            <h2 class="text-4xl font-bold cinzel-500 mx-6">
+            <h2 class="text-4xl font-bold cinzel-500 mx-6 cinematic-heading break-words">
               {{ t.about.style.title }}
             </h2>
           </div>
@@ -266,7 +277,10 @@
 
     <!-- SECTION: Das Auge -->
     <client-only>
-      <section class="bg-[#0a0a0a] py-24 px-6 text-center" data-aos="fade-up">
+      <section
+        class="transparent-section py-24 px-6 text-center"
+        data-aos="fade-up"
+      >
         <div
           class="flex flex-col items-center text-center justify-center w-full"
         >
@@ -274,7 +288,7 @@
             src="/img/auge.png"
             class="w-12 lg:w-32 h-auto mb-4 sm:mb-5 scale-x-[-1]"
           />
-          <h2 class="text-4xl font-bold cinzel-500 mx-6">
+          <h2 class="text-4xl font-bold cinzel-500 mx-6 cinematic-heading break-words">
             {{ t.about.eye.title }}
           </h2>
         </div>
@@ -297,7 +311,9 @@
             src="/img/auge.png"
             class="w-12 lg:w-32 h-auto mb-4 scale-x-[-1]"
           />
-          <h2 class="text-3xl sm:text-4xl font-bold cinzel-500 mx-6">
+          <h2
+            class="text-3xl sm:text-4xl font-bold cinzel-500 mx-6 cinematic-heading break-words"
+          >
             {{ t.about.testimonials.title }}<br />
             {{ t.about.testimonials.subtitle }}
           </h2>
@@ -326,7 +342,7 @@
                 class="w-full max-w-3xl mx-auto py-12 px-4 sm:px-8 box-border overflow-hidden"
               >
                 <div
-                  class="flex flex-col lg:flex-row items-center gap-6 bg-[#18181b] p-6 sm:p-8 rounded-3xl shadow-[0_0_25px_rgba(246,92,26,0.3)] transition-shadow duration-500 hover:shadow-[0_0_40px_rgba(246,92,26,0.5)]"
+                  class="flex flex-col lg:flex-row items-center gap-6 bg-gradient-to-br from-[#1a1a1a] to-[#2a2a2a] p-6 sm:p-8 rounded-3xl transition-all duration-500 hover:scale-[1.02] border border-[#d4af37]/20 modern-card cinematic-hover"
                 >
                   <!-- Tattoo Bild -->
                   <img
@@ -340,7 +356,7 @@
                   >
                     <!-- Zitat Icon -->
                     <svg
-                      class="w-10 h-10 text-[#f65c1a] mb-4"
+                      class="w-10 h-10 text-[#d4af37] mb-4 drop-shadow-[0_0_8px_rgba(212,175,55,0.6)]"
                       fill="currentColor"
                       viewBox="0 0 24 24"
                     >
@@ -360,7 +376,7 @@
                     <div class="mt-6 flex items-center gap-4">
                       <img
                         :src="testimonial.avatar"
-                        class="w-12 h-12 rounded-full object-cover border-2 border-[#f65c1a]"
+                        class="w-12 h-12 rounded-full object-cover border-2 border-[#d4af37] shadow-[0_0_12px_rgba(212,175,55,0.6)]"
                       />
                       <footer class="text-sm font-semibold text-white">
                         {{ testimonial.name }}
@@ -388,7 +404,7 @@
             src="/img/auge.png"
             class="w-12 lg:w-32 h-auto mb-4 scale-x-[-1]"
           />
-          <h2 class="text-4xl font-bold cinzel-500">
+          <h2 class="text-4xl font-bold cinzel-500 cinematic-heading break-words">
             {{ t.about.cta.title }}
           </h2>
         </div>
@@ -398,7 +414,7 @@
         <!-- "Book" Button -->
         <NuxtLink
           to="/#BookingForm"
-          class="cinzel-500 btn btn-custom inline-block px-4 py-1.5 text-sm sm:text-lg sm:px-6 sm:py-2 font-medium bg-[#f65c1a] text-white hover:bg-orange-500 rounded-sm shadow-md transition-all transform hover:scale-105"
+          class="cinzel-500 cta-button cta-button-primary inline-block px-8 py-3 text-lg sm:text-xl font-bold text-white rounded-xl shadow-[0_8px_32px_rgba(212,175,55,0.4)] hover:shadow-[0_16px_48px_rgba(212,175,55,0.6)]"
         >
           {{ t.about.cta.button }}
         </NuxtLink>
@@ -532,15 +548,17 @@ html {
 }
 
 :deep(.swiper-pagination-bullet) {
-  background: #ffffff;
+  background: #999999;
 }
 
 :deep(.swiper-pagination-bullet-active) {
-  background: #f65c1a;
+  background: #d4af37;
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.6);
 }
 
 :deep(.swiper-button-next),
 :deep(.swiper-button-prev) {
-  color: #f65c1a !important;
+  color: #d4af37 !important;
+  text-shadow: 0 0 8px rgba(212, 175, 55, 0.6);
 }
 </style>

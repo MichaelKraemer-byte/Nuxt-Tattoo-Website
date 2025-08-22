@@ -1,6 +1,6 @@
 <template>
   <section
-    class="relative w-full h-screen flex items-center justify-center bg-[#0f0f0f] text-white overflow-hidden"
+    class="relative w-full min-h-screen flex items-center justify-center bg-[#0f0f0f] text-white overflow-hidden"
   >
     <video
       ref="videoRef"
@@ -25,20 +25,48 @@
     <div class="relative z-20 text-center max-w-xl px-6 sm:px-8 md:px-12">
       <!-- Logo -->
       <img
-        class="animate-fade-in mx-auto"
+        class="animate-fade-in mx-auto cinematic-heading break-words"
         src="/logo/mkc-tattooart.svg"
         alt="MKC Tattoo Art Logo"
         loading="eager"
         fetchpriority="high"
       />
 
-      <div class="mt-6">
+      <div
+        class="mt-6 flex flex-col sm:flex-row items-center gap-4 justify-center"
+      >
         <a
           href="#BookingForm"
-          class="cinzel-500 btn btn-custom inline-block px-4 py-2 text-sm sm:text-lg sm:px-6 sm:py-3 font-medium bg-orange-600 hover:bg-orange-500 rounded-sm shadow-md transition-all transform hover:scale-105"
+          class="cinzel-500 cta-button cta-button-primary cta-button-glow inline-block px-6 py-3 text-lg sm:text-xl font-bold text-white rounded-xl shadow-[0_8px_32px_rgba(212,175,55,0.4)] hover:shadow-[0_16px_48px_rgba(212,175,55,0.6)]"
         >
           {{ t.hero.bookButton }}
         </a>
+
+        <a
+          href="/gallery"
+          class="cinzel-500 cta-button cta-button-secondary inline-block px-5 py-2.5 text-base sm:text-lg font-semibold rounded-lg shadow-[0_4px_16px_rgba(212,175,55,0.2)] hover:shadow-[0_8px_24px_rgba(212,175,55,0.4)]"
+        >
+          {{ t.hero.galleryButton }}
+        </a>
+      </div>
+    </div>
+    <!-- Scroll-Hinweis -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
+      <div class="flex flex-col items-center text-white/70 animate-bounce">
+        <span class="text-sm mb-2 cinzel-300">Scroll</span>
+        <svg
+          class="w-6 h-6 animate-pulse"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 14l-7 7m0 0l-7-7m7 7V3"
+          ></path>
+        </svg>
       </div>
     </div>
   </section>

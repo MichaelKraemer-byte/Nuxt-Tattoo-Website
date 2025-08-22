@@ -44,23 +44,23 @@ defineEmits(["update:modelValue"]);
 }
 
 :deep(.dp__input:focus) {
-  outline: solid 2.5px oklch(0.705 0.213 47.604) !important;
+  outline: solid 2.5px #d4af37 !important;
 }
 
 :deep(.dp__range_end),
 :deep(.dp__range_start),
 :deep(.dp__active_date) {
-  background-color: #f97316 !important; /* Orange für das Highlight */
+  background-color: #d4af37 !important; /* Gold für das Highlight */
 }
 
 :deep(.vdp-datepicker__day--disabled) {
-  background-color: #facc15 !important; /* Gelb für blockierte Tage */
-  color: #4b5563 !important; /* Dunkles Grau für Text auf blockierten Tagen */
+  background-color: #f4d03f !important; /* Gold für blockierte Tage */
+  color: #1f2937 !important; /* Dunkles Grau für Text auf blockierten Tagen */
   cursor: not-allowed !important;
 }
 
 :deep(.vdp-datepicker__day--disabled:hover) {
-  background-color: #facc15 !important; /* Gelb bei Hover */
+  background-color: #f4d03f !important; /* Gold bei Hover */
   cursor: not-allowed !important;
 }
 
@@ -104,8 +104,8 @@ defineEmits(["update:modelValue"]);
 :deep(.dp__date_hover_end:hover),
 :deep(.dp__date_hover_start:hover),
 :deep(.dp__date_hover:hover) {
-  background: #fb8c3c;
-  color: white;
+  background: #f4d03f;
+  color: #1f2937;
 }
 
 :deep(.dp__overlay) {
@@ -131,9 +131,11 @@ defineEmits(["update:modelValue"]);
 }
 
 :deep(.dp__action_buttons .dp__action_select) {
-  background-color: #f97316;
+  background-color: #d4af37;
   padding: 24px 32px;
   font-size: 20px;
+  color: #1f2937;
+  font-weight: 600;
 }
 
 :deep(.dp__input::placeholder) {

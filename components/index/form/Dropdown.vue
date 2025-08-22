@@ -11,7 +11,7 @@
       @keydown.down.prevent="highlightNext"
       @keydown.up.prevent="highlightPrev"
       @keydown.enter.prevent="selectHighlighted"
-      class="w-full bg-zinc-800 text-white border border-zinc-700 rounded-sm px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
+      class="w-full bg-zinc-800 text-white border border-zinc-700 rounded-sm px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#d4af37]"
     />
     <!-- Vorschlagsliste -->
     <ul
@@ -33,8 +33,8 @@
         @keydown.enter.prevent="selectSpot(spot)"
         tabindex="0"
         :class="[
-          'px-4 py-2 cursor-pointer hover:bg-orange-500 hover:text-black',
-          index === highlightedIndex ? 'bg-orange-500 text-black' : '',
+          'px-4 py-2 cursor-pointer hover:bg-[#d4af37] hover:text-black',
+          index === highlightedIndex ? 'bg-[#d4af37] text-black' : '',
         ]"
       >
         {{ spot }}

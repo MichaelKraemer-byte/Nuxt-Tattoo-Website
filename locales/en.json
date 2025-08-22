@@ -8,7 +8,8 @@
   },
   "hero": {
     "videoNotSupported": "Your browser does not support video.",
-    "bookButton": "Book"
+    "bookButton": "Book",
+    "galleryButton": "Gallery"
   },
   "gallery": {
     "instagramNotVisible": "📌 Instagram content is currently not visible.",
@@ -127,7 +128,8 @@
     "required": "Required",
     "optional": "Optional",
     "placeholder": {
-      "name": "Your first name",
+      "firstName": "Your first name",
+      "lastName": "Your last name",
       "email": "your.email@example.com",
       "phone": "+49 123 456789",
       "description": "Describe your desired tattoo...",
@@ -381,6 +383,7 @@
   "cookieBanner": {
     "title": "Cookie Settings",
     "description": "We use cookies to improve your experience on our website.",
+    "instagramNotice": "Note: Our gallery is connected to Instagram. By accepting cookies, you also consent to the connection to Instagram and the use of Instagram cookies.",
     "accept": "Accept All",
     "decline": "Decline",
     "settings": "Settings"
@@ -391,6 +394,7 @@
     "success": "Success",
     "close": "Close",
     "save": "Save",
-    "cancel": "Cancel"
+    "cancel": "Cancel",
+    "language": "Language"
   }
 }

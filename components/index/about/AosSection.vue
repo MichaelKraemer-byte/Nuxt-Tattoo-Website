@@ -31,7 +31,7 @@
               class="w-12 md:w-32 h-auto mb-4 scale-x-[-1]"
             />
             <h2
-              class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight cinzel-600 mx-3 lg:mx-6"
+              class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight cinzel-600 mx-3 lg:mx-6 cinematic-heading"
             >
               {{ t.aos.features.artistic.title }}
             </h2>
@@ -55,7 +55,7 @@
           data-aos="fade-left"
           class="w-full lg:w-1/2 grid grid-cols-2 sm:grid-cols-3 gap-1"
         >
-          <div class="col-span-2 sm:col-span-3 flex justify-center">
+          <div class="col-span-2 sm:grid-cols-3 flex justify-center">
             <img
               src="/img/arms-of-soulway.PNG"
               alt="Tattoo Galerie"
@@ -76,7 +76,7 @@
               class="w-12 md:w-32 h-auto mb-4 scale-x-[-1]"
             />
             <h2
-              class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight cinzel-600 mx-3 lg:mx-6"
+              class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight cinzel-600 mx-3 lg:mx-6 cinematic-heading"
             >
               {{ t.aos.features.spiritual.title }}
             </h2>
@@ -121,7 +121,7 @@
               class="w-12 md:w-32 h-auto mb-4 scale-x-[-1]"
             />
             <h2
-              class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight cinzel-600 mx-3 lg:mx-6"
+              class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight cinzel-600 mx-3 lg:mx-6 cinematic-heading"
             >
               {{ t.aos.features.quality.title }}
             </h2>

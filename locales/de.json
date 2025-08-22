@@ -8,7 +8,8 @@
   },
   "hero": {
     "videoNotSupported": "Dein Browser unterstützt kein Video.",
-    "bookButton": "Buchen"
+    "bookButton": "Buchen",
+    "galleryButton": "Galerie"
   },
   "gallery": {
     "instagramNotVisible": "📌 Instagram-Inhalte sind gerade nicht sichtbar.",
@@ -127,7 +128,8 @@
     "required": "Pflichtfeld",
     "optional": "Optional",
     "placeholder": {
-      "name": "Dein vollständiger Name",
+      "firstName": "Dein Vorname",
+      "lastName": "Dein Nachname",
       "email": "deine.email@beispiel.de",
       "phone": "+49 123 456789",
       "description": "Beschreibe dein gewünschtes Tattoo...",
@@ -381,6 +383,7 @@
   "cookieBanner": {
     "title": "Cookie-Einstellungen",
     "description": "Wir verwenden Cookies, um Ihre Erfahrung auf unserer Website zu verbessern.",
+    "instagramNotice": "Hinweis: Unsere Galerie ist mit Instagram verbunden. Mit der Zustimmung zu Cookies stimmen Sie auch der Verbindung zu Instagram und der Verwendung von Instagram-Cookies zu.",
     "accept": "Alle akzeptieren",
     "decline": "Ablehnen",
     "settings": "Einstellungen"
@@ -391,6 +394,7 @@
     "success": "Erfolgreich",
     "close": "Schließen",
     "save": "Speichern",
-    "cancel": "Abbrechen"
+    "cancel": "Abbrechen",
+    "language": "Sprache"
   }
 }

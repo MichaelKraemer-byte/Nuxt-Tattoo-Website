@@ -2,92 +2,111 @@
   <client-only>
     <div
       id="BookingForm"
-      class="max-w-full sm:max-w-2xl mx-auto px-4 py-6 sm:p-6 bg-zinc-900 rounded-lg shadow-xl text-white space-y-6 mb-40 poppins-200"
+      class="max-w-full sm:max-w-2xl mx-auto px-6 py-8 sm:p-8 bg-gradient-to-br from-zinc-900/95 to-zinc-800/90 backdrop-blur-sm rounded-2xl shadow-2xl text-white space-y-8 mb-40 poppins-200 border border-zinc-700/50"
       data-aos="fade-in"
     >
-      <h2 class="!text-xl lg:!text-3xl cinzel-500 text-center">
-        {{ t.form.title }}
-      </h2>
+      <div class="text-center space-y-3">
+        <h2
+          class="!text-2xl lg:!text-4xl cinzel-500 cinematic-heading hyphens-auto"
+        >
+          {{ t.form.title }}
+        </h2>
+      </div>
 
       <form
         @submit.prevent="submitForm"
         enctype="multipart/form-data"
-        class="space-y-5"
+        class="space-y-6"
         required
       >
         <!-- Botcheck -->
         <input type="hidden" name="botcheck" v-model="botcheck" />
 
         <!-- Name -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div>
-            <label class="block mb-1">{{ t.form.name }}</label>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div class="space-y-2">
+            <label class="block text-sm font-medium text-zinc-300">{{
+              t.form.firstName
+            }}</label>
             <input
               maxlength="50"
               v-model="form.firstName"
               type="text"
               required
-              :placeholder="t.form.placeholder.name"
-              class="w-full bg-zinc-800 text-white border border-zinc-700 rounded-sm px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
+              :placeholder="t.form.placeholder.firstName"
+              class="w-full bg-zinc-800/80 text-white border border-zinc-600/50 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#d4af37] focus:border-[#d4af37] transition-all duration-300 hover:border-zinc-500/70 placeholder-zinc-500"
             />
           </div>
-          <div>
-            <label class="block mb-1">{{ t.form.name }}</label>
+          <div class="space-y-2">
+            <label class="block text-sm font-medium text-zinc-300">{{
+              t.form.lastName
+            }}</label>
             <input
               maxlength="50"
               v-model="form.lastName"
               type="text"
               required
-              :placeholder="t.form.placeholder.name"
-              class="w-full bg-zinc-800 text-white border border-zinc-700 rounded-sm px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
+              :placeholder="t.form.placeholder.lastName"
+              class="w-full bg-zinc-800/80 text-white border border-zinc-600/50 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#d4af37] focus:border-[#d4af37] transition-all duration-300 hover:border-zinc-500/70 placeholder-zinc-500"
             />
           </div>
         </div>
 
         <!-- Email -->
-        <div>
-          <label class="block mb-1">{{ t.form.email }}</label>
+        <div class="space-y-2">
+          <label class="block text-sm font-medium text-zinc-300">{{
+            t.form.email
+          }}</label>
           <input
             maxlength="50"
             v-model="form.email"
             type="email"
             required
             :placeholder="t.form.placeholder.email"
-            class="w-full bg-zinc-800 text-white border border-zinc-700 rounded-sm px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
+            class="w-full bg-zinc-800/80 text-white border border-zinc-600/50 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#d4af37] focus:border-[#d4af37] transition-all duration-300 hover:border-zinc-500/70 placeholder-zinc-500"
           />
         </div>
 
         <!-- Telefonnummer -->
-        <div>
-          <label class="block mb-1">{{ t.form.phone }}</label>
+        <div class="space-y-2">
+          <label class="block text-sm font-medium text-zinc-300">{{
+            t.form.phone
+          }}</label>
           <input
             maxlength="30"
             v-model="form.phone"
             type="tel"
             required
             :placeholder="t.form.placeholder.phone"
-            class="w-full bg-zinc-800 text-white border border-zinc-700 rounded-sm px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
+            class="w-full bg-zinc-800/80 text-white border border-zinc-600/50 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#d4af37] focus:border-[#d4af37] transition-all duration-300 hover:border-zinc-500/70 placeholder-zinc-500"
           />
         </div>
 
         <!-- Volljährigkeit -->
-        <div class="flex items-center space-x-2">
+        <div
+          class="flex items-center space-x-3 p-4 bg-zinc-800/50 rounded-lg border border-zinc-600/30 flex-nowrap"
+        >
           <input
             maxlength="50"
             id="isAdult"
             v-model="form.isAdult"
             type="checkbox"
             required
-            class="w-5 h-5 bg-zinc-800 border-zinc-600 rounded cursor-pointer"
+            class="w-5 h-5 bg-zinc-700 border-zinc-500 rounded cursor-pointer focus:ring-2 focus:ring-[#d4af37] focus:ring-offset-2 focus:ring-offset-zinc-800 flex-shrink-0"
           />
-          <label for="isAdult" class="text-white select-none cursor-pointer">
+          <label
+            for="isAdult"
+            class="text-white select-none cursor-pointer text-sm"
+          >
             {{ t.form.ageConfirmation }}
           </label>
         </div>
 
         <!-- Wunschdatum -->
-        <div>
-          <label class="block mb-1">{{ t.form.date }}</label>
+        <div class="space-y-2">
+          <label class="block text-sm font-medium text-zinc-300">{{
+            t.form.date
+          }}</label>
           <FormDatepicker v-model="form.date" :asap="form.asap" />
         </div>
 
@@ -95,13 +114,18 @@
         <Dropdown v-model="form.spot" />
 
         <!-- Beschreibung mit Tooltip -->
-        <div class="relative">
-          <label class="items-center gap-2 group cursor-pointer">
-            {{ t.form.tattooDescription }}
-            <span class="text-orange-400">❔</span>
+        <div class="relative space-y-2">
+          <label class="items-center gap-2 group cursor-pointer flex">
+            <span class="text-sm font-medium text-zinc-300">{{
+              t.form.tattooDescription
+            }}</span>
+            <span
+              class="text-[#d4af37] text-lg hover:scale-110 transition-transform duration-200"
+              >❔</span
+            >
             <div class="relative mb-1">
               <div
-                class="pointer-events-none absolute top-full inset-x-0 mx-auto mt-1 w-full max-w-[90vw] sm:max-w-[20rem] text-sm bg-zinc-800 border border-orange-500 text-white p-3 rounded-sm shadow-lg opacity-0 group-hover:opacity-100 transition duration-200 z-10"
+                class="pointer-events-none absolute top-full inset-x-0 mx-auto mt-2 w-full max-w-[90vw] sm:max-w-[20rem] text-sm bg-zinc-800/95 backdrop-blur-sm border border-[#d4af37]/50 text-white p-4 rounded-lg shadow-2xl opacity-0 group-hover:opacity-100 transition-all duration-300 z-10"
               >
                 {{ t.form.descriptionAdvice }}
               </div>
@@ -114,7 +138,7 @@
             minlength="20"
             v-model="form.description"
             rows="4"
-            class="w-full bg-zinc-800 text-white border border-zinc-700 rounded-sm px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500 custom-scrollbar"
+            class="w-full bg-zinc-800/80 text-white border border-zinc-600/50 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#d4af37] focus:border-[#d4af37] transition-all duration-300 hover:border-zinc-500/70 placeholder-zinc-500 custom-scrollbar resize-none"
           ></textarea>
         </div>
 
@@ -127,14 +151,16 @@
         />  -->
 
         <!-- Datenschutzerklärung -->
-        <div class="flex items-start space-x-3">
+        <div
+          class="flex items-start space-x-3 p-4 bg-zinc-800/50 rounded-lg border border-zinc-600/30 flex-nowrap"
+        >
           <input
             maxlength="50"
             id="privacyPolicy"
             v-model="form.privacyPolicy"
             type="checkbox"
             required
-            class="w-10 h-5 mt-1 bg-zinc-800 border-zinc-600 rounded cursor-pointer"
+            class="w-5 h-5 mt-1 bg-zinc-700 border-zinc-500 rounded cursor-pointer focus:ring-2 focus:ring-[#d4af37] focus:ring-offset-2 focus:ring-offset-zinc-800 flex-shrink-0"
           />
           <label
             for="privacyPolicy"
@@ -143,7 +169,7 @@
             {{ t.form.privacyAndAgeConsent }}
             <nuxt-link
               to="/shared/privacy-policy"
-              class="text-orange-500 hover:underline poppins-200 text-sm"
+              class="text-[#d4af37] hover:text-[#f4d03f] hover:underline poppins-200 text-sm transition-colors duration-200"
             >
               {{ t.navigation.privacyPolicy }}
             </nuxt-link>
@@ -152,7 +178,7 @@
 
         <p
           v-if="validationError"
-          class="text-center text-sm text-red-400 bg-red-900 bg-opacity-30 border border-red-600 rounded-sm px-4 py-2 transition-opacity duration-300 ease-in-out"
+          class="text-center text-sm text-red-300 bg-red-900/30 border border-red-600/50 rounded-lg px-4 py-3 transition-all duration-300 ease-in-out backdrop-blur-sm"
         >
           {{ validationError }}
         </p>
@@ -160,22 +186,23 @@
         <!-- Absenden -->
         <button
           type="submit"
-          class="w-full cursor-pointer cinzel-500 btn btn-custom inline-block px-4 py-1.5 text-sm sm:text-lg sm:px-6 sm:py-2 font-medium bg-black hover:bg-orange-500 border-orange-500 border-[2px] rounded-sm shadow-md transition-all transform hover:scale-105"
+          class="w-full cursor-pointer cinzel-500 cta-button cta-button-primary inline-block px-8 py-4 text-lg font-bold text-white rounded-xl shadow-[0_8px_32px_rgba(212,175,55,0.4)] hover:shadow-[0_16px_48px_rgba(212,175,55,0.6)] transition-all duration-500 transform hover:scale-105 hover:-translate-y-1"
           :class="{
-            'opacity-50 cursor-not-allowed hover:bg-transparent':
+            'opacity-50 cursor-not-allowed hover:bg-transparent hover:scale-100 hover:translate-y-0':
               isInSubmitProcess,
           }"
           :disabled="isInSubmitProcess"
         >
           {{ t.form.submit }}
         </button>
+
         <!-- Fortschrittsanzeige beim Senden -->
         <div
           v-if="isInSubmitProcess"
-          class="relative w-full h-2 bg-zinc-700 rounded overflow-hidden mb-4"
+          class="relative w-full h-3 bg-zinc-700/50 rounded-full overflow-hidden mb-4 backdrop-blur-sm"
         >
           <div
-            class="absolute top-0 left-0 h-full bg-orange-500 animate-progress"
+            class="absolute top-0 left-0 h-full bg-gradient-to-r from-[#d4af37] to-[#f4d03f] rounded-full animate-progress shadow-lg"
             style="width: 100%"
           ></div>
         </div>
@@ -413,38 +440,132 @@ const submitForm = async () => {
 </script>
 
 <style scoped>
-@keyframes progressBar {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 100%;
-  }
-}
-
-.animate-progress {
-  animation: progressBar 2.5s linear forwards;
-}
-
+/* Custom Scrollbar für das Textarea */
 .custom-scrollbar::-webkit-scrollbar {
   width: 8px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: transparent;
+  background: rgba(39, 39, 42, 0.5);
+  border-radius: 4px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: oklch(0.21 0.006 285.885);
+  background: linear-gradient(135deg, #d4af37, #f4d03f);
   border-radius: 4px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background-color: oklch(0.21 0.006 285.885);
+  background: linear-gradient(135deg, #f4d03f, #d4af37);
 }
 
-textarea.custom-scrollbar {
-  scrollbar-color: oklch(0.21 0.006 285.885) transparent;
-  scrollbar-width: thin;
+/* Input Focus Animation */
+input:focus,
+textarea:focus {
+  transform: scale(1.01);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1), 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Checkbox Styling */
+input[type="checkbox"] {
+  appearance: none;
+  background: linear-gradient(135deg, #3f3f46, #52525b);
+  border: 2px solid #6b7280;
+  transition: all 0.3s ease;
+}
+
+input[type="checkbox"]:checked {
+  background: linear-gradient(135deg, #d4af37, #f4d03f);
+  border-color: #f4d03f;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+}
+
+input[type="checkbox"]:hover {
+  border-color: #d4af37;
+  transform: scale(1.05);
+}
+
+/* Progress Bar Animation */
+@keyframes animate-progress {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-progress {
+  background-size: 200% 200%;
+  animation: animate-progress 2s ease-in-out infinite;
+}
+
+/* Form Container Hover Effect */
+#BookingForm {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#BookingForm:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(212, 175, 55, 0.1);
+}
+
+/* Label Hover Effect */
+label:hover {
+  color: #d4af37;
+  transition: color 0.3s ease;
+}
+
+/* Input Placeholder Animation */
+input::placeholder,
+textarea::placeholder {
+  transition: opacity 0.3s ease;
+}
+
+input:focus::placeholder,
+textarea:focus::placeholder {
+  opacity: 0.7;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 640px) {
+  #BookingForm {
+    margin: 0 1rem 2rem 1rem;
+    padding: 1.5rem;
+  }
+
+  .grid {
+    gap: 1rem;
+  }
+}
+
+/* Dark Mode Enhancements */
+@media (prefers-color-scheme: dark) {
+  #BookingForm {
+    background: linear-gradient(
+      135deg,
+      rgba(24, 24, 27, 0.98),
+      rgba(39, 39, 42, 0.95)
+    );
+    border-color: rgba(82, 82, 91, 0.3);
+  }
+}
+
+/* Accessibility Improvements */
+@media (prefers-reduced-motion: reduce) {
+  #BookingForm,
+  input,
+  textarea,
+  button {
+    transition: none;
+    animation: none;
+  }
+
+  #BookingForm:hover {
+    transform: none;
+  }
 }
 </style>

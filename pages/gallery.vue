@@ -27,7 +27,7 @@
               {{ t.gallery.instagramNotVisible }}<br />
               {{ t.gallery.acceptCookies }}
               <button
-                class="text-orange-400 hover:text-orange-300 transition-colors mx-1 cursor-pointer"
+                class="text-[#d4af37] hover:text-[#f4d03f] transition-colors mx-1 cursor-pointer"
                 @click="openCookieBanner()"
               >
                 {{ t.gallery.cookiesInBanner }}

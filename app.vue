@@ -1,9 +1,8 @@
 <template>
-  <div>
+  <div class="app-container break-words">
     <StarryBackground />
     <NuxtRouteAnnouncer />
     <Header />
-    <Cursor />
     <NuxtPage />
     <FloatingContact />
     <CookieBanner />
@@ -32,6 +31,15 @@ onMounted(() => {
 </script>
 
 <style>
+.app-container {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+}
+
 #vue-tracer-overlay {
   max-width: 100vw;
   overflow-x: hidden;

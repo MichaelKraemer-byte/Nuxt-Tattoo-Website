@@ -2,67 +2,98 @@
 @use "@/assets/css/tailwind.css";
 @use "@/assets/css/starry-effects.scss";
 @use "@/assets/css/hero-blur-effects.scss";
+@use "@/assets/css/modern-effects.scss";
 
 ::selection {
-  background-color: #f65c1a;
+  background-color: #d4af37;
   color: white;
 }
 
 html {
   scroll-padding-top: 120px;
+  height: 100%;
 }
 
 body {
   background-color: transparent;
   font-family: "Cinzel";
   font-weight: 300;
-  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  min-height: 100vh;
 }
 
 html,
 body {
   max-width: 100vw;
-  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 .poppins-200 {
   font-family: "Poppins";
   font-weight: 200;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
 }
 
 .poppins-300 {
   font-family: "Poppins";
   font-weight: 300;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
 }
 
 .poppins-600 {
   font-family: "Poppins";
   font-weight: 600;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
 }
 
 .cinzel-300 {
   font-family: "Cinzel";
   font-weight: 300;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
 }
 
 .cinzel-400 {
   font-family: "Cinzel";
   font-weight: 400;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
 }
 
 .cinzel-500 {
   font-family: "Cinzel";
   font-weight: 500;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
 }
 
 .cinzel-600 {
   font-family: "Cinzel";
   font-weight: 600;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
 }
 
 .cinzel-700 {
   font-family: "Cinzel";
   font-weight: 700;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
 }
 
 /* Animation */
@@ -94,7 +125,7 @@ body {
   width: 100%;
   height: 100%;
   z-index: 1;
-  background-color: #f65c1a01;
+  background-color: #d4af3701;
   transition: all 0.3s;
   padding: 4px;
 }
@@ -149,7 +180,7 @@ body {
   transform: scale(0.1, 1);
 }
 .btn-custom-2:hover {
-  color: #ffbd8a;
+  color: #d4af37;
 }
 
 .btn-custom-2:hover span {
@@ -183,6 +214,9 @@ p,
 a {
   font-family: "Poppins";
   color: rgba(255, 255, 255, 0.831);
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
 }
 
 /* H1 */
@@ -464,11 +498,13 @@ p {
 a {
   font-size: 1.2rem;
   text-decoration: none;
-  color: orange;
+  color: #d4af37;
+  transition: all 0.3s ease;
 }
 
 a:hover {
-  color: rgb(255, 231, 187);
+  color: #f4d03f;
+  text-shadow: 0 0 8px rgba(212, 175, 55, 0.6);
 }
 
 @media (max-width: 2500px) {
@@ -517,4 +553,28 @@ a:hover {
   a {
     font-size: 0.8rem;
   }
+}
+
+/* Scrollbar-Problem beheben */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #52525b #1a1a1a; /* Grau für den Scrollbar-Thumb */
+}
+
+/* Webkit Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #52525b; /* Grau für den Scrollbar-Thumb */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6b7280; /* Etwas helleres Grau bei Hover */
 }

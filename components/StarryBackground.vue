@@ -297,8 +297,8 @@ onUnmounted(() => {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   z-index: -1;
   background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
   overflow: hidden;
@@ -563,6 +563,8 @@ onUnmounted(() => {
 @media (max-width: 768px) {
   .starry-background {
     background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    width: 100vw;
+    height: 100vh;
   }
 
   .star-tiny {
