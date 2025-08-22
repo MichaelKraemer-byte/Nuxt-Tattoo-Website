@@ -1,0 +1,168 @@
+/* Hero Blur-Effekte für sanfte Übergänge */
+
+/* Basis-Blur-Effekt für Hero-Video und Hero-Image */
+.hero-blur-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 8rem; /* 128px */
+  background: linear-gradient(
+    to top,
+    #0f0f0f 0%,
+    #0f0f0f 40%,
+    rgba(15, 15, 15, 0.9) 60%,
+    rgba(15, 15, 15, 0.7) 80%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Erweiterter Blur-Effekt mit mehreren Ebenen */
+.hero-blur-enhanced {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10rem; /* 160px */
+  background: linear-gradient(
+    to top,
+    #0f0f0f 0%,
+    #0f0f0f 30%,
+    rgba(15, 15, 15, 0.95) 45%,
+    rgba(15, 15, 15, 0.8) 60%,
+    rgba(15, 15, 15, 0.6) 75%,
+    rgba(15, 15, 15, 0.3) 90%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Blur-Effekt mit Sternenhimmel-Integration */
+.hero-blur-starry {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 12rem; /* 192px */
+  background: linear-gradient(
+    to top,
+    #0f0f0f 0%,
+    #0f0f0f 25%,
+    rgba(15, 15, 15, 0.95) 40%,
+    rgba(15, 15, 15, 0.85) 55%,
+    rgba(15, 15, 15, 0.7) 70%,
+    rgba(15, 15, 15, 0.5) 85%,
+    rgba(15, 15, 15, 0.2) 95%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 768px) {
+  .hero-blur-bottom {
+    height: 6rem; /* 96px */
+  }
+
+  .hero-blur-enhanced {
+    height: 8rem; /* 128px */
+  }
+
+  .hero-blur-starry {
+    height: 10rem; /* 160px */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-blur-bottom {
+    height: 5rem; /* 80px */
+  }
+
+  .hero-blur-enhanced {
+    height: 6rem; /* 96px */
+  }
+
+  .hero-blur-starry {
+    height: 8rem; /* 128px */
+  }
+}
+
+/* Animation für sanften Blur-Übergang */
+.hero-blur-animated {
+  animation: blurFadeIn 0.8s ease-out;
+}
+
+@keyframes blurFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Zusätzliche Blur-Effekte für verschiedene Hero-Typen */
+.hero-blur-video {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 12rem; /* 192px */
+  background: linear-gradient(
+    to top,
+    #0f0f0f 0%,
+    #0f0f0f 25%,
+    rgba(15, 15, 15, 0.95) 45%,
+    rgba(15, 15, 15, 0.85) 65%,
+    rgba(15, 15, 15, 0.7) 80%,
+    rgba(15, 15, 15, 0.5) 90%,
+    rgba(15, 15, 15, 0.2) 95%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 10;
+  /* Debug: Temporär sichtbar machen */
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.hero-blur-image {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 12rem; /* 192px */
+  background: linear-gradient(
+    to top,
+    #0f0f0f 0%,
+    #0f0f0f 20%,
+    rgba(15, 15, 15, 0.98) 40%,
+    rgba(15, 15, 15, 0.9) 60%,
+    rgba(15, 15, 15, 0.75) 75%,
+    rgba(15, 15, 15, 0.6) 85%,
+    rgba(15, 15, 15, 0.4) 92%,
+    rgba(15, 15, 15, 0.2) 97%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 10;
+  /* Debug: Temporär sichtbar machen */
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+/* High-DPI Display Optimierungen */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .hero-blur-bottom,
+  .hero-blur-enhanced,
+  .hero-blur-starry,
+  .hero-blur-video,
+  .hero-blur-image {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}

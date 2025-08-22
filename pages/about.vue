@@ -9,9 +9,15 @@
         <img
           src="\img\me\finger-pistole-copy2.jpg"
           alt="Tattoo Artist bei der Arbeit"
-          class="absolute inset-0 w-full h-full object-cover opacity-30"
+          class="absolute inset-0 w-full h-full object-cover opacity-20"
         />
-        <div class="relative z-10 max-w-3xl">
+
+        <!-- Transparenter Bereich für besseren Übergang zum Sternenhimmel -->
+        <div
+          class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#0f0f0f]/80 via-[#0f0f0f]/40 to-transparent pointer-events-none z-10"
+        ></div>
+
+        <div class="relative z-20 max-w-3xl">
           <h1 class="text-5xl sm:text-6xl font-bold cinzel-700 mb-4 mx-2">
             {{ t.about.hero.title }}
           </h1>

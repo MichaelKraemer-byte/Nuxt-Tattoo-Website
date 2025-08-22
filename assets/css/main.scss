@@ -1,5 +1,7 @@
 @use "@/assets/css/fonts.scss";
 @use "@/assets/css/tailwind.css";
+@use "@/assets/css/starry-effects.scss";
+@use "@/assets/css/hero-blur-effects.scss";
 
 ::selection {
   background-color: #f65c1a;
@@ -11,7 +13,7 @@ html {
 }
 
 body {
-  background-color: #0f0f0f;
+  background-color: transparent;
   font-family: "Cinzel";
   font-weight: 300;
   overflow-x: hidden;

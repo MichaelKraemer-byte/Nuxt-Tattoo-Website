@@ -1,5 +1,6 @@
 <template>
   <div>
+    <StarryBackground />
     <NuxtRouteAnnouncer />
     <Header />
     <Cursor />
@@ -19,6 +20,7 @@ import CookieBanner from "./components/CookieBanner.vue";
 import FloatingContact from "@/components/FloatingContact.vue";
 import { useCookieStore } from "./stores/cookieStore";
 import Cursor from "./components/Cursor.vue";
+import StarryBackground from "./components/StarryBackground.vue";
 
 // Store verwenden und initialisieren
 const cookieStore = useCookieStore();

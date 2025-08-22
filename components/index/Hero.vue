@@ -9,20 +9,20 @@
       loop
       playsinline
       preload="metadata"
-      class="absolute inset-0 w-full h-full object-cover opacity-60"
+      class="absolute inset-0 w-full h-full object-cover opacity-30"
       @loadeddata="onVideoLoaded"
     >
       <source src="/videos/hero-video.mp4" type="video/mp4" />
       {{ t.hero.videoNotSupported }}
     </video>
 
-    <!-- Fade Overlay unten -->
+    <!-- Transparenter Bereich für besseren Übergang zum Sternenhimmel -->
     <div
-      class="absolute bottom-0 w-full h-32 bg-gradient-to-b from-transparent to-[#0f0f0f] z-10"
+      class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#0f0f0f]/80 via-[#0f0f0f]/40 to-transparent pointer-events-none z-10"
     ></div>
 
     <!-- Inhalt -->
-    <div class="relative z-1 text-center max-w-xl px-6 sm:px-8 md:px-12">
+    <div class="relative z-20 text-center max-w-xl px-6 sm:px-8 md:px-12">
       <!-- Logo -->
       <img
         class="animate-fade-in mx-auto"
