@@ -131,7 +131,7 @@
             >
             <div class="relative mb-1">
               <div
-                class="pointer-events-none absolute top-full inset-x-0 mx-auto mt-2 w-full max-w-[90vw] sm:max-w-[28rem] md:max-w-[32rem] text-sm bg-zinc-800/95 backdrop-blur-sm border border-[#d4af37]/50 text-white p-4 sm:p-5 rounded-lg shadow-2xl opacity-0 group-hover:opacity-100 transition-all duration-300 z-10 hyphens-auto leading-relaxed"
+                class="pointer-events-none absolute top-full inset-x-0 mx-auto mt-2 w-full max-w-[90vw] sm:max-w-[32rem] md:max-w-[36rem] lg:max-w-[40rem] text-sm bg-zinc-800/95 backdrop-blur-sm border border-[#d4af37]/50 text-white p-4 sm:p-5 rounded-lg shadow-2xl opacity-0 group-hover:opacity-100 transition-all duration-300 z-10 hyphens-auto leading-relaxed"
               >
                 {{ t.form.descriptionAdvice }}
               </div>

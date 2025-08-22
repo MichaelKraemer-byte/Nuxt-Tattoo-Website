@@ -8,17 +8,13 @@
         <!-- Galerie -->
         <div
           data-aos="fade-up"
-          class="w-full lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-1 sm:gap-2"
+          class="w-full lg:w-1/2 flex justify-center items-center"
         >
-          <div
-            class="col-span-1 sm:col-span-2 md:col-span-3 flex justify-center"
-          >
-            <img
-              src="/img/tung-monster.png"
-              alt="Tattoo Galerie"
-              class="w-full max-w-[280px] sm:max-w-[320px] md:max-w-[380px] lg:max-w-[420px] h-auto object-contain swinging transition-transform duration-500 ease-in-out md:hover:scale-125 hover:z-10 lg:active:scale-125"
-            />
-          </div>
+          <img
+            src="/img/tung-monster.png"
+            alt="Tattoo Galerie"
+            class="w-full max-w-[280px] sm:max-w-[320px] md:max-w-[380px] lg:max-w-[420px] h-auto object-contain swinging transition-transform duration-500 ease-in-out md:hover:scale-125 hover:z-10 lg:active:scale-125"
+          />
         </div>
 
         <!-- Text -->
@@ -33,7 +29,7 @@
               class="w-12 md:w-32 h-auto mb-4 scale-x-[-1]"
             />
             <h2
-              class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 leading-tight text-white mx-2 sm:mx-3 lg:mx-6 cinematic-heading hyphens-auto"
+              class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 leading-tight text-white mx-2 sm:mx-3 lg:mx-6 cinematic-heading hyphens-auto font-cinzel"
             >
               {{ t.aos.features.artistic.title }}
             </h2>
@@ -55,15 +51,13 @@
         <!-- Galerie -->
         <div
           data-aos="fade-left"
-          class="w-full lg:w-1/2 grid grid-cols-2 sm:grid-cols-3 gap-1"
+          class="w-full lg:w-1/2 flex justify-center items-center"
         >
-          <div class="col-span-2 sm:grid-cols-3 flex justify-center">
-            <img
-              src="/img/arms-of-soulway.PNG"
-              alt="Tattoo Galerie"
-              class="w-auto max-h-[700px] object-contain swinging spin-slow transition-transform duration-500 ease-in-out md:hover:scale-125 hover:z-10 md:active:scale-125"
-            />
-          </div>
+          <img
+            src="/img/arms-of-soulway.PNG"
+            alt="Tattoo Galerie"
+            class="w-auto max-h-[700px] object-contain swinging spin-slow transition-transform duration-500 ease-in-out md:hover:scale-125 hover:z-10 md:active:scale-125"
+          />
         </div>
 
         <!-- Text -->
@@ -78,7 +72,7 @@
               class="w-12 md:w-32 h-auto mb-4 scale-x-[-1]"
             />
             <h2
-              class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight text-white mx-3 lg:mx-6 cinematic-heading"
+              class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight text-white mx-3 lg:mx-6 cinematic-heading font-cinzel"
             >
               {{ t.aos.features.spiritual.title }}
             </h2>
@@ -100,15 +94,13 @@
         <!-- Galerie -->
         <div
           data-aos="fade-up"
-          class="w-full lg:w-1/2 grid grid-cols-2 sm:grid-cols-3 gap-1"
+          class="w-full lg:w-1/2 flex justify-center items-center"
         >
-          <div class="col-span-2 sm:col-span-3 flex justify-center">
-            <img
-              src="/img/helping-plant.png"
-              alt="Tattoo Galerie"
-              class="w-full max-w-[320px] h-auto object-contain swinging-2 transition-transform duration-500 ease-in-out md:hover:scale-125 hover:z-10 md:active:scale-125"
-            />
-          </div>
+          <img
+            src="/img/helping-plant.png"
+            alt="Tattoo Galerie"
+            class="w-full max-w-[320px] h-auto object-contain swinging-2 transition-transform duration-500 ease-in-out md:hover:scale-125 hover:z-10 md:active:scale-125"
+          />
         </div>
 
         <!-- Text -->
@@ -123,7 +115,7 @@
               class="w-12 md:w-32 h-auto mb-4 scale-x-[-1]"
             />
             <h2
-              class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight text-white mx-3 lg:mx-6 cinematic-heading"
+              class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight text-white mx-3 lg:mx-6 cinematic-heading font-cinzel"
             >
               {{ t.aos.features.quality.title }}
             </h2>

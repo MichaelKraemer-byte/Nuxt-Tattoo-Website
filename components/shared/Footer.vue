@@ -1,6 +1,7 @@
 <template>
   <footer
     class="bg-black/15 backdrop-blur-md py-8 sm:py-10 md:py-12 shadow-md text-center text-xs sm:text-sm text-gray-600 mt-auto"
+    style="margin-top: auto"
   >
     <div
       class="container mx-auto px-3 sm:px-4 md:px-6 text-gray-100 cinzel-300"

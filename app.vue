@@ -3,7 +3,9 @@
     <StarryBackground />
     <NuxtRouteAnnouncer />
     <Header />
-    <NuxtPage />
+    <main class="flex-1">
+      <NuxtPage />
+    </main>
     <FloatingContact />
     <CookieBanner />
     <Footer />
@@ -38,6 +40,14 @@ onMounted(() => {
   hyphens: auto;
   -webkit-hyphens: auto;
   -ms-hyphens: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-container main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 #vue-tracer-overlay {

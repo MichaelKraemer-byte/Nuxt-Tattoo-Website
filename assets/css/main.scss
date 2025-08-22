@@ -29,6 +29,8 @@ body {
   hyphens: auto;
   -webkit-hyphens: auto;
   -ms-hyphens: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 html,
@@ -226,9 +228,11 @@ body {
 }
 
 .btn-custom-2 {
-  color: #fff;
+  color: #ffffff;
   transition: all 0.3s;
   position: relative;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
 }
 .btn-custom-2 span {
   transition: all 0.3s;
@@ -252,7 +256,8 @@ body {
   transform: scale(0.1, 1);
 }
 .btn-custom-2:hover {
-  color: #d4af37;
+  color: #f4d03f;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 1);
 }
 
 .btn-custom-2:hover span {
