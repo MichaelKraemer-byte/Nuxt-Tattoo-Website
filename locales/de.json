@@ -128,7 +128,9 @@
       "style": "z.B. Minimalistisch, Realistisch, Tribal...",
       "budget": "Dein Budget-Rahmen"
     },
-    "dropdownHint": "Du darfst auch etwas Eigenes eingeben – das sind nur Vorschläge 🤗."
+    "dropdownHint": "Du darfst auch etwas Eigenes eingeben – das sind nur Vorschläge 🤗.",
+    "privacyAndAgeConsent": "Ich habe die Datenschutzerklärung gelesen und stimme ihr zu.",
+    "ageConfirmation": "Ich bestätige, dass ich 18 Jahre oder älter bin."
   },
   "imprint": {
     "title": "Impressum",

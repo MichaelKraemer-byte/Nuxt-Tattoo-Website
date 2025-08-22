@@ -81,7 +81,7 @@
             class="w-5 h-5 bg-zinc-800 border-zinc-600 rounded cursor-pointer"
           />
           <label for="isAdult" class="text-white select-none cursor-pointer">
-            {{ t.form.required }} (18+)
+            {{ t.form.ageConfirmation }}
           </label>
         </div>
 
@@ -140,7 +140,7 @@
             for="privacyPolicy"
             class="text-white text-sm cursor-pointer leading-relaxed"
           >
-            {{ t.form.required }}:
+            {{ t.form.privacyAndAgeConsent }}
             <nuxt-link
               to="/shared/privacy-policy"
               class="text-orange-500 hover:underline poppins-200 text-sm"

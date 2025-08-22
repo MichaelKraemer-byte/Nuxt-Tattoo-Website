@@ -128,7 +128,9 @@
       "style": "e.g., minimalist, realistic, tribal...",
       "budget": "Your budget range"
     },
-    "dropdownHint": "You can also enter something of your own – these are just suggestions 🤗."
+    "dropdownHint": "You can also enter something of your own – these are just suggestions 🤗.",
+    "privacyAndAgeConsent": "I have read and agree to the privacy policy.",
+    "ageConfirmation": "I confirm that I am 18 years or older."
   },
   "imprint": {
     "title": "Imprint",
