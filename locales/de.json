@@ -129,6 +129,7 @@
       "budget": "Dein Budget-Rahmen"
     },
     "dropdownHint": "Du darfst auch etwas Eigenes eingeben – das sind nur Vorschläge 🤗.",
+    "descriptionAdvice": "Bitte beschreibe dein gewünschtes Tattoo so detailliert wie möglich. Wichtige Informationen für mich sind: Größe (z.B. in cm oder \"Handflächen-groß\"), Stil (z.B. microrealism, blackwork, fineline), Farben (Schwarz-Weiß, Farbig), Design-Elemente (Motive, Symbole, Schriften), Platzierung am Körper und eventuelle Besonderheiten der Haut (Narben, Muttermale).",
     "privacyAndAgeConsent": "Ich habe die Datenschutzerklärung gelesen und stimme ihr zu.",
     "ageConfirmation": "Ich bestätige, dass ich 18 Jahre oder älter bin."
   },

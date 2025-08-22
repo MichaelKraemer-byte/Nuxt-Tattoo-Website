@@ -103,7 +103,7 @@
               <div
                 class="pointer-events-none absolute top-full inset-x-0 mx-auto mt-1 w-full max-w-[90vw] sm:max-w-[20rem] text-sm bg-zinc-800 border border-orange-500 text-white p-3 rounded-sm shadow-lg opacity-0 group-hover:opacity-100 transition duration-200 z-10"
               >
-                {{ t.form.placeholder.description }}
+                {{ t.form.descriptionAdvice }}
               </div>
             </div>
           </label>

@@ -129,6 +129,7 @@
       "budget": "Your budget range"
     },
     "dropdownHint": "You can also enter something of your own – these are just suggestions 🤗.",
+    "descriptionAdvice": "Please describe your desired tattoo as detailed as possible. Important information for me includes: size (e.g., in cm or \"palm-sized\"), style (e.g., microrealism, blackwork, fineline), colors (black and white, colored), design elements (motifs, symbols, fonts), placement on the body, and any special skin conditions (scars, moles).",
     "privacyAndAgeConsent": "I have read and agree to the privacy policy.",
     "ageConfirmation": "I confirm that I am 18 years or older."
   },
