@@ -33,7 +33,7 @@
               class="w-12 md:w-32 h-auto mb-4 scale-x-[-1]"
             />
             <h2
-              class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 leading-tight cinzel-600 mx-2 sm:mx-3 lg:mx-6 cinematic-heading hyphens-auto"
+              class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 leading-tight text-white mx-2 sm:mx-3 lg:mx-6 cinematic-heading hyphens-auto"
             >
               {{ t.aos.features.artistic.title }}
             </h2>
@@ -78,7 +78,7 @@
               class="w-12 md:w-32 h-auto mb-4 scale-x-[-1]"
             />
             <h2
-              class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight cinzel-600 mx-3 lg:mx-6 cinematic-heading"
+              class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight text-white mx-3 lg:mx-6 cinematic-heading"
             >
               {{ t.aos.features.spiritual.title }}
             </h2>
@@ -123,13 +123,13 @@
               class="w-12 md:w-32 h-auto mb-4 scale-x-[-1]"
             />
             <h2
-              class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight cinzel-600 mx-3 lg:mx-6 cinematic-heading"
+              class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight text-white mx-3 lg:mx-6 cinematic-heading"
             >
               {{ t.aos.features.quality.title }}
             </h2>
           </div>
           <p
-            class="text-base sm:text-lg text-gray-300 leading-relaxed poppins-300 text-center"
+            class="text-base sm:text-lg text-white/80 leading-relaxed poppins-300 text-center"
           >
             {{ t.aos.features.quality.description }}
           </p>
@@ -148,9 +148,14 @@ import { useI18n } from "~/composables/useI18n";
 const { t } = useI18n();
 
 onMounted(() => {
+  // Mobile-Erkennung für Performance
+  const isMobile = window.innerWidth < 768;
+
   AOS.init({
-    duration: 800,
+    duration: isMobile ? 400 : 800, // Schnellere Animationen auf Mobile
     once: true,
+    disable: isMobile ? "mobile" : false, // AOS auf Mobile deaktivieren
+    offset: isMobile ? 50 : 100, // Kleinere Offset auf Mobile
   });
 });
 </script>

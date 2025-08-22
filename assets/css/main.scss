@@ -650,3 +650,64 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: #6b7280; /* Etwas helleres Grau bei Hover */
 }
+
+/* Mobile Performance-Optimierungen */
+@media (max-width: 768px) {
+  /* Reduzierte Komplexität auf Mobile */
+  .cinematic-heading,
+  .hero-content,
+  .gallery-item,
+  .testimonial-card {
+    will-change: auto !important;
+    transform: none !important;
+  }
+
+  /* Einfachere Schatten auf Mobile */
+  .shadow-2xl {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  /* Reduzierte Backdrop-Filter auf Mobile */
+  .backdrop-blur-sm {
+    backdrop-filter: none !important;
+  }
+
+  /* Schnellere Animationen auf Mobile */
+  .animate-fade-in,
+  .animate-slide-in-left,
+  .animate-slide-in-right,
+  .animate-scale-in {
+    animation-duration: 0.2s !important;
+  }
+
+  /* AOS-Animationen für alle Seiten optimieren */
+  [data-aos] {
+    animation-duration: 0.4s !important;
+  }
+
+  /* Swiper-Optimierungen auf Mobile */
+  .swiper {
+    will-change: auto !important;
+  }
+
+  .swiper-slide {
+    transform: none !important;
+  }
+
+  /* Form-Optimierungen auf Mobile */
+  input,
+  textarea,
+  select {
+    transition-duration: 0.2s !important;
+  }
+
+  /* Button-Optimierungen auf Mobile */
+  .cta-button {
+    transition-duration: 0.2s !important;
+  }
+
+  /* Image-Optimierungen auf Mobile */
+  img {
+    will-change: auto !important;
+  }
+}

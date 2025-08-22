@@ -2,7 +2,9 @@
   <section
     class="relative w-full min-h-[100dvh] flex items-center justify-center bg-[#0f0f0f] text-white overflow-hidden px-4 sm:px-6 md:px-8"
   >
+    <!-- Video nur auf Desktop, statisches Bild auf Mobile -->
     <video
+      v-if="!isMobile"
       ref="videoRef"
       autoplay
       muted
@@ -15,6 +17,12 @@
       <source src="/videos/hero-video.mp4" type="video/mp4" />
       {{ t.hero.videoNotSupported }}
     </video>
+
+    <!-- Statisches Bild für Mobile -->
+    <div
+      v-else
+      class="absolute inset-0 w-full h-full bg-gradient-to-b from-[#0f0f0f] via-[#1a1a1a] to-[#0f0f0f] opacity-30"
+    ></div>
 
     <!-- Transparenter Bereich für besseren Übergang zum Sternenhimmel -->
     <div
@@ -87,6 +95,7 @@ import "assets/css/main.scss";
 
 const { t } = useI18n();
 const videoRef = ref(null);
+const isMobile = ref(false);
 
 const onVideoLoaded = () => {
   // Video ist geladen und kann abgespielt werden
@@ -99,8 +108,23 @@ const onVideoLoaded = () => {
 };
 
 onMounted(() => {
+  // Mobile-Erkennung
+  const checkMobile = () => {
+    isMobile.value = window.innerWidth < 768;
+  };
+
+  checkMobile();
+  window.addEventListener("resize", checkMobile);
+
+  // Video nur laden wenn nicht Mobile
+  if (!isMobile.value && videoRef.value) {
+    videoRef.value.play().catch(() => {
+      console.log("Autoplay nicht unterstützt");
+    });
+  }
+
   // Lazy loading für Video
-  if ("IntersectionObserver" in window) {
+  if ("IntersectionObserver" in window && !isMobile.value) {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting && videoRef.value) {

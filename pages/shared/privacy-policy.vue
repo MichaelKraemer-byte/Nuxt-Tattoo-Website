@@ -1,6 +1,9 @@
 <template>
   <div
     class="text-white flex flex-col gap-8 w-full max-w-screen-xl mx-auto px-4 md:px-6 lg:px-8 py-50"
+    data-aos="fade-in"
+    data-aos-duration="400"
+    data-aos-offset="50"
   >
     <div class="w-full md:w-10/12 lg:w-8/12 mx-auto flex flex-col gap-6">
       <h1 class="text-center">{{ t.privacy.title }}</h1>
@@ -329,8 +332,22 @@
 <script setup>
 import "assets/css/main.scss";
 import { useI18n } from "~/composables/useI18n";
+import { onMounted } from "vue";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const { t } = useI18n();
+
+onMounted(() => {
+  // Mobile-Erkennung für Performance
+  const isMobile = window.innerWidth < 768;
+
+  AOS.init({
+    duration: isMobile ? 400 : 800, // Schnellere Animationen auf Mobile
+    once: true,
+    offset: isMobile ? 50 : 100, // Kleinere Offset auf Mobile
+  });
+});
 </script>
 
 <style></style>

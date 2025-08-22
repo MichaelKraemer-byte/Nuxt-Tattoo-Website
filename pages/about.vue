@@ -5,6 +5,8 @@
       <section
         class="relative min-h-[100dvh] flex flex-col justify-center items-center text-center px-4 sm:px-6 md:px-8"
         data-aos="fade-in"
+        data-aos-duration="400"
+        data-aos-offset="50"
       >
         <img
           src="\img\me\finger-pistole-copy2.jpg"
@@ -49,6 +51,8 @@
         <div
           class="w-full lg:w-1/2 overflow-hidden transparent-slider p-2 sm:p-4 rounded-xl sm:rounded-2xl"
           data-aos="fade-right"
+          data-aos-duration="400"
+          data-aos-offset="50"
         >
           <Swiper
             :modules="[Pagination, Navigation]"
@@ -72,6 +76,8 @@
         <div
           class="w-full lg:w-1/2 text-center lg:text-left"
           data-aos="fade-left"
+          data-aos-duration="400"
+          data-aos-offset="50"
         >
           <div
             class="flex flex-col items-center justify-center lg:justify-start w-full"
@@ -560,11 +566,28 @@ watch(currentLanguage, (newLang) => {
 });
 
 onMounted(() => {
-  AOS.init({ duration: 800, once: true });
+  // Mobile-Erkennung für Performance
+  const isMobile = window.innerWidth < 768;
+
+  AOS.init({
+    duration: isMobile ? 400 : 800, // Schnellere Animationen auf Mobile
+    once: true,
+    offset: isMobile ? 50 : 100, // Kleinere Offset auf Mobile
+  });
+
   if (window.innerWidth < 640) {
     // sm breakpoint Tailwind
     spaceBetween.value = 16; // kleinerer Abstand auf mobil
   }
+
+  // Mobile-Optimierungen für Swiper
+  if (isMobile) {
+    const swiperElements = document.querySelectorAll(".swiper");
+    swiperElements.forEach((swiper) => {
+      swiper.style.willChange = "auto";
+    });
+  }
+
   // Use nextTick to ensure DOM is updated before interacting with Swiper
   nextTick(() => {
     if (swiperRef.value?.swiper) {

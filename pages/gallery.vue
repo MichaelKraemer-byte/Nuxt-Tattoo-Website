@@ -3,7 +3,12 @@
     class="relative min-h-[100dvh] py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-24"
   >
     <!-- Hero Section -->
-    <section class="text-center mb-16 fade-in">
+    <section
+      class="text-center mb-16 fade-in"
+      data-aos="fade-in"
+      data-aos-duration="400"
+      data-aos-offset="50"
+    >
       <!-- Auge Icon -->
       <div class="flex justify-center mb-8">
         <img
@@ -50,6 +55,9 @@
             shouldLoadIframe
           "
           class="instagram-feed-container"
+          data-aos="fade-up"
+          data-aos-duration="400"
+          data-aos-offset="50"
         >
           <!-- Instagram Feed Header mit Animation -->
           <div class="feed-header feed-in-animation">
@@ -254,5 +262,33 @@ function onIframeLoaded() {
   transform: translateY(-5px);
   box-shadow: 0 35px 60px -15px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
+}
+
+/* Mobile Performance-Optimierungen */
+@media (max-width: 768px) {
+  .fade-in {
+    animation-duration: 0.4s;
+  }
+
+  .feed-in-animation {
+    animation-duration: 0.6s;
+  }
+
+  .feed-icon-animation {
+    animation-duration: 0.4s;
+  }
+
+  .feed-iframe-animation {
+    animation-duration: 0.8s;
+    transform: none;
+    will-change: auto;
+  }
+
+  /* Reduzierte Hover-Effekte auf Mobile */
+  .feed-header:hover .feed-icon-animation,
+  .feed-iframe-animation:hover {
+    transform: none;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
 }
 </style>

@@ -1,5 +1,29 @@
 /* Erweiterte Sternenhimmel-Effekte */
 
+/* Mobile Performance-Optimierungen */
+@media (max-width: 768px) {
+  .star-cosmic,
+  .star-drifting,
+  .star-aurora {
+    animation: none !important;
+    opacity: 0.3 !important;
+  }
+
+  .star-cluster::before,
+  .star-cluster::after {
+    display: none !important;
+  }
+
+  .meteor {
+    display: none !important;
+  }
+
+  /* Reduzierte Stern-Anzahl auf Mobile */
+  .stars-container {
+    --star-count: 20 !important;
+  }
+}
+
 /* Zusätzliche Stern-Animationen */
 @keyframes cosmic-pulse {
   0%,

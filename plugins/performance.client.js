@@ -58,6 +58,63 @@ export default defineNuxtPlugin(() => {
         }, 0);
       });
     }
+
+    // Mobile Performance-Optimierungen
+    const isMobile = window.innerWidth < 768;
+    if (isMobile) {
+      // Reduzierte Animationen auf Mobile
+      document.documentElement.style.setProperty(
+        "--animation-duration",
+        "0.2s"
+      );
+
+      // Einfachere Schatten auf Mobile
+      const style = document.createElement("style");
+      style.textContent = `
+        @media (max-width: 768px) {
+          * {
+            transition-duration: 0.2s !important;
+          }
+          .shadow-2xl {
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1) !important;
+          }
+          
+          /* AOS-Animationen für alle Seiten */
+          [data-aos] {
+            animation-duration: 0.4s !important;
+          }
+          
+          /* Swiper-Optimierungen */
+          .swiper {
+            will-change: auto !important;
+          }
+          
+          /* Form-Optimierungen */
+          input, textarea, select {
+            transition-duration: 0.2s !important;
+          }
+          
+          /* Button-Optimierungen */
+          .cta-button {
+            transition-duration: 0.2s !important;
+          }
+        }
+      `;
+      document.head.appendChild(style);
+
+      // Reduzierte Bildqualität auf Mobile
+      const images = document.querySelectorAll("img");
+      images.forEach((img) => {
+        if (img.src.includes("/img/")) {
+          img.loading = "lazy";
+          img.decoding = "async";
+        }
+      });
+
+      // AOS-Initialisierung für alle Seiten optimieren
+      if (window.AOS) {
+        window.AOS.refresh();
+      }
+    }
   }
 });
-

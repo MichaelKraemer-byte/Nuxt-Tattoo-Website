@@ -1,5 +1,10 @@
 <template>
-  <div class="max-w-3xl mx-auto px-6 py-12 text-center py-40">
+  <div
+    class="max-w-3xl mx-auto px-6 py-12 text-center py-40"
+    data-aos="fade-in"
+    data-aos-duration="400"
+    data-aos-offset="50"
+  >
     <h1 class="text-3xl poppins-600 mb-8 text-white cinzel-500">
       {{ t.imprint.title }}
     </h1>
@@ -66,6 +71,20 @@
 
 <script setup>
 import { useI18n } from "~/composables/useI18n";
+import { onMounted } from "vue";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const { t } = useI18n();
+
+onMounted(() => {
+  // Mobile-Erkennung für Performance
+  const isMobile = window.innerWidth < 768;
+
+  AOS.init({
+    duration: isMobile ? 400 : 800, // Schnellere Animationen auf Mobile
+    once: true,
+    offset: isMobile ? 50 : 100, // Kleinere Offset auf Mobile
+  });
+});
 </script>

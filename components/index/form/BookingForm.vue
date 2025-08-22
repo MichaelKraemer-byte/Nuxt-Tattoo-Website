@@ -4,6 +4,8 @@
       id="BookingForm"
       class="w-full max-w-xs sm:max-w-sm md:max-w-lg lg:max-w-xl xl:max-w-2xl mx-auto px-4 sm:px-6 md:px-8 py-6 sm:py-8 bg-gradient-to-br from-zinc-900/95 to-zinc-800/90 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl text-white space-y-6 sm:space-y-8 mb-20 sm:mb-32 md:mb-40 poppins-200 border border-zinc-700/50 flex flex-col items-center"
       data-aos="fade-in"
+      data-aos-duration="400"
+      data-aos-offset="50"
     >
       <div class="text-center space-y-2 sm:space-y-3">
         <h2
