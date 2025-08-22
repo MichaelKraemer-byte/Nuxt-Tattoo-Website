@@ -16,6 +16,7 @@
     <!-- Vorschlagsliste -->
     <ul
       v-if="filteredSpots.length > 0"
+      ref="suggestionsListRef"
       class="absolute z-20 bg-zinc-800 border border-zinc-700 mt-1 w-full rounded-sm shadow-lg max-h-48 overflow-y-auto"
     >
       <!-- 💬 Hinweis oben -->
@@ -43,7 +44,7 @@
 </template>
 
 <script setup>
-import { ref, watch, onMounted, onUnmounted } from "vue";
+import { ref, watch, onMounted, onUnmounted, nextTick } from "vue";
 import { spotSuggestions } from "~/utils/spotSuggestions.js";
 import { useI18n } from "~/composables/useI18n";
 
@@ -82,6 +83,7 @@ const emit = defineEmits(["update:modelValue"]);
 const query = ref(props.modelValue); // Verknüpft den query-Wert mit modelValue
 const filteredSpots = ref([]);
 const highlightedIndex = ref(-1);
+const suggestionsListRef = ref(null); // Ref for the suggestions list
 
 // Wenn query geändert wird, filtern wir die Vorschläge
 const filterSpots = () => {
@@ -111,6 +113,11 @@ const selectSpot = (spot) => {
 const highlightNext = () => {
   if (highlightedIndex.value < filteredSpots.value.length - 1) {
     highlightedIndex.value++;
+    nextTick(() => {
+      const highlightedElement =
+        suggestionsListRef.value?.children[highlightedIndex.value + 1]; // +1 because of the hint div
+      highlightedElement?.scrollIntoView({ block: "nearest" });
+    });
   }
 };
 
@@ -118,6 +125,11 @@ const highlightNext = () => {
 const highlightPrev = () => {
   if (highlightedIndex.value > 0) {
     highlightedIndex.value--;
+    nextTick(() => {
+      const highlightedElement =
+        suggestionsListRef.value?.children[highlightedIndex.value + 1]; // +1 because of the hint div
+      highlightedElement?.scrollIntoView({ block: "nearest" });
+    });
   }
 };
 
