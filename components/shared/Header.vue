@@ -25,13 +25,13 @@
         <div class="flex items-center space-x-6">
           <NuxtLink
             to="/gallery"
-            class="btn-custom-2 py-2 text-white text-sm sm:text-lg font-medium hover:text-[#d4af37] cinzel-300 break-words"
+            class="btn-custom-2 py-2 text-white text-sm sm:text-lg font-medium hover:text-[#d4af37] cinzel-300 hyphens-auto"
           >
             {{ t.navigation.gallery }}
           </NuxtLink>
           <NuxtLink
             to="/about"
-            class="btn-custom-2 py-2 text-white text-sm sm:text-lg font-medium hover:text-[#d4af37] cinzel-300 break-words"
+            class="btn-custom-2 py-2 text-white text-sm sm:text-lg font-medium hover:text-[#d4af37] cinzel-300 hyphens-auto"
           >
             {{ t.navigation.about }}
           </NuxtLink>
@@ -142,6 +142,24 @@
 
       <!-- Menu Content -->
       <div class="mobile-menu-content">
+        <!-- Logo Button Section - Top Left Corner -->
+        <div class="mobile-logo-section-top-left">
+          <NuxtLink to="/" class="mobile-logo-button" @click="closeMenu">
+            <img
+              v-if="isGalleryPage"
+              src="/logo/mkc-gallery-logo.svg"
+              alt="MKC Gallery Logo"
+              class="mobile-logo-image"
+            />
+            <img
+              v-else
+              src="/logo/mkc-tattooart.svg"
+              alt="MKC Tattoo Art Logo"
+              class="mobile-logo-image"
+            />
+          </NuxtLink>
+        </div>
+
         <!-- Language Switcher Section -->
         <div class="mobile-language-section">
           <h3 class="mobile-section-title">
@@ -412,6 +430,50 @@ if (process.client) {
   transform: scale(1.05);
 }
 
+/* Logo Section - Top Left Corner */
+.mobile-logo-section-top-left {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  z-index: 10;
+}
+
+.mobile-logo-button {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem;
+  background: linear-gradient(
+    135deg,
+    rgba(212, 175, 55, 0.05),
+    rgba(244, 208, 63, 0.02)
+  );
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.mobile-logo-button:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(212, 175, 55, 0.1),
+    rgba(244, 208, 63, 0.05)
+  );
+  border-color: rgba(212, 175, 55, 0.4);
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.2);
+}
+
+.mobile-logo-image {
+  height: 2.5rem;
+  width: auto;
+  transition: all 0.3s ease;
+}
+
+.mobile-logo-button:hover .mobile-logo-image {
+  filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.6));
+}
+
 /* Menu Content */
 .mobile-menu-content {
   margin-top: 4rem;
@@ -422,6 +484,7 @@ if (process.client) {
 
 /* Language Section */
 .mobile-language-section {
+  margin-top: 2rem;
   background: linear-gradient(
     135deg,
     rgba(212, 175, 55, 0.05),
@@ -665,6 +728,19 @@ if (process.client) {
   .mobile-menu-content {
     margin-top: 3rem;
     gap: 1.5rem;
+  }
+
+  .mobile-logo-section-top-left {
+    top: 1rem;
+    left: 1rem;
+  }
+
+  .mobile-logo-button {
+    padding: 0.5rem;
+  }
+
+  .mobile-logo-image {
+    height: 2rem;
   }
 
   .mobile-language-section {

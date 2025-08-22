@@ -3,18 +3,20 @@
     <!-- Section 1 -->
     <ClientOnly>
       <section
-        class="mx-auto max-w-screen-2xl px-4 sm:px-6 md:px-10 lg:px-16 xl:px-32 flex flex-col lg:flex-row items-center pt-40 sm:pt-60 lg:pt-96 gap-12 sm:gap-16 lg:gap-24 overflow-hidden lg:overflow-visible"
+        class="mx-auto max-w-screen-2xl px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16 flex flex-col lg:flex-row items-center pt-20 sm:pt-32 md:pt-40 lg:pt-60 xl:pt-80 2xl:pt-96 gap-8 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-20 2xl:gap-24 overflow-hidden lg:overflow-visible"
       >
         <!-- Galerie -->
         <div
           data-aos="fade-up"
-          class="w-full lg:w-1/2 grid grid-cols-2 sm:grid-cols-3 gap-1"
+          class="w-full lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-1 sm:gap-2"
         >
-          <div class="col-span-2 sm:col-span-3 flex justify-center">
+          <div
+            class="col-span-1 sm:col-span-2 md:col-span-3 flex justify-center"
+          >
             <img
               src="/img/tung-monster.png"
               alt="Tattoo Galerie"
-              class="w-full max-w-[420px] h-auto object-contain swinging transition-transform duration-500 ease-in-out md:hover:scale-125 hover:z-10 lg:active:scale-125"
+              class="w-full max-w-[280px] sm:max-w-[320px] md:max-w-[380px] lg:max-w-[420px] h-auto object-contain swinging transition-transform duration-500 ease-in-out md:hover:scale-125 hover:z-10 lg:active:scale-125"
             />
           </div>
         </div>
@@ -23,7 +25,7 @@
         <div
           data-aos="fade-up"
           data-aos-delay="200"
-          class="w-full lg:w-1/2 text-center lg:text-left lg:px-2 sm:px-4"
+          class="w-full lg:w-1/2 text-center lg:text-left px-2 sm:px-4"
         >
           <div class="flex items-center w-full text-center flex-col">
             <img
@@ -31,13 +33,13 @@
               class="w-12 md:w-32 h-auto mb-4 scale-x-[-1]"
             />
             <h2
-              class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight cinzel-600 mx-3 lg:mx-6 cinematic-heading"
+              class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 leading-tight cinzel-600 mx-2 sm:mx-3 lg:mx-6 cinematic-heading hyphens-auto"
             >
               {{ t.aos.features.artistic.title }}
             </h2>
           </div>
           <p
-            class="text-base sm:text-lg text-gray-300 leading-relaxed poppins-300 text-center"
+            class="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed poppins-300 text-center hyphens-auto"
           >
             {{ t.aos.features.artistic.description }}
           </p>
@@ -48,7 +50,7 @@
     <!-- Section 2 -->
     <ClientOnly>
       <section
-        class="mx-auto max-w-screen-2xl px-4 sm:px-6 md:px-10 lg:px-16 xl:px-32 flex flex-col lg:flex-row-reverse items-center pt-24 sm:pt-36 gap-12 sm:gap-16 lg:gap-24 overflow-hidden lg:overflow-visible"
+        class="mx-auto max-w-screen-2xl px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16 flex flex-col lg:flex-row-reverse items-center pt-16 sm:pt-24 md:pt-32 lg:pt-40 xl:pt-48 2xl:pt-56 gap-8 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-20 2xl:gap-24 overflow-hidden lg:overflow-visible"
       >
         <!-- Galerie -->
         <div
@@ -93,7 +95,7 @@
     <!-- Section 3 -->
     <ClientOnly>
       <section
-        class="mx-auto max-w-screen-2xl px-4 sm:px-6 md:px-10 lg:px-16 xl:px-32 overflow-hidden lg:overflow-visible flex flex-col lg:flex-row items-center pt-24 sm:pt-36 pb-36 sm:pb-56 gap-12 sm:gap-16 lg:gap-24"
+        class="mx-auto max-w-screen-2xl px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-16 overflow-hidden lg:overflow-visible flex flex-col lg:flex-row items-center pt-16 sm:pt-24 md:pt-32 lg:pt-40 xl:pt-48 2xl:pt-56 pb-20 sm:pb-32 md:pb-40 lg:pb-48 xl:pb-56 2xl:pb-64 gap-8 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-20 2xl:gap-24"
       >
         <!-- Galerie -->
         <div

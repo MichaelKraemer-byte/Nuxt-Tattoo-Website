@@ -3,7 +3,7 @@
     <!-- HERO SECTION -->
     <client-only>
       <section
-        class="relative h-screen flex flex-col justify-center items-center text-center px-6"
+        class="relative min-h-[100dvh] flex flex-col justify-center items-center text-center px-4 sm:px-6 md:px-8"
         data-aos="fade-in"
       >
         <img
@@ -17,17 +17,23 @@
           class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#0f0f0f]/80 via-[#0f0f0f]/40 to-transparent pointer-events-none z-10"
         ></div>
 
-        <div class="relative z-20 max-w-3xl">
+        <div
+          class="relative z-20 w-full max-w-xs sm:max-w-sm md:max-w-2xl lg:max-w-3xl xl:max-w-4xl"
+        >
           <h1
-            class="text-5xl sm:text-6xl font-bold cinzel-700 mb-4 mx-2 cinematic-heading break-words"
+            class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold cinzel-700 mb-3 sm:mb-4 mx-2 cinematic-heading hyphens-auto leading-tight"
           >
             {{ t.about.hero.title }}
           </h1>
-          <h4 class="text-3xl cinzel-300 leading-relaxed cinematic-heading break-words">
+          <h4
+            class="text-lg sm:text-xl md:text-2xl lg:text-3xl cinzel-300 leading-relaxed cinematic-heading hyphens-auto"
+          >
             {{ t.about.hero.subtitle }}<br />
             {{ t.about.hero.description }}
           </h4>
-          <p class="mt-6 text-lg text-gray-300 poppins-200 hidden md:block">
+          <p
+            class="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg text-gray-300 poppins-200 hidden md:block hyphens-auto"
+          >
             {{ t.about.hero.longDescription }}
           </p>
         </div>
@@ -36,19 +42,19 @@
 
     <!-- SECTION: Persönliche Vorstellung -->
     <section
-      class="max-w-screen-2xl mx-auto px-6 py-32 flex flex-col-reverse lg:flex-row items-center gap-12"
+      class="max-w-screen-2xl mx-auto px-4 sm:px-6 md:px-8 py-16 sm:py-20 md:py-24 lg:py-32 flex flex-col-reverse lg:flex-row items-center gap-8 sm:gap-10 md:gap-12"
     >
       <client-only>
         <!-- Swiper-Bildbereich -->
         <div
-          class="!w-fit lg:w-1/2 overflow-hidden transparent-slider p-4 rounded-2xl"
+          class="w-full lg:w-1/2 overflow-hidden transparent-slider p-2 sm:p-4 rounded-xl sm:rounded-2xl"
           data-aos="fade-right"
         >
           <Swiper
             :modules="[Pagination, Navigation]"
             :pagination="{ clickable: true }"
             :navigation="true"
-            class="max-w-md mx-auto rounded-2xl overflow-hidden"
+            class="w-full max-w-xs sm:max-w-sm md:max-w-md mx-auto rounded-xl sm:rounded-2xl overflow-hidden"
           >
             <SwiperSlide v-for="(image, index) in personalImages" :key="index">
               <img
@@ -75,23 +81,23 @@
               class="w-12 md:w-32 h-auto mb-4 sm:mb-5 sm:mr-6 scale-x-[-1]"
             />
             <h2
-              class="text-5xl sm:text-6xl font-bold cinzel-500 mb-4 cinematic-heading break-words"
+              class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold cinzel-500 mb-3 sm:mb-4 cinematic-heading hyphens-auto leading-tight"
             >
               {{ t.about.personal.title }}
             </h2>
           </div>
           <p
-            class="text-lg text-gray-300 poppins-300 leading-relaxed mb-12 text-center"
+            class="text-sm sm:text-base md:text-lg text-gray-300 poppins-300 leading-relaxed mb-8 sm:mb-10 md:mb-12 text-center hyphens-auto"
           >
             {{ t.about.personal.description }}
           </p>
           <h3
-            class="text-4xl font-bold mb-4 cinzel-500 text-center cinematic-heading break-words"
+            class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 cinzel-500 text-center cinematic-heading hyphens-auto leading-tight"
           >
             {{ t.about.personal.whyTitle }}
           </h3>
           <p
-            class="text-lg text-gray-300 poppins-300 leading-relaxed text-center"
+            class="text-sm sm:text-base md:text-lg text-gray-300 poppins-300 leading-relaxed text-center hyphens-auto"
           >
             {{ t.about.personal.whyDescription }}
           </p>
@@ -101,84 +107,113 @@
 
     <client-only>
       <!-- SECTION: Timeline "Mein Weg" -->
-      <section class="transparent-section py-24 px-6" data-aos="fade-up">
+      <section
+        class="transparent-section py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8"
+        data-aos="fade-up"
+      >
         <div
-          class="flex flex-col items-center justify-center text-center w-full mb-4"
+          class="flex flex-col items-center justify-center text-center w-full mb-4 sm:mb-6"
         >
           <img
             src="/img/auge.png"
             class="w-12 md:w-32 h-auto mb-4 sm:mb-5 scale-x-[-1]"
           />
           <h2
-            class="text-5xl sm:text-6xl font-bold cinzel-500 mb-4 mx-6 cinematic-heading break-words"
+            class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold cinzel-500 mb-3 sm:mb-4 mx-3 sm:mx-4 md:mx-6 cinematic-heading hyphens-auto leading-tight"
           >
             {{ t.about.timeline.title }}
           </h2>
         </div>
-        <ol class="relative border-l border-gray-700 max-w-2xl mx-auto">
-          <li class="mb-10 ml-6">
+        <ol
+          class="relative border-l border-gray-700 max-w-xs sm:max-w-sm md:max-w-lg lg:max-w-xl xl:max-w-2xl mx-auto"
+        >
+          <li class="mb-8 sm:mb-10 ml-4 sm:ml-6">
             <span
-              class="absolute w-4 h-4 bg-gradient-to-r from-[#d4af37] to-[#f4d03f] rounded-full -left-2 shadow-[0_0_12px_rgba(212,175,55,0.6)]"
+              class="absolute w-3 h-3 sm:w-4 sm:h-4 bg-gradient-to-r from-[#d4af37] to-[#f4d03f] rounded-full -left-1.5 sm:-left-2 shadow-[0_0_8px_rgba(212,175,55,0.6)] sm:shadow-[0_0_12px_rgba(212,175,55,0.6)]"
             ></span>
-            <h3 class="text-xl font-semibold cinematic-heading">
+            <h3
+              class="text-base sm:text-lg md:text-xl font-semibold cinematic-heading hyphens-auto leading-tight"
+            >
               {{ t.about.timeline.items["2018"].title }}
             </h3>
-            <p class="text-gray-400">
+            <p
+              class="text-sm sm:text-base text-gray-400 hyphens-auto leading-relaxed"
+            >
               {{ t.about.timeline.items["2018"].description }}
             </p>
           </li>
-          <li class="mb-10 ml-6">
+          <li class="mb-8 sm:mb-10 ml-4 sm:ml-6">
             <span
-              class="absolute w-4 h-4 bg-gradient-to-r from-[#d4af37] to-[#f4d03f] rounded-full -left-2 shadow-[0_0_12px_rgba(212,175,55,0.6)]"
+              class="absolute w-3 h-3 sm:w-4 sm:h-4 bg-gradient-to-r from-[#d4af37] to-[#f4d03f] rounded-full -left-1.5 sm:-left-2 shadow-[0_0_8px_rgba(212,175,55,0.6)] sm:shadow-[0_0_12px_rgba(212,175,55,0.6)]"
             ></span>
-            <h3 class="text-xl font-semibold cinematic-heading">
+            <h3
+              class="text-base sm:text-lg md:text-xl font-semibold cinematic-heading hyphens-auto leading-tight"
+            >
               {{ t.about.timeline.items["2019"].title }}
             </h3>
-            <p class="text-gray-400">
+            <p
+              class="text-sm sm:text-base text-gray-400 hyphens-auto leading-relaxed"
+            >
               {{ t.about.timeline.items["2019"].description }}
             </p>
           </li>
-          <li class="mb-10 ml-6">
+          <li class="mb-8 sm:mb-10 ml-4 sm:ml-6">
             <span
-              class="absolute w-4 h-4 bg-gradient-to-r from-[#d4af37] to-[#f4d03f] rounded-full -left-2 shadow-[0_0_12px_rgba(212,175,55,0.6)]"
+              class="absolute w-3 h-3 sm:w-4 sm:h-4 bg-gradient-to-r from-[#d4af37] to-[#f4d03f] rounded-full -left-1.5 sm:-left-2 shadow-[0_0_8px_rgba(212,175,55,0.6)] sm:shadow-[0_0_12px_rgba(212,175,55,0.6)]"
             ></span>
-            <h3 class="text-xl font-semibold cinematic-heading">
+            <h3
+              class="text-base sm:text-lg md:text-xl font-semibold cinematic-heading hyphens-auto leading-tight"
+            >
               {{ t.about.timeline.items["2020"].title }}
             </h3>
-            <p class="text-gray-400">
+            <p
+              class="text-sm sm:text-base text-gray-400 hyphens-auto leading-relaxed"
+            >
               {{ t.about.timeline.items["2020"].description }}
             </p>
           </li>
-          <li class="mb-10 ml-6">
+          <li class="mb-8 sm:mb-10 ml-4 sm:ml-6">
             <span
-              class="absolute w-4 h-4 bg-gradient-to-r from-[#d4af37] to-[#f4d03f] rounded-full -left-2 shadow-[0_0_12px_rgba(212,175,55,0.6)]"
+              class="absolute w-3 h-3 sm:w-4 sm:h-4 bg-gradient-to-r from-[#d4af37] to-[#f4d03f] rounded-full -left-1.5 sm:-left-2 shadow-[0_0_8px_rgba(212,175,55,0.6)] sm:shadow-[0_0_12px_rgba(212,175,55,0.6)]"
             ></span>
-            <h3 class="text-xl font-semibold cinematic-heading">
+            <h3
+              class="text-base sm:text-lg md:text-xl font-semibold cinematic-heading hyphens-auto leading-tight"
+            >
               {{ t.about.timeline.items["2022-2024"].title }}
             </h3>
-            <p class="text-gray-400">
+            <p
+              class="text-sm sm:text-base text-gray-400 hyphens-auto leading-relaxed"
+            >
               {{ t.about.timeline.items["2022-2024"].description }}
             </p>
           </li>
-          <li class="mb-10 ml-6">
+          <li class="mb-8 sm:mb-10 ml-4 sm:ml-6">
             <span
-              class="absolute w-4 h-4 bg-gradient-to-r from-[#d4af37] to-[#f4d03f] rounded-full -left-2 shadow-[0_0_12px_rgba(212,175,55,0.6)]"
+              class="absolute w-3 h-3 sm:w-4 sm:h-4 bg-gradient-to-r from-[#d4af37] to-[#f4d03f] rounded-full -left-1.5 sm:-left-2 shadow-[0_0_8px_rgba(212,175,55,0.6)] sm:shadow-[0_0_12px_rgba(212,175,55,0.6)]"
             ></span>
-            <h3 class="text-xl font-semibold cinematic-heading">
+            <h3
+              class="text-base sm:text-lg md:text-xl font-semibold cinematic-heading hyphens-auto leading-tight"
+            >
               {{ t.about.timeline.items["2024"].title }}
             </h3>
-            <p class="text-gray-400">
+            <p
+              class="text-sm sm:text-base text-gray-400 hyphens-auto leading-relaxed"
+            >
               {{ t.about.timeline.items["2024"].description }}
             </p>
           </li>
-          <li class="ml-6">
+          <li class="ml-4 sm:ml-6">
             <span
-              class="absolute w-4 h-4 bg-gradient-to-r from-[#d4af37] to-[#f4d03f] rounded-full -left-2 shadow-[0_0_12px_rgba(212,175,55,0.6)]"
+              class="absolute w-3 h-3 sm:w-4 sm:h-4 bg-gradient-to-r from-[#d4af37] to-[#f4d03f] rounded-full -left-1.5 sm:-left-2 shadow-[0_0_8px_rgba(212,175,55,0.6)] sm:shadow-[0_0_12px_rgba(212,175,55,0.6)]"
             ></span>
-            <h3 class="text-xl font-semibold cinematic-heading">
+            <h3
+              class="text-base sm:text-lg md:text-xl font-semibold cinematic-heading hyphens-auto leading-tight"
+            >
               {{ t.about.timeline.items["2024-2025"].title }}
             </h3>
-            <p class="text-gray-400">
+            <p
+              class="text-sm sm:text-base text-gray-400 hyphens-auto leading-relaxed"
+            >
               {{ t.about.timeline.items["2024-2025"].description }}
             </p>
           </li>
@@ -189,10 +224,10 @@
     <client-only>
       <!-- SECTION: Stil & Inspiration -->
       <section
-        class="max-w-screen-2xl mx-auto px-6 py-24 flex flex-col lg:flex-row items-center gap-12"
+        class="max-w-screen-2xl mx-auto px-4 sm:px-6 md:px-8 py-16 sm:py-20 md:py-24 flex flex-col lg:flex-row items-center gap-8 sm:gap-10 md:gap-12"
       >
         <div
-          class="w-full lg:w-1/2 swiper-container overflow-hidden rounded-xl transparent-slider p-4"
+          class="w-full lg:w-1/2 swiper-container overflow-hidden rounded-lg sm:rounded-xl transparent-slider p-2 sm:p-4"
           data-aos="fade-right"
         >
           <!-- Swipe-Galerie kommt hier rein -->
@@ -262,7 +297,9 @@
               src="/img/auge.png"
               class="w-12 md:w-32 h-auto mb-4 sm:mb-5 scale-x-[-1]"
             />
-            <h2 class="text-4xl font-bold cinzel-500 mx-6 cinematic-heading break-words">
+            <h2
+              class="text-4xl font-bold cinzel-500 mx-6 cinematic-heading hyphens-auto"
+            >
               {{ t.about.style.title }}
             </h2>
           </div>
@@ -286,9 +323,11 @@
         >
           <img
             src="/img/auge.png"
-            class="w-12 lg:w-32 h-auto mb-4 sm:mb-5 scale-x-[-1]"
+            class="w-12 md:w-32 h-auto mb-4 sm:mb-5 scale-x-[-1]"
           />
-          <h2 class="text-4xl font-bold cinzel-500 mx-6 cinematic-heading break-words">
+          <h2
+            class="text-4xl font-bold cinzel-500 mx-6 cinematic-heading hyphens-auto"
+          >
             {{ t.about.eye.title }}
           </h2>
         </div>
@@ -312,7 +351,7 @@
             class="w-12 lg:w-32 h-auto mb-4 scale-x-[-1]"
           />
           <h2
-            class="text-3xl sm:text-4xl font-bold cinzel-500 mx-6 cinematic-heading break-words"
+            class="text-3xl sm:text-4xl font-bold cinzel-500 mx-6 cinematic-heading hyphens-auto"
           >
             {{ t.about.testimonials.title }}<br />
             {{ t.about.testimonials.subtitle }}
@@ -367,7 +406,7 @@
 
                     <!-- Zitattext -->
                     <blockquote
-                      class="poppins-300 text-sm md:text-base lg:text-lg italic leading-relaxed break-words"
+                      class="poppins-300 text-sm md:text-base lg:text-lg italic leading-relaxed hyphens-auto"
                     >
                       {{ testimonial.text }}
                     </blockquote>
@@ -404,7 +443,9 @@
             src="/img/auge.png"
             class="w-12 lg:w-32 h-auto mb-4 scale-x-[-1]"
           />
-          <h2 class="text-4xl font-bold cinzel-500 cinematic-heading break-words">
+          <h2
+            class="text-4xl font-bold cinzel-500 cinematic-heading hyphens-auto"
+          >
             {{ t.about.cta.title }}
           </h2>
         </div>

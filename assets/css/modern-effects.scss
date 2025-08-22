@@ -1,14 +1,33 @@
-/* Moderne kinematische Effekte für die Tattoo-Website */
+/* Moderne kinematische Effekte für die Tattoo-Website - Mobile-First */
 
-/* Glasmorphismus-Effekte */
+/* Mobile-First Base Styles */
 .glass-effect {
   background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(5px); /* Reduced blur for mobile performance */
   border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3); /* Smaller shadow for mobile */
   hyphens: auto;
   -webkit-hyphens: auto;
   -ms-hyphens: auto;
+  border-radius: 8px; /* Mobile-first border radius */
+  padding: 12px; /* Mobile-first padding */
+}
+
+/* Responsive Glass Effect */
+@media (min-width: 768px) {
+  .glass-effect {
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    padding: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .glass-effect {
+    padding: 20px;
+    border-radius: 16px;
+  }
 }
 
 /* Moderne Hover-Effekte */
@@ -80,20 +99,57 @@
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
 }
 
-/* Optimierte CTA Button-Klasse */
+/* Mobile-First CTA Button-Klasse */
 .cta-button {
   position: relative;
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
-  font-weight: 800;
-  letter-spacing: 0.05em;
+  font-weight: 700; /* Slightly reduced for mobile */
+  letter-spacing: 0.03em; /* Reduced for mobile */
   border: 2px solid transparent;
   background-clip: padding-box;
   z-index: 1;
   hyphens: auto;
   -webkit-hyphens: auto;
   -ms-hyphens: auto;
+  padding: 12px 20px; /* Mobile-first padding */
+  font-size: 0.875rem; /* Mobile-first font size */
+  min-height: 48px; /* Touch-friendly height */
+  border-radius: 8px; /* Mobile-first border radius */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Responsive CTA Button */
+@media (min-width: 480px) {
+  .cta-button {
+    padding: 14px 24px;
+    font-size: 1rem;
+    min-height: 52px;
+  }
+}
+
+@media (min-width: 768px) {
+  .cta-button {
+    padding: 16px 28px;
+    font-size: 1.125rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    min-height: 56px;
+    border-radius: 12px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cta-button {
+    padding: 18px 32px;
+    font-size: 1.25rem;
+    min-height: 60px;
+    border-radius: 16px;
+  }
 }
 
 .cta-button::before {

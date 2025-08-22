@@ -2,12 +2,12 @@
   <client-only>
     <div
       id="BookingForm"
-      class="max-w-full sm:max-w-2xl mx-auto px-6 py-8 sm:p-8 bg-gradient-to-br from-zinc-900/95 to-zinc-800/90 backdrop-blur-sm rounded-2xl shadow-2xl text-white space-y-8 mb-40 poppins-200 border border-zinc-700/50"
+      class="w-full max-w-xs sm:max-w-sm md:max-w-lg lg:max-w-xl xl:max-w-2xl mx-auto px-4 sm:px-6 md:px-8 py-6 sm:py-8 bg-gradient-to-br from-zinc-900/95 to-zinc-800/90 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl text-white space-y-6 sm:space-y-8 mb-20 sm:mb-32 md:mb-40 poppins-200 border border-zinc-700/50 flex flex-col items-center"
       data-aos="fade-in"
     >
-      <div class="text-center space-y-3">
+      <div class="text-center space-y-2 sm:space-y-3">
         <h2
-          class="!text-2xl lg:!text-4xl cinzel-500 cinematic-heading hyphens-auto"
+          class="text-xl sm:text-2xl md:text-3xl lg:text-4xl cinzel-500 cinematic-heading hyphens-auto leading-tight"
         >
           {{ t.form.title }}
         </h2>
@@ -23,68 +23,72 @@
         <input type="hidden" name="botcheck" v-model="botcheck" />
 
         <!-- Name -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
           <div class="space-y-2">
-            <label class="block text-sm font-medium text-zinc-300">{{
-              t.form.firstName
-            }}</label>
+            <label
+              class="block text-xs sm:text-sm font-medium text-zinc-300 hyphens-auto"
+              >{{ t.form.firstName }}</label
+            >
             <input
               maxlength="50"
               v-model="form.firstName"
               type="text"
               required
               :placeholder="t.form.placeholder.firstName"
-              class="w-full bg-zinc-800/80 text-white border border-zinc-600/50 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#d4af37] focus:border-[#d4af37] transition-all duration-300 hover:border-zinc-500/70 placeholder-zinc-500"
+              class="w-full bg-zinc-800/80 text-white border border-zinc-600/50 rounded-lg px-3 py-2.5 sm:px-4 sm:py-3 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#d4af37] focus:border-[#d4af37] transition-all duration-300 hover:border-zinc-500/70 placeholder-zinc-500"
             />
           </div>
           <div class="space-y-2">
-            <label class="block text-sm font-medium text-zinc-300">{{
-              t.form.lastName
-            }}</label>
+            <label
+              class="block text-xs sm:text-sm font-medium text-zinc-300 hyphens-auto"
+              >{{ t.form.lastName }}</label
+            >
             <input
               maxlength="50"
               v-model="form.lastName"
               type="text"
               required
               :placeholder="t.form.placeholder.lastName"
-              class="w-full bg-zinc-800/80 text-white border border-zinc-600/50 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#d4af37] focus:border-[#d4af37] transition-all duration-300 hover:border-zinc-500/70 placeholder-zinc-500"
+              class="w-full bg-zinc-800/80 text-white border border-zinc-600/50 rounded-lg px-3 py-2.5 sm:px-4 sm:py-3 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#d4af37] focus:border-[#d4af37] transition-all duration-300 hover:border-zinc-500/70 placeholder-zinc-500"
             />
           </div>
         </div>
 
         <!-- Email -->
         <div class="space-y-2">
-          <label class="block text-sm font-medium text-zinc-300">{{
-            t.form.email
-          }}</label>
+          <label
+            class="block text-xs sm:text-sm font-medium text-zinc-300 hyphens-auto"
+            >{{ t.form.email }}</label
+          >
           <input
             maxlength="50"
             v-model="form.email"
             type="email"
             required
             :placeholder="t.form.placeholder.email"
-            class="w-full bg-zinc-800/80 text-white border border-zinc-600/50 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#d4af37] focus:border-[#d4af37] transition-all duration-300 hover:border-zinc-500/70 placeholder-zinc-500"
+            class="w-full bg-zinc-800/80 text-white border border-zinc-600/50 rounded-lg px-3 py-2.5 sm:px-4 sm:py-3 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#d4af37] focus:border-[#d4af37] transition-all duration-300 hover:border-zinc-500/70 placeholder-zinc-500"
           />
         </div>
 
         <!-- Telefonnummer -->
         <div class="space-y-2">
-          <label class="block text-sm font-medium text-zinc-300">{{
-            t.form.phone
-          }}</label>
+          <label
+            class="block text-xs sm:text-sm font-medium text-zinc-300 hyphens-auto"
+            >{{ t.form.phone }}</label
+          >
           <input
             maxlength="30"
             v-model="form.phone"
             type="tel"
             required
             :placeholder="t.form.placeholder.phone"
-            class="w-full bg-zinc-800/80 text-white border border-zinc-600/50 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#d4af37] focus:border-[#d4af37] transition-all duration-300 hover:border-zinc-500/70 placeholder-zinc-500"
+            class="w-full bg-zinc-800/80 text-white border border-zinc-600/50 rounded-lg px-3 py-2.5 sm:px-4 sm:py-3 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#d4af37] focus:border-[#d4af37] transition-all duration-300 hover:border-zinc-500/70 placeholder-zinc-500"
           />
         </div>
 
         <!-- Volljährigkeit -->
         <div
-          class="flex items-center space-x-3 p-4 bg-zinc-800/50 rounded-lg border border-zinc-600/30 flex-nowrap"
+          class="flex items-start sm:items-center space-x-3 p-3 sm:p-4 bg-zinc-800/50 rounded-lg border border-zinc-600/30 flex-nowrap"
         >
           <input
             maxlength="50"
@@ -92,11 +96,11 @@
             v-model="form.isAdult"
             type="checkbox"
             required
-            class="w-5 h-5 bg-zinc-700 border-zinc-500 rounded cursor-pointer focus:ring-2 focus:ring-[#d4af37] focus:ring-offset-2 focus:ring-offset-zinc-800 flex-shrink-0"
+            class="w-4 h-4 sm:w-5 sm:h-5 bg-zinc-700 border-zinc-500 rounded cursor-pointer focus:ring-2 focus:ring-[#d4af37] focus:ring-offset-2 focus:ring-offset-zinc-800 flex-shrink-0 mt-0.5 sm:mt-0"
           />
           <label
             for="isAdult"
-            class="text-white select-none cursor-pointer text-sm"
+            class="text-white select-none cursor-pointer text-xs sm:text-sm hyphens-auto leading-relaxed"
           >
             {{ t.form.ageConfirmation }}
           </label>
@@ -125,7 +129,7 @@
             >
             <div class="relative mb-1">
               <div
-                class="pointer-events-none absolute top-full inset-x-0 mx-auto mt-2 w-full max-w-[90vw] sm:max-w-[20rem] text-sm bg-zinc-800/95 backdrop-blur-sm border border-[#d4af37]/50 text-white p-4 rounded-lg shadow-2xl opacity-0 group-hover:opacity-100 transition-all duration-300 z-10"
+                class="pointer-events-none absolute top-full inset-x-0 mx-auto mt-2 w-full max-w-[90vw] sm:max-w-[28rem] md:max-w-[32rem] text-sm bg-zinc-800/95 backdrop-blur-sm border border-[#d4af37]/50 text-white p-4 sm:p-5 rounded-lg shadow-2xl opacity-0 group-hover:opacity-100 transition-all duration-300 z-10 hyphens-auto leading-relaxed"
               >
                 {{ t.form.descriptionAdvice }}
               </div>
@@ -530,8 +534,38 @@ textarea:focus::placeholder {
   opacity: 0.7;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 640px) {
+/* Mobile-First Responsive Adjustments */
+@media (max-width: 300px) {
+  #BookingForm {
+    margin: 0 0.5rem 1rem 0.5rem;
+    padding: 1rem;
+    border-radius: 0.75rem;
+  }
+
+  .grid {
+    gap: 0.75rem;
+  }
+
+  input,
+  textarea,
+  select {
+    font-size: 0.875rem;
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+@media (min-width: 301px) and (max-width: 480px) {
+  #BookingForm {
+    margin: 0 0.75rem 1.5rem 0.75rem;
+    padding: 1.25rem;
+  }
+
+  .grid {
+    gap: 0.875rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 640px) {
   #BookingForm {
     margin: 0 1rem 2rem 1rem;
     padding: 1.5rem;
@@ -539,6 +573,27 @@ textarea:focus::placeholder {
 
   .grid {
     gap: 1rem;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+  #BookingForm {
+    margin: 0 1.5rem 2.5rem 1.5rem;
+    padding: 2rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  #BookingForm {
+    margin: 0 2rem 3rem 2rem;
+    padding: 2.5rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  #BookingForm {
+    margin: 0 2.5rem 4rem 2.5rem;
+    padding: 3rem;
   }
 }
 

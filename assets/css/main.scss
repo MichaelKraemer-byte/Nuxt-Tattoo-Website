@@ -9,9 +9,11 @@
   color: white;
 }
 
+/* Mobile-First Base Styles */
 html {
-  scroll-padding-top: 120px;
+  scroll-padding-top: 60px; /* Reduced for mobile */
   height: 100%;
+  font-size: 14px; /* Base font size for mobile */
 }
 
 body {
@@ -22,6 +24,11 @@ body {
   padding: 0;
   height: 100%;
   min-height: 100vh;
+  font-size: 1rem;
+  line-height: 1.5;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
 }
 
 html,
@@ -30,6 +37,40 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
+}
+
+/* Responsive Typography */
+@media (min-width: 480px) {
+  html {
+    font-size: 15px;
+    scroll-padding-top: 80px;
+  }
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+    scroll-padding-top: 100px;
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: 16px;
+    scroll-padding-top: 120px;
+  }
+}
+
+@media (min-width: 1280px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1536px) {
+  html {
+    font-size: 20px;
+  }
 }
 
 .poppins-200 {
@@ -116,6 +157,37 @@ body {
   color: #fff;
   transition: all 0.5s;
   position: relative;
+  padding: 10px 16px; /* Mobile-first padding */
+  font-size: 0.875rem; /* Mobile-first font size */
+  min-height: 44px; /* Touch-friendly minimum height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+}
+
+/* Responsive Button Sizing */
+@media (min-width: 480px) {
+  .btn-custom {
+    padding: 12px 20px;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .btn-custom {
+    padding: 12px 24px;
+    font-size: 1.125rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .btn-custom {
+    padding: 14px 28px;
+    font-size: 1.25rem;
+  }
 }
 .btn-custom::before {
   content: "";

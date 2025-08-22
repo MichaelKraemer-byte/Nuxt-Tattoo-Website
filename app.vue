@@ -1,5 +1,5 @@
 <template>
-  <div class="app-container break-words">
+  <div class="app-container hyphens-auto">
     <StarryBackground />
     <NuxtRouteAnnouncer />
     <Header />

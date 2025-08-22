@@ -1,16 +1,16 @@
 <template>
   <div
-    class="fixed right-0 top-1/2 transform -translate-y-1/2 flex flex-col gap-10 z-50 mr-8 hidden md:flex"
+    class="fixed right-0 top-1/2 transform -translate-y-1/2 flex flex-col gap-6 sm:gap-8 md:gap-10 z-50 mr-2 sm:mr-4 md:mr-6 lg:mr-8 hidden md:flex"
   >
     <!-- Instagram -->
     <a
       :href="instagramLink"
       target="_blank"
       rel="noopener noreferrer"
-      class="bg-zinc-800 hover:bg-zinc-700 p-4 rounded-full shadow-md transition"
+      class="bg-zinc-800 hover:bg-zinc-700 p-3 sm:p-4 rounded-full shadow-md transition-all duration-300 hover:scale-110"
     >
       <svg
-        class="w-6 h-6 md:w-8 md:h-8 text-gray-400"
+        class="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-gray-400"
         fill="currentColor"
         viewBox="0 0 24 24"
       >
@@ -25,10 +25,10 @@
       :href="whatsappLink"
       target="_blank"
       rel="noopener noreferrer"
-      class="bg-zinc-800 hover:bg-zinc-700 p-4 rounded-full shadow-md transition"
+      class="bg-zinc-800 hover:bg-zinc-700 p-3 sm:p-4 rounded-full shadow-md transition-all duration-300 hover:scale-110"
     >
       <svg
-        class="w-6 h-6 md:w-8 md:h-8 text-gray-400"
+        class="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-gray-400"
         fill="currentColor"
         viewBox="0 0 24 24"
       >
@@ -48,25 +48,77 @@ const whatsappLink = `https://wa.me/4915734434856?text=${encodeURIComponent(
 </script>
 
 <style scoped>
-/* Responsivität: Ausblenden unter 768px */
-@media (max-width: 768px) {
+/* Mobile-First Responsive Styles */
+@media (max-width: 767px) {
   .hidden {
     display: none;
   }
 }
 
-/* Responsive Größe für größere Bildschirme */
-@media (min-width: 768px) {
+/* Responsive Größen für verschiedene Bildschirmgrößen */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .w-5,
+  .h-5 {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
   .w-6,
   .h-6 {
     width: 1.5rem;
     height: 1.5rem;
   }
 
+  .w-7,
+  .h-7 {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .w-6,
+  .h-6 {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .w-7,
+  .h-7 {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+
   .w-8,
   .h-8 {
     width: 2rem;
     height: 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .w-8,
+  .h-8 {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+/* Touch-friendly hover effects for mobile */
+@media (hover: hover) {
+  a:hover {
+    transform: scale(1.1);
+  }
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  a {
+    transition: none;
+  }
+
+  a:hover {
+    transform: none;
   }
 }
 </style>

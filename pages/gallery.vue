@@ -1,5 +1,7 @@
 <template>
-  <div class="relative min-h-screen py-32 sm:px-8 md:px-16 lg:px-32 xl:px-48">
+  <div
+    class="relative min-h-[100dvh] py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-24"
+  >
     <!-- Zeige nichts, bis hydration abgeschlossen ist -->
     <div v-if="isHydrated" id="instagram-container">
       <div class="mx-auto max-w-5xl w-full">
@@ -18,12 +20,14 @@
 
         <div
           v-else-if="cookieStore.instagramIframeSrc === ''"
-          class="fixed inset-0 flex items-center justify-center"
+          class="fixed inset-0 flex items-center justify-center p-4"
         >
           <div
-            class="max-w-xl w-full border border-dashed border-gray-400 shadow-md rounded-lg p-6 text-center text-gray-700"
+            class="w-full max-w-xs sm:max-w-sm md:max-w-lg lg:max-w-xl border border-dashed border-gray-400 shadow-md rounded-lg p-4 sm:p-6 text-center text-gray-700"
           >
-            <p class="text-lg font-medium cinzel-300">
+            <p
+              class="text-sm sm:text-base md:text-lg font-medium cinzel-300 hyphens-auto leading-relaxed"
+            >
               {{ t.gallery.instagramNotVisible }}<br />
               {{ t.gallery.acceptCookies }}
               <button

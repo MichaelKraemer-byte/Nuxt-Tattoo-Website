@@ -1,6 +1,6 @@
 <template>
   <section
-    class="relative w-full min-h-screen flex items-center justify-center bg-[#0f0f0f] text-white overflow-hidden"
+    class="relative w-full min-h-[100dvh] flex items-center justify-center bg-[#0f0f0f] text-white overflow-hidden px-4 sm:px-6 md:px-8"
   >
     <video
       ref="videoRef"
@@ -22,10 +22,12 @@
     ></div>
 
     <!-- Inhalt -->
-    <div class="relative z-20 text-center max-w-xl px-6 sm:px-8 md:px-12">
+    <div
+      class="relative z-20 text-center w-full max-w-xs sm:max-w-sm md:max-w-xl lg:max-w-2xl"
+    >
       <!-- Logo -->
       <img
-        class="animate-fade-in mx-auto cinematic-heading break-words"
+        class="animate-fade-in mx-auto cinematic-heading hyphens-auto w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72"
         src="/logo/mkc-tattooart.svg"
         alt="MKC Tattoo Art Logo"
         loading="eager"
@@ -33,29 +35,33 @@
       />
 
       <div
-        class="mt-6 flex flex-col sm:flex-row items-center gap-4 justify-center"
+        class="mt-4 sm:mt-6 flex flex-col sm:flex-row items-center gap-3 sm:gap-4 justify-center"
       >
         <a
           href="#BookingForm"
-          class="cinzel-500 cta-button cta-button-primary cta-button-glow inline-block px-6 py-3 text-lg sm:text-xl font-bold text-white rounded-xl shadow-[0_8px_32px_rgba(212,175,55,0.4)] hover:shadow-[0_16px_48px_rgba(212,175,55,0.6)]"
+          class="cinzel-500 cta-button cta-button-primary cta-button-glow inline-block w-full sm:w-auto px-4 py-3 sm:px-6 sm:py-3 text-base sm:text-lg md:text-xl font-bold text-white rounded-lg sm:rounded-xl shadow-[0_4px_16px_rgba(212,175,55,0.4)] hover:shadow-[0_8px_32px_rgba(212,175,55,0.6)] transition-all duration-300"
         >
           {{ t.hero.bookButton }}
         </a>
 
         <a
           href="/gallery"
-          class="cinzel-500 cta-button cta-button-secondary inline-block px-5 py-2.5 text-base sm:text-lg font-semibold rounded-lg shadow-[0_4px_16px_rgba(212,175,55,0.2)] hover:shadow-[0_8px_24px_rgba(212,175,55,0.4)]"
+          class="cinzel-500 cta-button cta-button-secondary inline-block w-full sm:w-auto px-4 py-2.5 sm:px-5 sm:py-2.5 text-sm sm:text-base md:text-lg font-semibold rounded-lg shadow-[0_2px_8px_rgba(212,175,55,0.2)] hover:shadow-[0_4px_16px_rgba(212,175,55,0.4)] transition-all duration-300"
         >
           {{ t.hero.galleryButton }}
         </a>
       </div>
     </div>
     <!-- Scroll-Hinweis -->
-    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
+    <div
+      class="absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 z-20"
+    >
       <div class="flex flex-col items-center text-white/70 animate-bounce">
-        <span class="text-sm mb-2 cinzel-300">Scroll</span>
+        <span class="text-xs sm:text-sm mb-1 sm:mb-2 cinzel-300 hyphens-auto"
+          >Scroll</span
+        >
         <svg
-          class="w-6 h-6 animate-pulse"
+          class="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 animate-pulse"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
