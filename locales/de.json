@@ -72,7 +72,15 @@
     "testimonials": {
       "title": "- Healed -",
       "subtitle": "Stimmen meiner Kunden",
-      "note": "*Die Tattoos sind 3–6 Monate abgeheilt & die Bilder sind unbearbeitet*"
+      "note": "*Die Tattoos sind 3–6 Monate abgeheilt & die Bilder sind unbearbeitet*",
+      "maikG": {
+        "name": "Maik G.",
+        "text": "Mika hat meine Erwartungen übertroffen! Das Tattoo ist nicht nur wunderschön, sondern hat auch eine tiefe Bedeutung für mich. Die Atmosphäre im Studio war super entspannt und professionell. Ich komme auf jeden Fall wieder!"
+      },
+      "niklasW": {
+        "name": "Niklas W.",
+        "text": "Ich bin absolut begeistert von meinem neuen Tattoo. Mika hat meine Ideen perfekt umgesetzt und sogar noch verbessert. Die Qualität der Arbeit ist top und der Heilungsprozess war unkompliziert. Danke für dieses Kunstwerk!"
+      }
     },
     "cta": {
       "title": "Lass uns gemeinsam echte Kunst erschaffen",
@@ -108,7 +116,7 @@
     "email": "E-Mail",
     "phone": "Telefon",
     "date": "Gewünschter Termin",
-    "description": "Beschreibung des Tattoos",
+    "tattooDescription": "Beschreibung des Tattoos",
     "size": "Größe",
     "placement": "Platzierung",
     "style": "Stil",

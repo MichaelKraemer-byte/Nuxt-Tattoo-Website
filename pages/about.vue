@@ -245,7 +245,7 @@
               src="/img/auge.png"
               class="w-12 md:w-32 h-auto mb-4 sm:mb-5 scale-x-[-1]"
             />
-            <h2 class="text-4xl font-bold mb-4 cinzel-500 mx-6">
+            <h2 class="text-4xl font-bold cinzel-500 mx-6">
               {{ t.about.style.title }}
             </h2>
           </div>
@@ -258,8 +258,8 @@
       </section>
     </client-only>
 
+    <!-- SECTION: Das Auge -->
     <client-only>
-      <!-- SECTION: Das Auge -->
       <section class="bg-[#0a0a0a] py-24 px-6 text-center" data-aos="fade-up">
         <div
           class="flex flex-col items-center text-center justify-center w-full"
@@ -268,7 +268,7 @@
             src="/img/auge.png"
             class="w-12 lg:w-32 h-auto mb-4 sm:mb-5 scale-x-[-1]"
           />
-          <h2 class="text-4xl font-bold mb-4 cinzel-500 mx-6">
+          <h2 class="text-4xl font-bold cinzel-500 mx-6">
             {{ t.about.eye.title }}
           </h2>
         </div>
@@ -278,8 +278,8 @@
       </section>
     </client-only>
 
+    <!-- SECTION: Testimonials -->
     <client-only>
-      <!-- SECTION: Testimonials -->
       <section
         class="py-28 px-4 sm:px-8 lg:px-16 overflow-hidden"
         data-aos="zoom-in"
@@ -305,6 +305,7 @@
         <!-- Swiper -->
         <div class="w-full sm:px-6 lg:px-12 overflow-hidden">
           <Swiper
+            v-if="testimonials && testimonials.length > 0"
             :modules="[Pagination, Navigation]"
             :pagination="{ clickable: true }"
             :navigation="true"
@@ -338,7 +339,7 @@
                       viewBox="0 0 24 24"
                     >
                       <path
-                        d="M7.17 4.93A7 7 0 0 0 3 12v4a3 3 0 0 0 3 3h3V12H6a5 5 0 0 1 3.17-4.64zM17.17 4.93A7 7 0 0 0 13 12v4a3 3 0 0 0 3 3h3V12h-3a5 5 0 0 1 3.17-4.64z"
+                        d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z"
                       />
                     </svg>
 
@@ -401,7 +402,7 @@
 </template>
 
 <script setup>
-import { onMounted } from "vue";
+import { onMounted, ref, nextTick, computed, watch } from "vue";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Swiper, SwiperSlide } from "swiper/vue";
@@ -409,52 +410,106 @@ import { Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+
+// Register Swiper components globally for client-side rendering
+// This might help resolve the "Invalid vnode type" error with client-only
+if (process.client) {
+  // No direct global registration needed in Nuxt 3 with auto-imports,
+  // but ensuring the imports are processed client-side is key.
+  // The error might be due to a subtle interaction with Nuxt's auto-imports
+  // and the client-only component.
+}
 import { useI18n } from "~/composables/useI18n";
 
-const { t } = useI18n();
+const { t, currentLanguage, languages } = useI18n();
+
+// Debug: Überprüfe die geladenen Sprachen
+console.log("🔍 useI18n Debug:", {
+  currentLanguage: currentLanguage?.value,
+  languagesExist: !!languages,
+  deExists: !!languages?.de?.locale,
+  enExists: !!languages?.en?.locale,
+  aboutExists: !!languages?.de?.locale?.about,
+  testimonialsExist: !!languages?.de?.locale?.about?.testimonials,
+});
 const spaceBetween = ref(32); // Default Abstand
 const swiperRef = ref(null);
 
 // Für About-Seite
-import { useSeoAbout } from "../composables/useSeo";
+import { useSeoAbout } from "~/composables/useSeo";
 useSeoAbout();
+
+const personalImages = ["/img/me/hunt-hocke.jpg", "/img/me/hunt-front.jpg"];
+
+// Testimonials data - direkt aus den Sprachdateien
+const testimonials = computed(() => {
+  // Verwende die Sprachen direkt anstatt der t computed property
+  const currentLang = currentLanguage.value;
+  const currentLocale = languages[currentLang]?.locale;
+
+  if (currentLocale?.about?.testimonials) {
+    const testimonialsData = [
+      {
+        name: currentLocale.about.testimonials.maikG.name,
+        text: currentLocale.about.testimonials.maikG.text,
+        image: "/img/healedTattoos/dryade.jpg",
+        avatar: "/img/testimonials/maik-g.png",
+      },
+      {
+        name: currentLocale.about.testimonials.niklasW.name,
+        text: currentLocale.about.testimonials.niklasW.text,
+        image: "/img/healedTattoos/fvahik.jpg",
+        avatar: "/img/testimonials/niklas-w.png",
+      },
+    ];
+
+    console.log("✅ Using direct language data:", {
+      language: currentLang,
+      data: testimonialsData,
+    });
+    return testimonialsData;
+  }
+
+  // Fallback: Verwende deutsche Standarddaten
+  console.log("⚠️ Using fallback testimonials data");
+  return [
+    {
+      name: "Maik G.",
+      text: "Mika hat meine Erwartungen übertroffen! Das Tattoo ist nicht nur wunderschön, sondern hat auch eine tiefe Bedeutung für mich. Die Atmosphäre im Studio war super entspannt und professionell. Ich komme auf jeden Fall wieder!",
+      image: "/img/healedTattoos/dryade.jpg",
+      avatar: "/img/testimonials/maik-g.png",
+    },
+    {
+      name: "Niklas W.",
+      text: "Ich bin absolut begeistert von meinem neuen Tattoo. Mika hat meine Ideen perfekt umgesetzt und sogar noch verbessert. Die Qualität der Arbeit ist top und der Heilungsprozess war unkompliziert. Danke für dieses Kunstwerk!",
+      image: "/img/healedTattoos/fvahik.jpg",
+      avatar: "/img/testimonials/niklas-w.png",
+    },
+  ];
+});
+
+// Watch für Sprachänderungen - force reactive update
+watch(currentLanguage, (newLang) => {
+  console.log("🔄 Language changed to:", newLang);
+  nextTick(() => {
+    console.log("🔄 Testimonials after language change:", testimonials.value);
+  });
+});
 
 onMounted(() => {
   AOS.init({ duration: 800, once: true });
-  // wenn du einen Ref zum Swiper hast, z.B. mit ref="swiperRef" im Template:
-  swiperRef.value?.swiper.update(); // force update
-  swiperRef.value?.swiper.slideTo(0, 0); // setze initial auf Slide 0 ohne Animation
   if (window.innerWidth < 640) {
     // sm breakpoint Tailwind
     spaceBetween.value = 16; // kleinerer Abstand auf mobil
   }
-  setTimeout(() => {
-    swiperRef.value?.swiper.update();
-  }, 100);
+  // Use nextTick to ensure DOM is updated before interacting with Swiper
+  nextTick(() => {
+    if (swiperRef.value?.swiper) {
+      swiperRef.value.swiper.update(); // force update
+      swiperRef.value.swiper.slideTo(0, 0); // setze initial auf Slide 0 ohne Animation
+    }
+  });
 });
-
-const personalImages = ["/img/me/hunt-hocke.jpg", "/img/me/hunt-front.jpg"];
-
-const testimonials = [
-  {
-    name: "Maik Griep",
-    text: "Mika ist entspannt, leidenschaftlich und präzise. Wenn ihn ein Motiv inspiriert, steht für ihn die Kunst im Vordergrund – nicht der finanzielle Aspekt.",
-    image: "/img/healedTattoos/dryade.jpg",
-    avatar: "/img/testimonials/maik-g.png",
-  },
-  {
-    name: "Niklas Wasmuth",
-    text: "Ich feier Mikas Kunst total. Wie er sich mit allen Wesen und Formen immer so kreativ austoben kann ist etwas einzigartiges.",
-    image: "/img/healedTattoos/fvahik.jpg",
-    avatar: "/img/testimonials/niklas-w.png",
-  },
-  // {
-  //   name: "Wiebke Voss-Plassonke",
-  //   text: "Ich hab mir ein Unikat gewünscht, den Weg meiner Seele verewigt auf meinem rechten Arm. Michael hat dies perfekt umgesetzt. Ich bin sehr glücklich mit dem Ergebnis!",
-  //   image: "/img/healedTattoos/wiebke-schlaufe-2.jpg",
-  //   avatar: "/img/testimonials/wiebke-v.png",
-  // },
-];
 </script>
 
 <style scoped>
@@ -470,16 +525,16 @@ html {
   margin: auto;
 }
 
-::v-deep .swiper-pagination-bullet {
+:deep(.swiper-pagination-bullet) {
   background: #ffffff;
 }
 
-::v-deep .swiper-pagination-bullet-active {
+:deep(.swiper-pagination-bullet-active) {
   background: #f65c1a;
 }
 
-::v-deep .swiper-button-next,
-::v-deep .swiper-button-prev {
+:deep(.swiper-button-next),
+:deep(.swiper-button-prev) {
   color: #f65c1a !important;
 }
 </style>

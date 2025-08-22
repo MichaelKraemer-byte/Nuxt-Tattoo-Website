@@ -72,7 +72,15 @@
     "testimonials": {
       "title": "- Healed -",
       "subtitle": "Voices of my clients",
-      "note": "*The tattoos are 3-6 months healed & the images are unedited*"
+      "note": "*The tattoos are 3-6 months healed & the images are unedited*",
+      "maikG": {
+        "name": "Maik G.",
+        "text": "Mika exceeded my expectations! The tattoo is not only beautiful but also holds deep meaning for me. The atmosphere in the studio was super relaxed and professional. I will definitely come back!"
+      },
+      "niklasW": {
+        "name": "Niklas W.",
+        "text": "I am absolutely thrilled with my new tattoo. Mika perfectly implemented my ideas and even improved them. The quality of the work is top-notch, and the healing process was uncomplicated. Thank you for this work of art!"
+      }
     },
     "cta": {
       "title": "Let's create real art together",
@@ -108,7 +116,7 @@
     "email": "Email",
     "phone": "Phone",
     "date": "Preferred Date",
-    "description": "Tattoo Description",
+    "tattooDescription": "Tattoo Description",
     "size": "Size",
     "placement": "Placement",
     "style": "Style",

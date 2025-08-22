@@ -97,7 +97,7 @@
         <!-- Beschreibung mit Tooltip -->
         <div class="relative">
           <label class="items-center gap-2 group cursor-pointer">
-            {{ t.form.description }}
+            {{ t.form.tattooDescription }}
             <span class="text-orange-400">❔</span>
             <div class="relative mb-1">
               <div
