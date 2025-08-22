@@ -131,7 +131,7 @@
             >
             <div class="relative mb-1">
               <div
-                class="pointer-events-none absolute top-full inset-x-0 mx-auto mt-2 w-full max-w-[90vw] sm:max-w-[32rem] md:max-w-[36rem] lg:max-w-[40rem] text-sm bg-zinc-800/95 backdrop-blur-sm border border-[#d4af37]/50 text-white p-4 sm:p-5 rounded-lg shadow-2xl opacity-0 group-hover:opacity-100 transition-all duration-300 z-10 hyphens-auto leading-relaxed"
+                class="pointer-events-none absolute top-full left-1/2 mt-2 w-max max-w-[85vw] sm:max-w-[80vw] md:max-w-[75vw] lg:max-w-[70vw] xl:max-w-[65vw] 2xl:max-w-[60vw] text-sm bg-zinc-800/95 backdrop-blur-sm border border-[#d4af37]/50 text-white p-3 sm:p-4 md:p-5 rounded-lg shadow-2xl opacity-0 group-hover:opacity-100 transition-all duration-300 z-10 hyphens-auto leading-relaxed whitespace-normal transform -translate-x-1/2"
               >
                 {{ t.form.descriptionAdvice }}
               </div>
@@ -192,7 +192,7 @@
         <!-- Absenden -->
         <button
           type="submit"
-          class="w-full cursor-pointer cinzel-500 cta-button cta-button-primary inline-block px-8 py-4 text-lg font-bold text-white rounded-xl shadow-[0_8px_32px_rgba(212,175,55,0.4)] hover:shadow-[0_16px_48px_rgba(212,175,55,0.6)] transition-all duration-500 transform hover:scale-105 hover:-translate-y-1"
+          class="w-full cursor-pointer cinzel-500 cta-button cta-button-primary inline-block px-8 py-4 text-lg font-bold text-white rounded-xl shadow-[0_8px_32px_rgba(212,175,55,0.4)] hover:shadow-[0_16px_48px_rgba(212,175,55,0.6)] transition-all duration-500 transform hover:scale-[1.02] hover:-translate-y-[0.5]"
           :class="{
             'opacity-50 cursor-not-allowed hover:bg-transparent hover:scale-100 hover:translate-y-0':
               isInSubmitProcess,
@@ -515,8 +515,8 @@ input[type="checkbox"]:hover {
 }
 
 #BookingForm:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(212, 175, 55, 0.1);
+  transform: translateY(-1px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(212, 175, 55, 0.1);
 }
 
 /* Label Hover Effect */
@@ -608,6 +608,42 @@ textarea:focus::placeholder {
       rgba(39, 39, 42, 0.95)
     );
     border-color: rgba(82, 82, 91, 0.3);
+  }
+}
+
+/* Tooltip Responsive Positioning */
+.group:hover .relative .absolute {
+  /* Verhindert, dass der Tooltip aus dem Bildschirm hinausgeht */
+  max-width: min(85vw, 600px);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Mobile Tooltip Optimierungen */
+@media (max-width: 640px) {
+  .group:hover .relative .absolute {
+    max-width: 90vw;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    margin-left: 0;
+  }
+}
+
+/* Tablet Tooltip Optimierungen */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .group:hover .relative .absolute {
+    max-width: 80vw;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+}
+
+/* Desktop Tooltip Optimierungen */
+@media (min-width: 1025px) {
+  .group:hover .relative .absolute {
+    max-width: 70vw;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
   }
 }
 

@@ -175,7 +175,7 @@
 
 .cta-button:hover {
   text-shadow: 0 3px 8px rgba(0, 0, 0, 1);
-  transform: translateY(-2px) scale(1.02);
+  transform: translateY(-1px) scale(1.01);
   border-color: rgba(255, 255, 255, 0.3);
 }
 
@@ -255,7 +255,7 @@
   }
 
   .cta-button:hover {
-    transform: translateY(-1px) scale(1.01);
+    transform: translateY(-0.5px) scale(1.005);
   }
 }
 
